@@ -1,0 +1,289 @@
+import Link from "next/link";
+
+export default function ThemingPage() {
+  return (
+    <div className="space-y-8">
+      {/* Page title */}
+      <div className="space-y-2">
+        <h1 className="text-3xl font-bold tracking-tight">Theming</h1>
+        <p className="text-sm text-muted-foreground">
+          Learn how the color system works and how to customize the look and
+          feel of Apex Dashboard.
+        </p>
+      </div>
+
+      {/* OKLCh Color Tokens */}
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold">OKLCh Color Tokens</h2>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          All colors are defined as CSS custom properties using the{" "}
+          <strong className="text-foreground">OKLCh</strong> color space. OKLCh
+          provides perceptually uniform lightness, making it easier to create
+          consistent color palettes. The tokens are defined in{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            src/app/globals.css
+          </code>
+          .
+        </p>
+        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
+          <code>{`:root {
+  --primary: oklch(0.55 0.175 160);
+  --primary-foreground: oklch(0.985 0.002 230);
+  --background: oklch(0.985 0.002 230);
+  --foreground: oklch(0.155 0.015 230);
+  --card: oklch(1 0 0);
+  --muted: oklch(0.96 0.005 230);
+  --muted-foreground: oklch(0.556 0.015 230);
+  --border: oklch(0.922 0.005 230);
+  /* ... more tokens */
+}`}</code>
+        </pre>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          The OKLCh format is{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            oklch(lightness chroma hue)
+          </code>{" "}
+          where lightness is 0&ndash;1, chroma is 0&ndash;0.4, and hue is
+          0&ndash;360 degrees. Tailwind CSS v4 maps these tokens through the{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            @theme inline
+          </code>{" "}
+          block at the top of globals.css.
+        </p>
+      </section>
+
+      {/* Changing the primary color */}
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold">Changing the Primary Color</h2>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          To change the primary color, update the{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            --primary
+          </code>{" "}
+          token in both the{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            :root
+          </code>{" "}
+          (light) and{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            .dark
+          </code>{" "}
+          blocks. For example, to switch from teal to blue:
+        </p>
+        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
+          <code>{`/* Light mode */
+:root {
+  --primary: oklch(0.55 0.175 250);          /* hue 160 → 250 (blue) */
+  --primary-foreground: oklch(0.985 0.002 230);
+  --ring: oklch(0.55 0.175 250);
+}
+
+/* Dark mode */
+.dark {
+  --primary: oklch(0.65 0.19 250);
+  --primary-foreground: oklch(0.09 0.015 170);
+  --ring: oklch(0.65 0.19 250);
+}`}</code>
+        </pre>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          The change propagates everywhere{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            bg-primary
+          </code>
+          ,{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            text-primary
+          </code>
+          , or{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            ring-primary
+          </code>{" "}
+          is used &mdash; buttons, links, active states, charts, and sidebar
+          accents all update automatically.
+        </p>
+      </section>
+
+      {/* Semantic tokens */}
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold">Semantic Color Tokens</h2>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          The design system uses semantic names rather than raw color values.
+          Each token has a foreground counterpart for text that sits on top of
+          it:
+        </p>
+        <div className="overflow-x-auto rounded-lg border">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b bg-muted/50">
+                <th className="px-4 py-2 text-left font-medium">Token</th>
+                <th className="px-4 py-2 text-left font-medium">Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b">
+                <td className="px-4 py-2 font-mono text-xs">--primary</td>
+                <td className="px-4 py-2 text-muted-foreground">
+                  Brand color, buttons, active states
+                </td>
+              </tr>
+              <tr className="border-b">
+                <td className="px-4 py-2 font-mono text-xs">--secondary</td>
+                <td className="px-4 py-2 text-muted-foreground">
+                  Secondary actions, subtle backgrounds
+                </td>
+              </tr>
+              <tr className="border-b">
+                <td className="px-4 py-2 font-mono text-xs">--muted</td>
+                <td className="px-4 py-2 text-muted-foreground">
+                  Muted backgrounds, code blocks
+                </td>
+              </tr>
+              <tr className="border-b">
+                <td className="px-4 py-2 font-mono text-xs">--accent</td>
+                <td className="px-4 py-2 text-muted-foreground">
+                  Hover states, highlights
+                </td>
+              </tr>
+              <tr className="border-b">
+                <td className="px-4 py-2 font-mono text-xs">--destructive</td>
+                <td className="px-4 py-2 text-muted-foreground">
+                  Error states, delete actions
+                </td>
+              </tr>
+              <tr className="border-b">
+                <td className="px-4 py-2 font-mono text-xs">--success</td>
+                <td className="px-4 py-2 text-muted-foreground">
+                  Success indicators, positive trends
+                </td>
+              </tr>
+              <tr className="border-b">
+                <td className="px-4 py-2 font-mono text-xs">--warning</td>
+                <td className="px-4 py-2 text-muted-foreground">
+                  Warning badges, caution states
+                </td>
+              </tr>
+              <tr className="border-b">
+                <td className="px-4 py-2 font-mono text-xs">
+                  --chart-1 to --chart-5
+                </td>
+                <td className="px-4 py-2 text-muted-foreground">
+                  Chart color palette (5 colors)
+                </td>
+              </tr>
+              <tr>
+                <td className="px-4 py-2 font-mono text-xs">--sidebar-*</td>
+                <td className="px-4 py-2 text-muted-foreground">
+                  Sidebar-specific tokens (dark sidebar in light mode)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {/* Dark mode */}
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold">Dark Mode</h2>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          Dark mode is implemented by toggling a{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            .dark
+          </code>{" "}
+          class on the{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            &lt;html&gt;
+          </code>{" "}
+          element. The{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            ThemeProvider
+          </code>{" "}
+          component in{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            src/components/theme-provider.tsx
+          </code>{" "}
+          manages the state and persists the preference to localStorage. The
+          Tailwind dark variant is configured in globals.css:
+        </p>
+        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
+          <code>{`@custom-variant dark (&:is(.dark *));`}</code>
+        </pre>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          This allows you to use{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            dark:bg-slate-900
+          </code>{" "}
+          classes in your components, and the{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            .dark
+          </code>{" "}
+          block in globals.css overrides all semantic tokens for dark mode.
+        </p>
+      </section>
+
+      {/* Using the theme provider */}
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold">Using the Theme Provider</h2>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          The{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            useTheme
+          </code>{" "}
+          hook provides access to the current theme and a setter:
+        </p>
+        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
+          <code>{`"use client";
+
+import { useTheme } from "@/components/theme-provider";
+
+export function MyComponent() {
+  const { theme, setTheme } = useTheme();
+
+  return (
+    <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+      Current theme: {theme}
+    </button>
+  );
+}`}</code>
+        </pre>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          Supported values are{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            &quot;light&quot;
+          </code>
+          ,{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            &quot;dark&quot;
+          </code>
+          , and{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            &quot;system&quot;
+          </code>
+          . The system option follows the user&apos;s OS preference and reacts
+          to changes in real time.
+        </p>
+      </section>
+
+      {/* Next steps */}
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold">Next Steps</h2>
+        <p className="text-sm text-muted-foreground">
+          See{" "}
+          <Link
+            href="/docs/components"
+            className="font-medium text-primary hover:underline"
+          >
+            Components
+          </Link>{" "}
+          for a full list of available UI primitives, or learn how to{" "}
+          <Link
+            href="/docs/adding-pages"
+            className="font-medium text-primary hover:underline"
+          >
+            add new pages
+          </Link>{" "}
+          to the dashboard.
+        </p>
+      </section>
+    </div>
+  );
+}
