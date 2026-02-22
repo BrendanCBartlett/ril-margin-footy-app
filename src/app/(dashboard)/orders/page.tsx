@@ -2,10 +2,12 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import type { ColumnDef } from "@tanstack/react-table";
 import { Plus, MoreHorizontal, Eye, Pencil, Trash2 } from "lucide-react";
 import { LineChart, Line, ResponsiveContainer } from "recharts";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,7 +15,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { PageHeader } from "@/components/shared/page-header";
-import { DataTable } from "@/components/shared/data-table";
+import { DataTable, DataTableColumnHeader } from "@/components/shared/data-table";
 import { ConfirmDialog } from "@/components/shared/confirm-dialog";
 import { getOrders, deleteOrder } from "@/lib/data";
 import type { Order, OrderStatus } from "@/lib/data";
@@ -46,59 +48,92 @@ export default function OrdersPage() {
     perPage: 100,
   });
 
-  const columns = [
+  const columns: ColumnDef<Order>[] = [
     {
-      key: "id",
-      header: "Order",
-      sortable: true,
-      render: (row: Order) => (
-        <span className="font-mono text-sm font-medium">{row.id}</span>
+      id: "select",
+      header: ({ table }) => (
+        <Checkbox
+          checked={
+            table.getIsAllPageRowsSelected() ||
+            (table.getIsSomePageRowsSelected() && "indeterminate")
+          }
+          onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+          aria-label="Select all"
+        />
       ),
+      cell: ({ row }) => (
+        <Checkbox
+          checked={row.getIsSelected()}
+          onCheckedChange={(value) => row.toggleSelected(!!value)}
+          aria-label="Select row"
+          onClick={(e) => e.stopPropagation()}
+        />
+      ),
+      enableSorting: false,
+      enableHiding: false,
+      enableGlobalFilter: false,
+      size: 40,
     },
     {
-      key: "customerName",
-      header: "Customer",
-      sortable: true,
-      render: (row: Order) => (
+      accessorKey: "id",
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Order" />
+      ),
+      cell: ({ row }) => (
+        <span className="font-mono text-sm font-medium">{row.getValue("id")}</span>
+      ),
+      enableGlobalFilter: true,
+    },
+    {
+      accessorKey: "customerName",
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Customer" />
+      ),
+      cell: ({ row }) => (
         <div className="flex items-center gap-2.5">
           <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary">
-            {row.customerInitials}
+            {row.original.customerInitials}
           </div>
           <div>
-            <p className="text-sm font-medium">{row.customerName}</p>
-            <p className="text-xs text-muted-foreground">{row.customerEmail}</p>
+            <p className="text-sm font-medium">{row.original.customerName}</p>
+            <p className="text-xs text-muted-foreground">{row.original.customerEmail}</p>
           </div>
         </div>
       ),
+      enableGlobalFilter: true,
     },
     {
-      key: "productName",
-      header: "Product",
-      sortable: true,
+      accessorKey: "productName",
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Product" />
+      ),
+      enableGlobalFilter: true,
     },
     {
-      key: "status",
-      header: "Status",
-      sortable: true,
-      render: (row: Order) => (
-        <Badge variant={statusVariant[row.status]} className="capitalize text-[11px]">
-          {row.status}
+      accessorKey: "status",
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Status" />
+      ),
+      cell: ({ row }) => (
+        <Badge variant={statusVariant[row.original.status]} className="capitalize text-[11px]">
+          {row.original.status}
         </Badge>
       ),
     },
     {
-      key: "date",
-      header: "Date",
-      sortable: true,
+      accessorKey: "date",
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Date" />
+      ),
     },
     {
-      key: "trend",
+      id: "trend",
       header: "Trend",
-      className: "w-24 hidden md:table-cell",
-      render: (row: Order) => {
-        if (!row.trend) return null;
-        const data = row.trend.map((v) => ({ v }));
-        const isUp = row.trend[row.trend.length - 1] >= row.trend[0];
+      cell: ({ row }) => {
+        const trend = row.original.trend;
+        if (!trend) return null;
+        const data = trend.map((v) => ({ v }));
+        const isUp = trend[trend.length - 1] >= trend[0];
         return (
           <ResponsiveContainer width={80} height={28}>
             <LineChart data={data}>
@@ -113,42 +148,48 @@ export default function OrdersPage() {
           </ResponsiveContainer>
         );
       },
+      enableSorting: false,
+      enableGlobalFilter: false,
+      meta: { className: "w-24 hidden md:table-cell", mobileHidden: true },
     },
     {
-      key: "amount",
-      header: "Amount",
-      sortable: true,
-      className: "text-right",
-      render: (row: Order) => (
+      accessorKey: "amount",
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Amount" />
+      ),
+      cell: ({ row }) => (
         <span className="font-semibold">
-          ${row.amount.toLocaleString("en-US", { minimumFractionDigits: 2 })}
+          ${row.original.amount.toLocaleString("en-US", { minimumFractionDigits: 2 })}
         </span>
       ),
+      meta: { className: "text-right" },
     },
     {
-      key: "_actions",
-      header: "",
-      className: "w-10",
-      render: (row: Order) => (
+      id: "actions",
+      enableSorting: false,
+      enableHiding: false,
+      enableGlobalFilter: false,
+      meta: { className: "w-10" },
+      cell: ({ row }) => (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="icon" className="h-8 w-8">
+            <Button variant="ghost" size="icon" className="h-8 w-8" onClick={(e) => e.stopPropagation()}>
               <MoreHorizontal className="h-4 w-4" />
               <span className="sr-only">Actions</span>
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuItem onClick={() => router.push(`/orders/${row.id}`)}>
+            <DropdownMenuItem onClick={() => router.push(`/orders/${row.original.id}`)}>
               <Eye className="mr-2 h-4 w-4" />
               View
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => router.push(`/orders/${row.id}/edit`)}>
+            <DropdownMenuItem onClick={() => router.push(`/orders/${row.original.id}/edit`)}>
               <Pencil className="mr-2 h-4 w-4" />
               Edit
             </DropdownMenuItem>
             <DropdownMenuItem
               className="text-destructive focus:text-destructive"
-              onClick={() => setDeleteTarget(row)}
+              onClick={() => setDeleteTarget(row.original)}
             >
               <Trash2 className="mr-2 h-4 w-4" />
               Delete
@@ -158,6 +199,11 @@ export default function OrdersPage() {
       ),
     },
   ];
+
+  const handleBulkDelete = (selected: Order[]) => {
+    selected.forEach((order) => deleteOrder(order.id));
+    refresh();
+  };
 
   return (
     <>
@@ -198,10 +244,20 @@ export default function OrdersPage() {
         columns={columns}
         data={allOrders}
         searchPlaceholder="Search orders..."
-        searchKeys={["id", "customerName", "productName", "customerEmail"]}
         emptyMessage="No orders found."
         onRowClick={(row) => router.push(`/orders/${row.id}`)}
         exportFilename="orders"
+        enableRowSelection
+        bulkActions={(selected) => (
+          <Button
+            variant="destructive"
+            size="sm"
+            onClick={() => handleBulkDelete(selected)}
+          >
+            <Trash2 className="mr-1 size-3.5" />
+            Delete ({selected.length})
+          </Button>
+        )}
       />
 
       <ConfirmDialog

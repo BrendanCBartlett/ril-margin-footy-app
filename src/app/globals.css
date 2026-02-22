@@ -184,16 +184,43 @@
 /* Density */
 .density-compact {
   --table-row-height: 2rem;
+  --table-cell-py: 0.25rem;
   --card-padding: 0.75rem;
   --spacing-unit: 0.75;
 }
 .density-comfortable {
   --table-row-height: 2.75rem;
+  --table-cell-py: 0.5rem;
   --card-padding: 1.25rem;
   --spacing-unit: 1;
 }
 .density-spacious {
   --table-row-height: 3.5rem;
+  --table-cell-py: 0.75rem;
   --card-padding: 1.75rem;
   --spacing-unit: 1.25;
+}
+
+/* Wire density variables into components via data-slot selectors */
+[data-slot="table-head"] {
+  height: var(--table-row-height, 2.5rem);
+}
+[data-slot="table-cell"] {
+  padding-top: var(--table-cell-py, 0.5rem);
+  padding-bottom: var(--table-cell-py, 0.5rem);
+}
+[data-slot="table-row"] {
+  height: var(--table-row-height);
+}
+
+:is(.density-compact, .density-comfortable, .density-spacious) [data-slot="card-header"],
+:is(.density-compact, .density-comfortable, .density-spacious) [data-slot="card-content"],
+:is(.density-compact, .density-comfortable, .density-spacious) [data-slot="card-footer"] {
+  padding: var(--card-padding);
+}
+:is(.density-compact, .density-comfortable, .density-spacious) [data-slot="card-content"] {
+  padding-top: 0;
+}
+:is(.density-compact, .density-comfortable, .density-spacious) [data-slot="card-footer"] {
+  padding-top: 0;
 }

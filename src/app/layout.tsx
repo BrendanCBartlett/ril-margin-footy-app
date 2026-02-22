@@ -28,6 +28,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var d=localStorage.getItem("apex-density");if(d&&["compact","comfortable","spacious"].includes(d)){document.documentElement.classList.add("density-"+d)}else{document.documentElement.classList.add("density-comfortable")}}catch(e){document.documentElement.classList.add("density-comfortable")}})();
+(function(){try{var c=localStorage.getItem("apex-color-preset");var p={"emerald":[160,0.19],"blue":[240,0.19],"violet":[280,0.19],"rose":[350,0.19],"orange":[50,0.19],"slate":[260,0.02]};if(c&&p[c]){var s=document.documentElement.style;var v="oklch(0.55 "+p[c][1]+" "+p[c][0]+")";s.setProperty("--primary",v);s.setProperty("--primary-foreground","oklch(1 0 0)");s.setProperty("--sidebar-primary",v);s.setProperty("--chart-1",v);s.setProperty("--ring",v)}}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

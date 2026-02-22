@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
+import type { ColumnDef } from "@tanstack/react-table";
 import { Badge } from "@/components/ui/badge";
 import { PageHeader } from "@/components/shared/page-header";
-import { DataTable } from "@/components/shared/data-table";
+import { DataTable, DataTableColumnHeader } from "@/components/shared/data-table";
 import { getCustomers } from "@/lib/data";
 import type { Customer } from "@/lib/data";
 import { cn } from "@/lib/utils";
@@ -14,6 +15,66 @@ const statusFilters = [
   { label: "Inactive", value: "inactive" },
 ] as const;
 
+const columns: ColumnDef<Customer>[] = [
+  {
+    accessorKey: "name",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Customer" />
+    ),
+    cell: ({ row }) => (
+      <div className="flex items-center gap-2.5">
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary">
+          {row.original.initials}
+        </div>
+        <div>
+          <p className="text-sm font-medium">{row.original.name}</p>
+          <p className="text-xs text-muted-foreground">{row.original.email}</p>
+        </div>
+      </div>
+    ),
+    enableGlobalFilter: true,
+  },
+  {
+    accessorKey: "status",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Status" />
+    ),
+    cell: ({ row }) => (
+      <Badge
+        variant={row.original.status === "active" ? "success" : "secondary"}
+        className="capitalize text-[11px]"
+      >
+        {row.original.status}
+      </Badge>
+    ),
+  },
+  {
+    accessorKey: "joinDate",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Joined" />
+    ),
+  },
+  {
+    accessorKey: "ordersCount",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Orders" />
+    ),
+    meta: { className: "text-right" },
+  },
+  {
+    accessorKey: "totalSpent",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Total Spent" />
+    ),
+    cell: ({ row }) => (
+      <span className="font-semibold">
+        ${row.original.totalSpent.toLocaleString("en-US", { minimumFractionDigits: 2 })}
+      </span>
+    ),
+    meta: { className: "text-right" },
+  },
+];
+
 export default function CustomersPage() {
   const [filter, setFilter] = useState<"all" | "active" | "inactive">("all");
 
@@ -21,60 +82,6 @@ export default function CustomersPage() {
     status: filter === "all" ? undefined : filter,
     perPage: 100,
   });
-
-  const columns = [
-    {
-      key: "name",
-      header: "Customer",
-      sortable: true,
-      render: (row: Customer) => (
-        <div className="flex items-center gap-2.5">
-          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary">
-            {row.initials}
-          </div>
-          <div>
-            <p className="text-sm font-medium">{row.name}</p>
-            <p className="text-xs text-muted-foreground">{row.email}</p>
-          </div>
-        </div>
-      ),
-    },
-    {
-      key: "status",
-      header: "Status",
-      sortable: true,
-      render: (row: Customer) => (
-        <Badge
-          variant={row.status === "active" ? "success" : "secondary"}
-          className="capitalize text-[11px]"
-        >
-          {row.status}
-        </Badge>
-      ),
-    },
-    {
-      key: "joinDate",
-      header: "Joined",
-      sortable: true,
-    },
-    {
-      key: "ordersCount",
-      header: "Orders",
-      sortable: true,
-      className: "text-right",
-    },
-    {
-      key: "totalSpent",
-      header: "Total Spent",
-      sortable: true,
-      className: "text-right",
-      render: (row: Customer) => (
-        <span className="font-semibold">
-          ${row.totalSpent.toLocaleString("en-US", { minimumFractionDigits: 2 })}
-        </span>
-      ),
-    },
-  ];
 
   return (
     <>
@@ -110,7 +117,6 @@ export default function CustomersPage() {
         columns={columns}
         data={allCustomers}
         searchPlaceholder="Search customers..."
-        searchKeys={["name", "email"]}
         emptyMessage="No customers found."
         exportFilename="customers"
       />
