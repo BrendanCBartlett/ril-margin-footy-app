@@ -24,6 +24,7 @@ import {
   Kanban,
   Calendar,
   ListChecks,
+  FileInput,
   BookOpen,
 } from "lucide-react";
 
@@ -62,6 +63,7 @@ const navGroups: NavGroup[] = [
       { icon: Kanban, label: "Kanban", href: "/kanban" },
       { icon: Calendar, label: "Calendar", href: "/calendar" },
       { icon: ListChecks, label: "Wizard", href: "/wizard" },
+      { icon: FileInput, label: "Forms", href: "/forms" },
     ],
   },
   {
