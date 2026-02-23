@@ -8,23 +8,34 @@ import { CommandPalette } from "@/components/command-palette";
 import { PageTransition } from "./page-transition";
 
 export function DashboardShell({ children }: { children: React.ReactNode }) {
-  const { collapsed } = useSidebar();
+  const { collapsed, layout, container } = useSidebar();
 
   return (
-    <div className="flex min-h-screen bg-background">
-      <Sidebar />
-      <CommandPalette />
+    <div
+      className={cn(
+        "min-h-screen",
+        container === "boxed"
+          ? "mx-auto max-w-[1440px] border-x border-border bg-background shadow-sm"
+          : "bg-background"
+      )}
+    >
+      <div className="flex min-h-screen">
+        <Sidebar />
+        <CommandPalette />
 
-      <div
-        className={cn(
-          "flex flex-1 flex-col transition-all duration-300",
-          collapsed ? "lg:ml-[68px]" : "lg:ml-[260px]"
-        )}
-      >
-        <Header />
-        <main id="main-content" className="flex-1 p-4 sm:p-6">
-          <PageTransition>{children}</PageTransition>
-        </main>
+        <div
+          className={cn(
+            "flex flex-1 flex-col transition-all duration-300",
+            layout === "sidebar"
+              ? collapsed ? "lg:ml-[68px]" : "lg:ml-[260px]"
+              : ""
+          )}
+        >
+          <Header />
+          <main id="main-content" className="flex-1 p-4 sm:p-6">
+            <PageTransition>{children}</PageTransition>
+          </main>
+        </div>
       </div>
     </div>
   );

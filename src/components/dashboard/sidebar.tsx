@@ -25,27 +25,36 @@ import {
   Calendar,
   ListChecks,
   FileInput,
+  MessageCircle,
+  Mail,
+  FolderOpen,
   BookOpen,
+  Store,
+  Handshake,
+  Rocket,
 } from "lucide-react";
 
-interface NavItem {
+export interface NavItem {
   icon: React.ElementType;
   label: string;
   href: string;
   badge?: string;
 }
 
-interface NavGroup {
+export interface NavGroup {
   label: string;
   items: NavItem[];
 }
 
-const navGroups: NavGroup[] = [
+export const navGroups: NavGroup[] = [
   {
     label: "Overview",
     items: [
       { icon: LayoutDashboard, label: "Dashboard", href: "/" },
       { icon: BarChart3, label: "Analytics", href: "/analytics" },
+      { icon: Store, label: "eCommerce", href: "/ecommerce" },
+      { icon: Handshake, label: "CRM", href: "/crm" },
+      { icon: Rocket, label: "SaaS", href: "/saas" },
     ],
   },
   {
@@ -60,6 +69,9 @@ const navGroups: NavGroup[] = [
   {
     label: "Apps",
     items: [
+      { icon: Mail, label: "Mail", href: "/mail" },
+      { icon: MessageCircle, label: "Chat", href: "/chat" },
+      { icon: FolderOpen, label: "Files", href: "/files" },
       { icon: Kanban, label: "Kanban", href: "/kanban" },
       { icon: Calendar, label: "Calendar", href: "/calendar" },
       { icon: ListChecks, label: "Wizard", href: "/wizard" },
@@ -74,7 +86,7 @@ const navGroups: NavGroup[] = [
   },
 ];
 
-const systemNav: NavGroup = {
+export const systemNav: NavGroup = {
   label: "System",
   items: [
     { icon: Bell, label: "Notifications", href: "/notifications", badge: "3" },
@@ -83,7 +95,7 @@ const systemNav: NavGroup = {
   ],
 };
 
-const docsNav: NavItem = {
+export const docsNav: NavItem = {
   icon: BookOpen,
   label: "Documentation",
   href: "/docs",
@@ -211,9 +223,6 @@ function SidebarContent({ collapsed }: { collapsed: boolean }) {
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
-  // Check if any item in a group is active (for auto-expanding)
-  const groupHasActive = (group: NavGroup) =>
-    group.items.some((item) => isActive(item.href));
 
   return (
     <>
@@ -246,7 +255,7 @@ function SidebarContent({ collapsed }: { collapsed: boolean }) {
             group={group}
             collapsed={collapsed}
             isActive={isActive}
-            defaultOpen={groupHasActive(group)}
+            defaultOpen={true}
           />
         ))}
 
@@ -256,7 +265,7 @@ function SidebarContent({ collapsed }: { collapsed: boolean }) {
           group={systemNav}
           collapsed={collapsed}
           isActive={isActive}
-          defaultOpen={groupHasActive(systemNav)}
+          defaultOpen={true}
         />
 
         <div className="my-2 border-t border-sidebar-border" />
@@ -270,20 +279,28 @@ function SidebarContent({ collapsed }: { collapsed: boolean }) {
 
       {/* User section */}
       <div className="border-t border-sidebar-border p-3">
-        <div className="flex items-center gap-3 rounded-lg px-2 py-2">
-          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-sidebar-primary/80 to-sidebar-primary text-[11px] font-bold text-sidebar-primary-foreground">
-            AS
-          </div>
-          {!collapsed && (
-            <div className="flex flex-1 flex-col">
-              <span className="text-sm font-medium text-sidebar-foreground">
-                Aigars S.
-              </span>
-              <span className="text-[11px] text-sidebar-foreground/50">
-                Admin
-              </span>
+        <div className="flex items-center gap-2">
+          <Link
+            href="/profile"
+            className={cn(
+              "flex flex-1 items-center gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-sidebar-accent/50",
+              pathname === "/profile" && "bg-sidebar-accent/50"
+            )}
+          >
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-sidebar-primary/80 to-sidebar-primary text-[11px] font-bold text-sidebar-primary-foreground">
+              AS
             </div>
-          )}
+            {!collapsed && (
+              <div className="flex flex-1 flex-col">
+                <span className="text-sm font-medium text-sidebar-foreground">
+                  Aigars S.
+                </span>
+                <span className="text-[11px] text-sidebar-foreground/50">
+                  Admin
+                </span>
+              </div>
+            )}
+          </Link>
           {!collapsed && (
             <button
               aria-label="Log out"
@@ -299,14 +316,15 @@ function SidebarContent({ collapsed }: { collapsed: boolean }) {
 }
 
 export function Sidebar() {
-  const { collapsed, setCollapsed, mobileOpen, setMobileOpen } = useSidebar();
+  const { collapsed, setCollapsed, mobileOpen, setMobileOpen, layout } = useSidebar();
 
   return (
     <>
       {/* Desktop sidebar */}
       <aside
         className={cn(
-          "fixed left-0 top-0 z-40 hidden h-screen flex-col bg-sidebar transition-all duration-300 ease-in-out lg:flex",
+          "fixed left-0 top-0 z-40 hidden h-screen flex-col bg-sidebar transition-all duration-300 ease-in-out",
+          layout === "sidebar" ? "lg:flex" : "",
           collapsed ? "w-[68px]" : "w-[260px]"
         )}
       >

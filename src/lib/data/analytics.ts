@@ -7,6 +7,7 @@ export const statsData: StatCard[] = [
     change: 12.5,
     changeLabel: "vs last month",
     iconType: "revenue",
+    sparkline: [28, 32, 25, 35, 30, 38, 42, 36, 45, 40, 48, 52],
   },
   {
     title: "Active Users",
@@ -14,6 +15,7 @@ export const statsData: StatCard[] = [
     change: 8.2,
     changeLabel: "vs last month",
     iconType: "users",
+    sparkline: [18, 22, 20, 25, 23, 28, 24, 30, 27, 32, 29, 34],
   },
   {
     title: "Total Orders",
@@ -21,6 +23,7 @@ export const statsData: StatCard[] = [
     change: -3.1,
     changeLabel: "vs last month",
     iconType: "orders",
+    sparkline: [22, 25, 28, 24, 20, 23, 18, 21, 19, 17, 20, 18],
   },
   {
     title: "Page Views",
@@ -28,6 +31,7 @@ export const statsData: StatCard[] = [
     change: 24.7,
     changeLabel: "vs last month",
     iconType: "views",
+    sparkline: [120, 135, 128, 145, 160, 155, 170, 185, 195, 210, 230, 250],
   },
 ];
 

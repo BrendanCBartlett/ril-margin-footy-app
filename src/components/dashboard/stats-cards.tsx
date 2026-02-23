@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import { AreaChart, Area, ResponsiveContainer } from "recharts";
 import {
   TrendingUp,
   TrendingDown,
@@ -14,18 +15,19 @@ import { cn } from "@/lib/utils";
 import { statsData } from "@/lib/data";
 
 const iconMap = {
-  revenue: { icon: DollarSign, color: "text-chart-1", bg: "bg-chart-1/10" },
-  users: { icon: Users, color: "text-chart-2", bg: "bg-chart-2/10" },
-  orders: { icon: ShoppingCart, color: "text-chart-3", bg: "bg-chart-3/10" },
-  views: { icon: Eye, color: "text-chart-4", bg: "bg-chart-4/10" },
+  revenue: { icon: DollarSign, color: "text-chart-1", bg: "bg-chart-1/10", stroke: "var(--chart-1)" },
+  users: { icon: Users, color: "text-chart-2", bg: "bg-chart-2/10", stroke: "var(--chart-2)" },
+  orders: { icon: ShoppingCart, color: "text-chart-3", bg: "bg-chart-3/10", stroke: "var(--chart-3)" },
+  views: { icon: Eye, color: "text-chart-4", bg: "bg-chart-4/10", stroke: "var(--chart-4)" },
 };
 
 export function StatsCards() {
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
       {statsData.map((stat, i) => {
-        const { icon: Icon, color, bg } = iconMap[stat.iconType];
+        const { icon: Icon, color, bg, stroke } = iconMap[stat.iconType];
         const isPositive = stat.change > 0;
+        const chartData = stat.sparkline.map((v) => ({ v }));
 
         return (
           <Card
@@ -36,7 +38,7 @@ export function StatsCards() {
               animation: "slide-in-up 0.4s ease-out backwards",
             }}
           >
-            <CardContent className="p-5">
+            <CardContent className="p-5 pb-0">
               <div className="flex items-start justify-between">
                 <div className="space-y-2">
                   <p className="text-xs font-medium text-muted-foreground">
@@ -75,6 +77,27 @@ export function StatsCards() {
                 </div>
               </div>
             </CardContent>
+            {/* Sparkline chart pinned to bottom edge */}
+            <div className="h-12 w-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <AreaChart data={chartData} margin={{ top: 4, right: 0, bottom: 0, left: 0 }}>
+                  <defs>
+                    <linearGradient id={`gradient-${stat.iconType}`} x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor={stroke} stopOpacity={0.2} />
+                      <stop offset="100%" stopColor={stroke} stopOpacity={0} />
+                    </linearGradient>
+                  </defs>
+                  <Area
+                    type="monotone"
+                    dataKey="v"
+                    stroke={stroke}
+                    strokeWidth={1.5}
+                    fill={`url(#gradient-${stat.iconType})`}
+                    dot={false}
+                  />
+                </AreaChart>
+              </ResponsiveContainer>
+            </div>
           </Card>
         );
       })}

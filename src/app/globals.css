@@ -218,9 +218,22 @@
 :is(.density-compact, .density-comfortable, .density-spacious) [data-slot="card-footer"] {
   padding: var(--card-padding);
 }
-:is(.density-compact, .density-comfortable, .density-spacious) [data-slot="card-content"] {
+:is(.density-compact, .density-comfortable, .density-spacious) [data-slot="card-header"] + [data-slot="card-content"] {
   padding-top: 0;
 }
-:is(.density-compact, .density-comfortable, .density-spacious) [data-slot="card-footer"] {
+:is(.density-compact, .density-comfortable, .density-spacious) [data-slot="card-header"] + [data-slot="card-content"] + [data-slot="card-footer"],
+:is(.density-compact, .density-comfortable, .density-spacious) [data-slot="card-content"] + [data-slot="card-footer"] {
   padding-top: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Boxed container                                                    */
+/* ------------------------------------------------------------------ */
+
+.container-boxed body {
+  background-color: oklch(0.95 0.005 260);
+}
+
+.dark.container-boxed body {
+  background-color: oklch(0.15 0.005 260);
 }

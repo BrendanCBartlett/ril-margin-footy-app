@@ -75,6 +75,7 @@ export interface StatCard {
   change: number;
   changeLabel: string;
   iconType: "revenue" | "users" | "orders" | "views";
+  sparkline: number[];
 }
 
 export interface RevenueDataPoint {
