@@ -11,7 +11,13 @@ npm run start     # Serve production build
 npm run lint      # ESLint (flat config, v9)
 ```
 
-No test framework is configured yet.
+```bash
+npm run test      # Vitest watch mode
+npm run test:run  # Vitest single run
+npm run test:e2e  # Playwright E2E tests
+npm run storybook # Storybook dev server (port 6006)
+npm run analyze   # Bundle size analysis (opens report)
+```
 
 ## Architecture
 
@@ -51,3 +57,15 @@ Colors use **OKLCh** format defined as CSS custom properties in `src/app/globals
 - **Lucide React** for icons
 - **class-variance-authority** for component variants
 - **clsx + tailwind-merge** wrapped in `cn()` utility at `src/lib/utils.ts`
+
+### i18n
+
+Custom i18n system in `src/lib/i18n/` using React Context + localStorage persistence. Three locales: en, de, fr. Translation JSON files in `src/lib/i18n/messages/`. Type-safe keys via `useTranslations()` hook from `src/lib/i18n/locale-context.tsx`.
+
+### Storybook
+
+Storybook 8.x using `@storybook/react-vite` framework (NOT `@storybook/nextjs` -- incompatible with Next.js 16). Config in `.storybook/`. Stories co-located with components as `*.stories.tsx`.
+
+### Performance
+
+Chart-heavy components on the dashboard use `next/dynamic` with `ssr: false`. The `LazyChart` wrapper (`src/components/shared/lazy-chart.tsx`) uses IntersectionObserver to defer rendering until the element enters the viewport.

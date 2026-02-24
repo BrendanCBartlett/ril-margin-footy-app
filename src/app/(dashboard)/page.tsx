@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import { StatsCards } from "@/components/dashboard/stats-cards";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useTranslations } from "@/lib/i18n/locale-context";
 
 const RevenueChart = dynamic(
   () => import("@/components/dashboard/revenue-chart").then((m) => m.RevenueChart),
@@ -25,14 +26,14 @@ const ActivityFeed = dynamic(
 );
 
 export default function DashboardPage() {
+  const t = useTranslations();
   return (
     <>
       {/* Page title */}
       <div className="mb-6">
-        <h1 className="text-2xl font-bold tracking-tight">Dashboard</h1>
+        <h1 className="text-2xl font-bold tracking-tight">{t("dashboard.title")}</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          Welcome back, Aigars. Here&apos;s what&apos;s happening with your
-          business today.
+          {t("dashboard.welcome")}
         </p>
       </div>
 

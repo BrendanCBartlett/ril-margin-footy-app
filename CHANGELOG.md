@@ -2,6 +2,38 @@
 
 All notable changes to Apex Dashboard are documented here.
 
+## v2.1.0 — February 2026
+
+### User Management
+
+- Users list page with DataTable, role/status filters, and CRUD operations
+- User detail page with profile card, permissions grid, and account details
+- Create and edit user forms with React Hook Form + Zod validation
+- 25 mock users with roles (admin, editor, viewer, moderator), permissions, and departments
+- RBAC-style permissions model with granular permission strings
+
+### Storybook
+
+- Storybook 8.x with @storybook/react-vite framework
+- 15 component stories across 3 tiers (core primitives, form components, dashboard widgets)
+- Dark mode decorator and responsive viewport presets
+- Auto-docs enabled for all stories
+
+### Internationalization (i18n)
+
+- Custom i18n system with React Context + localStorage persistence
+- Type-safe translation keys with TypeScript NestedKeyOf utility
+- 3 languages: English, German (Deutsch), French (Français)
+- ~80 translation keys covering sidebar, header, dashboard, and common strings
+- Locale switcher in Theme Customizer and Settings > Appearance tab
+
+### Performance
+
+- @next/bundle-analyzer integration with `npm run analyze` script
+- next/dynamic lazy loading for chart components on dashboard home
+- LazyChart wrapper using IntersectionObserver for viewport-triggered rendering
+- Charts page uses LazyChart for deferred loading of below-fold charts
+
 ## v2.0.0 — February 2026
 
 Major update covering Phases 2–9 of the product roadmap.

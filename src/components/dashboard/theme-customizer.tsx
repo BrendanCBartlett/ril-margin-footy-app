@@ -13,10 +13,13 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { Sun, Moon, Monitor, Rows3, Rows4, StretchHorizontal, PanelLeft, PanelTop, Maximize, Minimize, AlignLeft, AlignRight } from "lucide-react";
+import { Sun, Moon, Monitor, Rows3, Rows4, StretchHorizontal, PanelLeft, PanelTop, Maximize, Minimize, AlignLeft, AlignRight, Globe } from "lucide-react";
 import { useSidebar } from "./sidebar-context";
 import type { LayoutMode, ContainerMode, DirectionMode } from "./sidebar-context";
 import { cn } from "@/lib/utils";
+import { useLocale } from "@/lib/i18n/locale-context";
+import { locales } from "@/lib/i18n/config";
+import type { Locale } from "@/lib/i18n/config";
 
 /* ------------------------------------------------------------------ */
 /*  Color presets (mirrored from settings page)                        */
@@ -104,6 +107,7 @@ const DIRECTION_OPTIONS: { value: DirectionMode; label: string; icon: React.Elem
 export function ThemeCustomizer({ open, onOpenChange }: ThemeCustomizerProps) {
   const { theme, setTheme } = useTheme();
   const { layout, setLayout, container, setContainer, direction, setDirection } = useSidebar();
+  const { locale, setLocale } = useLocale();
 
   /* --- Color preset state --- */
   const [colorPreset, setColorPreset] = useState<ColorPresetKey>(() => {
@@ -142,6 +146,7 @@ export function ThemeCustomizer({ open, onOpenChange }: ThemeCustomizerProps) {
     setLayout("sidebar");
     setContainer("fluid");
     setDirection("ltr");
+    setLocale("en");
   }
 
   /* --- Theme options --- */
@@ -334,6 +339,32 @@ export function ThemeCustomizer({ open, onOpenChange }: ThemeCustomizerProps) {
                   </button>
                 );
               })}
+            </div>
+          </div>
+
+          <Separator />
+
+          {/* ---- Language ---- */}
+          <div className="space-y-3">
+            <Label>Language</Label>
+            <div className="grid grid-cols-3 gap-2">
+              {locales.map((loc) => (
+                <button
+                  key={loc.code}
+                  onClick={() => setLocale(loc.code as Locale)}
+                  className={cn(
+                    "flex flex-col items-center gap-1.5 rounded-lg border-2 p-3 transition-all",
+                    locale === loc.code
+                      ? "border-primary bg-primary/5 text-primary"
+                      : "border-border hover:border-primary/30"
+                  )}
+                >
+                  <Globe className={cn("h-5 w-5", locale === loc.code ? "text-primary" : "text-muted-foreground")} />
+                  <span className={cn("text-xs font-medium", locale === loc.code ? "text-primary" : "text-muted-foreground")}>
+                    {loc.label}
+                  </span>
+                </button>
+              ))}
             </div>
           </div>
         </div>

@@ -47,6 +47,7 @@ import {
 import type { NotificationType } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
+import { useTranslations } from "@/lib/i18n/locale-context";
 
 const notificationIcon: Record<
   NotificationType,
@@ -62,6 +63,7 @@ export function Header() {
   const { theme, setTheme } = useTheme();
   const { setMobileOpen, layout } = useSidebar();
   const router = useRouter();
+  const t = useTranslations();
   const [notifOpen, setNotifOpen] = useState(false);
   const [customizerOpen, setCustomizerOpen] = useState(false);
   const [, forceUpdate] = useState(0);
@@ -98,7 +100,7 @@ export function Header() {
           className="relative hidden h-9 w-72 items-center rounded-lg border border-input bg-muted/40 ps-9 pe-4 text-start text-sm text-muted-foreground/50 transition-colors hover:bg-muted/60 sm:flex"
         >
           <Search className="absolute ltr:left-3 rtl:right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground/60" />
-          Search anything...
+          {t("header.search")}
           <kbd className="pointer-events-none absolute ltr:right-3 rtl:left-3 top-1/2 -translate-y-1/2 rounded border border-border bg-muted px-1.5 text-[10px] font-medium text-muted-foreground">
             ⌘K
           </kbd>
@@ -115,7 +117,7 @@ export function Header() {
           onClick={() => router.push("/orders/new")}
         >
           <Plus className="h-3.5 w-3.5" />
-          New Order
+          {t("header.newOrder")}
         </Button>
 
         <div className="mx-1 hidden h-6 w-px bg-border sm:block" />
@@ -158,7 +160,7 @@ export function Header() {
           <PopoverContent className="w-80 p-0" align="end" sideOffset={8}>
             <div className="flex items-center justify-between border-b border-border px-4 py-3">
               <div className="flex items-center gap-2">
-                <p className="text-sm font-semibold">Notifications</p>
+                <p className="text-sm font-semibold">{t("header.notifications")}</p>
                 {unreadCount > 0 && (
                   <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-primary/15 px-1.5 text-[10px] font-semibold text-primary">
                     {unreadCount}
@@ -174,14 +176,14 @@ export function Header() {
                   className="flex items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
                 >
                   <CheckCheck className="h-3 w-3" />
-                  Mark all read
+                  {t("header.markAllRead")}
                 </button>
               )}
             </div>
             <div className="max-h-80 overflow-y-auto">
               {recentNotifications.length === 0 ? (
                 <p className="px-4 py-6 text-center text-sm text-muted-foreground">
-                  No notifications
+                  {t("header.noNotifications")}
                 </p>
               ) : (
                 recentNotifications.map((notif) => {
@@ -241,7 +243,7 @@ export function Header() {
                 onClick={() => setNotifOpen(false)}
                 className="flex items-center justify-center py-2.5 text-xs font-medium text-primary transition-colors hover:text-primary/80"
               >
-                View all notifications
+                {t("header.viewAll")}
               </Link>
             </div>
           </PopoverContent>
@@ -266,11 +268,11 @@ export function Header() {
             <DropdownMenuGroup>
               <DropdownMenuItem onClick={() => router.push("/settings")}>
                 <Settings className="me-2 h-4 w-4" />
-                Settings
+                {t("header.settings")}
               </DropdownMenuItem>
               <DropdownMenuItem onClick={() => router.push("/notifications")}>
                 <Bell className="me-2 h-4 w-4" />
-                Notifications
+                {t("header.notifications")}
                 {unreadCount > 0 && (
                   <span className="ms-auto flex h-4 min-w-4 items-center justify-center rounded-full bg-primary/15 px-1 text-[10px] font-semibold text-primary">
                     {unreadCount}
@@ -281,13 +283,13 @@ export function Header() {
             <DropdownMenuSeparator />
             <DropdownMenuItem
               onClick={() => {
-                toast.success("Logged out", {
-                  description: "You have been signed out successfully.",
+                toast.success(t("header.loggedOut"), {
+                  description: t("header.signedOutMessage"),
                 });
               }}
             >
               <LogOut className="me-2 h-4 w-4" />
-              Log out
+              {t("header.logOut")}
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

@@ -12,11 +12,56 @@ export default function ChangelogPage() {
         </p>
       </div>
 
+      {/* v2.1.0 */}
+      <section className="space-y-4">
+        <div className="flex items-center gap-3">
+          <h2 className="text-lg font-semibold">v2.1.0</h2>
+          <Badge variant="default">Latest</Badge>
+          <span className="text-sm text-muted-foreground">
+            February 2026
+          </span>
+        </div>
+        <p className="text-sm text-muted-foreground">
+          User management, Storybook component library, internationalization, and performance optimizations.
+        </p>
+
+        <div className="space-y-3">
+          <h3 className="text-sm font-medium">User Management</h3>
+          <ul className="list-disc space-y-1 ps-6 text-sm text-muted-foreground">
+            <li>Users list page with DataTable, role/status filters, and CRUD operations</li>
+            <li>User detail page with profile card, permissions grid, and account details</li>
+            <li>Create and edit forms with React Hook Form + Zod validation</li>
+            <li>25 mock users with roles, permissions, and departments</li>
+          </ul>
+
+          <h3 className="text-sm font-medium">Storybook</h3>
+          <ul className="list-disc space-y-1 ps-6 text-sm text-muted-foreground">
+            <li>Storybook 8.x with 15 component stories across core, form, and dashboard tiers</li>
+            <li>Dark mode decorator and responsive viewport presets</li>
+            <li>Auto-docs enabled for all stories</li>
+          </ul>
+
+          <h3 className="text-sm font-medium">Internationalization (i18n)</h3>
+          <ul className="list-disc space-y-1 ps-6 text-sm text-muted-foreground">
+            <li>Custom i18n with React Context and type-safe translation keys</li>
+            <li>3 languages: English, German, French</li>
+            <li>~80 translation keys covering sidebar, header, and dashboard</li>
+            <li>Locale switcher in Theme Customizer and Settings</li>
+          </ul>
+
+          <h3 className="text-sm font-medium">Performance</h3>
+          <ul className="list-disc space-y-1 ps-6 text-sm text-muted-foreground">
+            <li>Bundle analyzer integration with npm run analyze</li>
+            <li>Dynamic imports for chart components on dashboard home</li>
+            <li>LazyChart wrapper using IntersectionObserver for viewport-triggered rendering</li>
+          </ul>
+        </div>
+      </section>
+
       {/* v2.0.0 */}
       <section className="space-y-4">
         <div className="flex items-center gap-3">
           <h2 className="text-lg font-semibold">v2.0.0</h2>
-          <Badge variant="default">Latest</Badge>
           <span className="text-sm text-muted-foreground">
             February 2026
           </span>

@@ -5,6 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useSidebar } from "./sidebar-context";
+import { useTranslations } from "@/lib/i18n/locale-context";
+import type { TranslationKey } from "@/lib/i18n/locale-context";
 import {
   LayoutDashboard,
   ShoppingCart,
@@ -41,61 +43,68 @@ export interface NavItem {
   label: string;
   href: string;
   badge?: string;
+  tKey?: TranslationKey;
 }
 
 export interface NavGroup {
   label: string;
   items: NavItem[];
+  tKey?: TranslationKey;
 }
 
 export const navGroups: NavGroup[] = [
   {
     label: "Overview",
+    tKey: "sidebar.overview",
     items: [
-      { icon: LayoutDashboard, label: "Dashboard", href: "/" },
-      { icon: BarChart3, label: "Analytics", href: "/analytics" },
-      { icon: Store, label: "eCommerce", href: "/ecommerce" },
-      { icon: Handshake, label: "CRM", href: "/crm" },
-      { icon: Rocket, label: "SaaS", href: "/saas" },
-      { icon: ChartNoAxesCombined, label: "Charts", href: "/charts" },
+      { icon: LayoutDashboard, label: "Dashboard", href: "/", tKey: "sidebar.dashboard" },
+      { icon: BarChart3, label: "Analytics", href: "/analytics", tKey: "sidebar.analytics" },
+      { icon: Store, label: "eCommerce", href: "/ecommerce", tKey: "sidebar.ecommerce" },
+      { icon: Handshake, label: "CRM", href: "/crm", tKey: "sidebar.crm" },
+      { icon: Rocket, label: "SaaS", href: "/saas", tKey: "sidebar.saas" },
+      { icon: ChartNoAxesCombined, label: "Charts", href: "/charts", tKey: "sidebar.charts" },
     ],
   },
   {
     label: "Commerce",
+    tKey: "sidebar.commerce",
     items: [
-      { icon: ShoppingCart, label: "Orders", href: "/orders", badge: "12" },
-      { icon: Package, label: "Products", href: "/products" },
-      { icon: Users, label: "Customers", href: "/customers" },
-      { icon: FileText, label: "Invoices", href: "/invoices" },
+      { icon: ShoppingCart, label: "Orders", href: "/orders", badge: "12", tKey: "sidebar.orders" },
+      { icon: Package, label: "Products", href: "/products", tKey: "sidebar.products" },
+      { icon: Users, label: "Customers", href: "/customers", tKey: "sidebar.customers" },
+      { icon: FileText, label: "Invoices", href: "/invoices", tKey: "sidebar.invoices" },
     ],
   },
   {
     label: "Apps",
+    tKey: "sidebar.apps",
     items: [
-      { icon: Mail, label: "Mail", href: "/mail" },
-      { icon: MessageCircle, label: "Chat", href: "/chat" },
-      { icon: FolderOpen, label: "Files", href: "/files" },
-      { icon: Kanban, label: "Kanban", href: "/kanban" },
-      { icon: Calendar, label: "Calendar", href: "/calendar" },
-      { icon: ListChecks, label: "Wizard", href: "/wizard" },
-      { icon: FileInput, label: "Forms", href: "/forms" },
+      { icon: Mail, label: "Mail", href: "/mail", tKey: "sidebar.mail" },
+      { icon: MessageCircle, label: "Chat", href: "/chat", tKey: "sidebar.chat" },
+      { icon: FolderOpen, label: "Files", href: "/files", tKey: "sidebar.files" },
+      { icon: Kanban, label: "Kanban", href: "/kanban", tKey: "sidebar.kanban" },
+      { icon: Calendar, label: "Calendar", href: "/calendar", tKey: "sidebar.calendar" },
+      { icon: ListChecks, label: "Wizard", href: "/wizard", tKey: "sidebar.wizard" },
+      { icon: FileInput, label: "Forms", href: "/forms", tKey: "sidebar.forms" },
     ],
   },
   {
     label: "Finance",
+    tKey: "sidebar.finance",
     items: [
-      { icon: CreditCard, label: "Billing", href: "/billing" },
+      { icon: CreditCard, label: "Billing", href: "/billing", tKey: "sidebar.billing" },
     ],
   },
 ];
 
 export const systemNav: NavGroup = {
   label: "System",
+  tKey: "sidebar.system",
   items: [
-    { icon: UserCog, label: "Users", href: "/users" },
-    { icon: Bell, label: "Notifications", href: "/notifications", badge: "3" },
-    { icon: Settings, label: "Settings", href: "/settings" },
-    { icon: HelpCircle, label: "Help & Support", href: "/support" },
+    { icon: UserCog, label: "Users", href: "/users", tKey: "sidebar.users" },
+    { icon: Bell, label: "Notifications", href: "/notifications", badge: "3", tKey: "sidebar.notifications" },
+    { icon: Settings, label: "Settings", href: "/settings", tKey: "sidebar.settings" },
+    { icon: HelpCircle, label: "Help & Support", href: "/support", tKey: "sidebar.helpSupport" },
   ],
 };
 
@@ -103,6 +112,7 @@ export const docsNav: NavItem = {
   icon: BookOpen,
   label: "Documentation",
   href: "/docs",
+  tKey: "sidebar.documentation",
 };
 
 function NavItemComponent({
@@ -115,6 +125,8 @@ function NavItemComponent({
   active: boolean;
 }) {
   const Icon = item.icon;
+  const t = useTranslations();
+  const label = item.tKey ? t(item.tKey) : item.label;
   return (
     <Link
       href={item.href}
@@ -136,7 +148,7 @@ function NavItemComponent({
       />
       {!collapsed && (
         <>
-          <span className="flex-1">{item.label}</span>
+          <span className="flex-1">{label}</span>
           {item.badge && (
             <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-sidebar-primary/15 px-1.5 text-[10px] font-semibold text-sidebar-primary">
               {item.badge}
@@ -163,8 +175,11 @@ function CollapsibleGroup({
   defaultOpen: boolean;
 }) {
   const [open, setOpen] = useState(defaultOpen);
+  const t = useTranslations();
 
   const toggle = useCallback(() => setOpen((prev) => !prev), []);
+
+  const groupLabel = group.tKey ? t(group.tKey) : group.label;
 
   // When sidebar is collapsed, show only icons (no group headers)
   if (sidebarCollapsed) {
@@ -188,7 +203,7 @@ function CollapsibleGroup({
         onClick={toggle}
         className="flex w-full items-center gap-2 rounded-md px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-sidebar-foreground/30 transition-colors hover:text-sidebar-foreground/50"
       >
-        <span className="flex-1 text-start">{group.label}</span>
+        <span className="flex-1 text-start">{groupLabel}</span>
         <ChevronRight
           className={cn(
             "size-3 transition-transform duration-200",

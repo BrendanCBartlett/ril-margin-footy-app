@@ -25,6 +25,8 @@ A modern, production-ready admin dashboard template built with **Next.js 16**, *
 - Fully responsive with collapsible sidebar and mobile overlay menu
 - Accessible: skip-to-content link, ARIA attributes, focus management, semantic HTML
 - Unit tests (Vitest) and E2E tests (Playwright) included
+- Storybook component library with 15 stories and auto-docs
+- i18n support (English, German, French) with locale switcher
 - Built-in `/docs` documentation site
 
 ---
@@ -175,6 +177,49 @@ Switch between layouts from the Theme Customizer or programmatically.
 
 ---
 
+## User Management
+
+Full user management with RBAC-style permissions:
+
+- User list with DataTable (role/status filters, search, pagination)
+- User detail view with profile card, permissions grid, and account details
+- Create and edit forms with React Hook Form + Zod validation
+- 4 roles (Admin, Editor, Viewer, Moderator) with granular permissions
+- 25 mock users with departments and activity tracking
+
+---
+
+## Storybook
+
+Browse and test components in isolation:
+
+```bash
+npm run storybook       # Development (port 6006)
+npm run build-storybook # Static build
+```
+
+15 stories covering:
+
+- **Core primitives:** Button, Badge, Card, Input, Dialog, Tabs
+- **Form components:** Select, Checkbox, Switch, Textarea, Slider
+- **Dashboard widgets:** StatsCards, DataTable, PageHeader, EmptyState
+
+---
+
+## Internationalization (i18n)
+
+Built-in multi-language support with 3 locales:
+
+- English, German (Deutsch), French (Français)
+- ~80 translation keys covering sidebar, header, dashboard, and common strings
+- Type-safe translation keys with TypeScript
+- Locale switcher in Theme Customizer and Settings > Appearance
+- Locale persists to localStorage
+
+To add a new language, create a JSON file in `src/lib/i18n/messages/` and register it in `src/lib/i18n/config.ts`.
+
+---
+
 ## RTL Support
 
 Full right-to-left layout support built in:
@@ -209,6 +254,9 @@ Full right-to-left layout support built in:
 | Phone Input | libphonenumber-js |
 | Unit Testing | Vitest + Testing Library |
 | E2E Testing | Playwright |
+| Storybook | Storybook 8.x (15 component stories) |
+| i18n | Custom React Context + typed JSON messages |
+| Bundle Analysis | @next/bundle-analyzer |
 
 ---
 
@@ -242,6 +290,9 @@ Open [http://localhost:3737](http://localhost:3737) to see the dashboard.
 | `npm run test:run` | Vitest single run |
 | `npm run test:e2e` | Playwright E2E tests |
 | `npm run test:e2e:ui` | Playwright UI mode |
+| `npm run storybook` | Start Storybook dev server (port 6006) |
+| `npm run build-storybook` | Build static Storybook |
+| `npm run analyze` | Bundle size analysis |
 
 ---
 
@@ -302,6 +353,7 @@ apex-dashboard/
 │   │   │   ├── orders/           # CRUD: list, [id], new, [id]/edit
 │   │   │   ├── products/         # CRUD: list, [id], new, [id]/edit
 │   │   │   ├── customers/
+│   │   │   ├── users/            # User management CRUD
 │   │   │   ├── invoices/
 │   │   │   ├── billing/
 │   │   │   ├── notifications/
@@ -333,6 +385,10 @@ apex-dashboard/
 │   │   ├── data/                 # Mock data layer with CRUD helpers
 │   │   ├── navigation.ts         # Centralized route definitions
 │   │   ├── docs-navigation.ts    # Docs sidebar structure
+│   │   ├── i18n/                 # Internationalization
+│   │   │   ├── config.ts         # Locale definitions
+│   │   │   ├── locale-context.tsx # LocaleProvider + hooks
+│   │   │   └── messages/         # en.json, de.json, fr.json
 │   │   └── utils.ts              # cn() utility (clsx + tailwind-merge)
 │   └── test/                     # Vitest setup
 │       └── vitest.d.ts

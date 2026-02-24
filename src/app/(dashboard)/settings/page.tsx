@@ -10,9 +10,12 @@ import { Switch } from "@/components/ui/switch";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useTheme } from "@/components/theme-provider";
-import { Sun, Moon, Monitor, Rows3, Rows4, StretchHorizontal } from "lucide-react";
+import { Sun, Moon, Monitor, Rows3, Rows4, StretchHorizontal, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
+import { useLocale } from "@/lib/i18n/locale-context";
+import { locales } from "@/lib/i18n/config";
+import type { Locale } from "@/lib/i18n/config";
 
 /* ------------------------------------------------------------------ */
 /*  Color presets                                                      */
@@ -183,6 +186,7 @@ function PreferencesTab() {
 
 function AppearanceTab() {
   const { theme, setTheme } = useTheme();
+  const { locale, setLocale } = useLocale();
 
   /* --- Color preset state --- */
   const [colorPreset, setColorPreset] = useState<ColorPresetKey>(() => {
@@ -330,6 +334,42 @@ function AppearanceTab() {
                 </button>
               );
             })}
+          </div>
+        </div>
+
+        <Separator />
+
+        {/* ---- Language ---- */}
+        <div className="space-y-4">
+          <Label>Language</Label>
+          <div className="grid grid-cols-3 gap-3">
+            {locales.map((loc) => (
+              <button
+                key={loc.code}
+                onClick={() => setLocale(loc.code as Locale)}
+                className={cn(
+                  "flex flex-col items-center gap-2 rounded-lg border-2 p-4 transition-all",
+                  locale === loc.code
+                    ? "border-primary bg-primary/5"
+                    : "border-border hover:border-primary/30"
+                )}
+              >
+                <Globe
+                  className={cn(
+                    "h-6 w-6",
+                    locale === loc.code ? "text-primary" : "text-muted-foreground"
+                  )}
+                />
+                <span
+                  className={cn(
+                    "text-sm font-medium",
+                    locale === loc.code ? "text-primary" : "text-muted-foreground"
+                  )}
+                >
+                  {loc.label}
+                </span>
+              </button>
+            ))}
           </div>
         </div>
       </CardContent>
