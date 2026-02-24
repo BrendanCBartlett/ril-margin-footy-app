@@ -22,7 +22,7 @@ export function DataTableColumnHeader<TData, TValue>({
   return (
     <button
       className={cn(
-        "inline-flex items-center gap-1 hover:text-foreground -ml-2 px-2 py-1 rounded-md transition-colors",
+        "inline-flex items-center gap-1 hover:text-foreground -ms-2 px-2 py-1 rounded-md transition-colors",
         className
       )}
       onClick={() => {

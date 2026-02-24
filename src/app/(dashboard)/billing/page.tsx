@@ -129,11 +129,11 @@ export default function BillingPage() {
             <table className="w-full">
               <thead>
                 <tr className="border-b border-border">
-                  <th className="pb-3 text-left text-xs font-medium text-muted-foreground">Date</th>
-                  <th className="pb-3 text-left text-xs font-medium text-muted-foreground">Description</th>
-                  <th className="pb-3 text-left text-xs font-medium text-muted-foreground">Status</th>
-                  <th className="pb-3 text-right text-xs font-medium text-muted-foreground">Amount</th>
-                  <th className="pb-3 text-right text-xs font-medium text-muted-foreground">
+                  <th className="pb-3 text-start text-xs font-medium text-muted-foreground">Date</th>
+                  <th className="pb-3 text-start text-xs font-medium text-muted-foreground">Description</th>
+                  <th className="pb-3 text-start text-xs font-medium text-muted-foreground">Status</th>
+                  <th className="pb-3 text-end text-xs font-medium text-muted-foreground">Amount</th>
+                  <th className="pb-3 text-end text-xs font-medium text-muted-foreground">
                     <span className="sr-only">Download</span>
                   </th>
                 </tr>
@@ -146,8 +146,8 @@ export default function BillingPage() {
                     <td className="py-3">
                       <Badge variant={statusVariant[item.status]} className="capitalize text-[11px]">{item.status}</Badge>
                     </td>
-                    <td className="py-3 text-right text-sm font-semibold">{item.amount}</td>
-                    <td className="py-3 text-right">
+                    <td className="py-3 text-end text-sm font-semibold">{item.amount}</td>
+                    <td className="py-3 text-end">
                       <Button variant="ghost" size="icon" className="h-8 w-8">
                         <Download className="h-4 w-4" />
                       </Button>

@@ -37,7 +37,7 @@ export default function CustomersLoading() {
             {/* Join date */}
             <Skeleton className="h-4 w-24" />
             {/* Orders */}
-            <Skeleton className="ml-auto h-4 w-8" />
+            <Skeleton className="ms-auto h-4 w-8" />
             {/* Total spent */}
             <Skeleton className="h-4 w-20" />
           </div>

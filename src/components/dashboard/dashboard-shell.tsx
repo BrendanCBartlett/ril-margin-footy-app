@@ -27,7 +27,7 @@ export function DashboardShell({ children }: { children: React.ReactNode }) {
           className={cn(
             "flex flex-1 flex-col transition-all duration-300",
             layout === "sidebar"
-              ? collapsed ? "lg:ml-[68px]" : "lg:ml-[260px]"
+              ? collapsed ? "lg:ms-[68px]" : "lg:ms-[260px]"
               : ""
           )}
         >

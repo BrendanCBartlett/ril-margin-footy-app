@@ -99,7 +99,7 @@ export default function PricingPage() {
             Annual
           </Label>
           {annual && (
-            <Badge variant="success" className="ml-1">
+            <Badge variant="success" className="ms-1">
               Save 20%
             </Badge>
           )}

@@ -18,51 +18,69 @@ export default function FolderStructurePage() {
         <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm leading-relaxed">
           <code>{`apex-dashboard/
 ├── public/                     # Static assets (favicon, images)
+├── e2e/                        # Playwright end-to-end tests
+│   └── smoke.spec.ts
 ├── src/
 │   ├── app/
-│   │   ├── (auth)/             # Auth pages (sign-in, sign-up)
+│   │   ├── (auth)/             # Auth pages (standalone layout)
 │   │   │   ├── sign-in/
-│   │   │   └── sign-up/
-│   │   ├── (dashboard)/        # Dashboard routes (inherits sidebar layout)
+│   │   │   ├── sign-up/
+│   │   │   ├── forgot-password/
+│   │   │   ├── reset-password/
+│   │   │   ├── two-factor/
+│   │   │   ├── verify-email/
+│   │   │   └── lock-screen/
+│   │   ├── (dashboard)/        # Dashboard routes (sidebar + header layout)
 │   │   │   ├── analytics/
 │   │   │   ├── billing/
+│   │   │   ├── calendar/
+│   │   │   ├── charts/         # Charts showcase (Radar, Treemap, etc.)
+│   │   │   ├── chat/
+│   │   │   ├── crm/
 │   │   │   ├── customers/
+│   │   │   ├── ecommerce/
+│   │   │   ├── files/
 │   │   │   ├── invoices/
+│   │   │   ├── kanban/
+│   │   │   ├── mail/
 │   │   │   ├── notifications/
-│   │   │   ├── orders/
-│   │   │   ├── products/
+│   │   │   ├── orders/         # CRUD (list, [id], new, [id]/edit)
+│   │   │   ├── pricing/
+│   │   │   ├── products/       # CRUD (list, [id], new, [id]/edit)
+│   │   │   ├── profile/
+│   │   │   ├── saas/
 │   │   │   ├── settings/
 │   │   │   ├── support/
+│   │   │   ├── wizard/
 │   │   │   ├── layout.tsx      # Dashboard shell (sidebar + header)
 │   │   │   └── page.tsx        # Home / overview
-│   │   ├── docs/               # Documentation site (this section)
+│   │   ├── docs/               # Built-in documentation site
 │   │   ├── fonts/              # Local font files (Geist)
-│   │   ├── globals.css         # Tailwind config + CSS custom properties
+│   │   ├── globals.css         # Tailwind config + OKLCh color tokens
 │   │   ├── layout.tsx          # Root layout (ThemeProvider, fonts)
 │   │   └── not-found.tsx       # Custom 404 page
 │   ├── components/
-│   │   ├── dashboard/          # Dashboard-specific components
+│   │   ├── dashboard/          # Sidebar, Header, Shell, Charts, Customizer
 │   │   │   ├── sidebar.tsx
 │   │   │   ├── sidebar-context.tsx
 │   │   │   ├── header.tsx
 │   │   │   ├── dashboard-shell.tsx
-│   │   │   ├── stats-cards.tsx
-│   │   │   ├── revenue-chart.tsx
+│   │   │   ├── theme-customizer.tsx
+│   │   │   ├── top-nav.tsx
 │   │   │   └── ...
-│   │   ├── ui/                 # shadcn/ui primitives (vendored)
-│   │   │   ├── button.tsx
-│   │   │   ├── card.tsx
-│   │   │   ├── dialog.tsx
-│   │   │   ├── input.tsx
-│   │   │   ├── table.tsx
-│   │   │   └── ...
+│   │   ├── shared/             # DataTable, PageHeader, ConfirmDialog, etc.
+│   │   │   └── data-table/     # TanStack Table components
+│   │   ├── ui/                 # 35+ shadcn/ui primitives (vendored)
 │   │   └── theme-provider.tsx  # Dark/light/system theme context
-│   └── lib/
-│       ├── navigation.ts       # Dashboard sidebar nav config
-│       ├── docs-navigation.ts  # Docs sidebar nav config
-│       └── utils.ts            # cn() helper (clsx + tailwind-merge)
+│   ├── lib/
+│   │   ├── data/               # Mock data layer with CRUD helpers
+│   │   ├── navigation.ts       # Dashboard sidebar nav config
+│   │   ├── docs-navigation.ts  # Docs sidebar nav config
+│   │   └── utils.ts            # cn() helper (clsx + tailwind-merge)
+│   └── test/                   # Vitest setup and type declarations
+├── vitest.config.ts            # Vitest test configuration
+├── playwright.config.ts        # Playwright E2E configuration
 ├── components.json             # shadcn/ui CLI configuration
-├── tailwind.config.ts          # Tailwind CSS configuration
 ├── tsconfig.json               # TypeScript configuration
 ├── next.config.ts              # Next.js configuration
 └── package.json`}</code>
@@ -91,8 +109,10 @@ export default function FolderStructurePage() {
           </code>
         </h3>
         <p className="text-sm text-muted-foreground leading-relaxed">
-          Authentication pages (sign-in, sign-up) have their own layout
-          without the dashboard chrome. They use a centered card design.
+          Authentication and utility pages (sign-in, sign-up, forgot
+          password, reset password, two-factor, email verification, lock
+          screen) have their own layout without the dashboard chrome. They
+          use a centered card design.
         </p>
 
         <h3 className="text-sm font-medium">
@@ -127,8 +147,9 @@ export default function FolderStructurePage() {
           </code>
         </h3>
         <p className="text-sm text-muted-foreground leading-relaxed">
-          Higher-level components that compose the dashboard UI: the sidebar,
-          header, stats cards, charts, data tables, and activity feeds.
+          Higher-level components that compose the dashboard UI: sidebar,
+          header, theme customizer, top-nav, stats cards, charts, data
+          tables, and activity feeds.
         </p>
 
         <h3 className="text-sm font-medium">
@@ -137,7 +158,7 @@ export default function FolderStructurePage() {
           </code>
         </h3>
         <p className="text-sm text-muted-foreground leading-relaxed">
-          Shared utilities and configuration. The{" "}
+          Shared utilities, mock data, and configuration. The{" "}
           <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
             navigation.ts
           </code>{" "}

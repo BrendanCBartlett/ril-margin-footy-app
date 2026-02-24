@@ -118,7 +118,7 @@ export default function ProductsPage() {
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Stock" />
       ),
-      meta: { className: "text-right" },
+      meta: { className: "text-end" },
     },
     {
       accessorKey: "price",
@@ -130,7 +130,7 @@ export default function ProductsPage() {
           ${row.original.price.toLocaleString("en-US", { minimumFractionDigits: 2 })}
         </span>
       ),
-      meta: { className: "text-right" },
+      meta: { className: "text-end" },
     },
     {
       accessorKey: "createdAt",
@@ -154,18 +154,18 @@ export default function ProductsPage() {
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuItem onClick={() => router.push(`/products/${row.original.id}`)}>
-              <Eye className="mr-2 h-4 w-4" />
+              <Eye className="me-2 h-4 w-4" />
               View
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => router.push(`/products/${row.original.id}/edit`)}>
-              <Pencil className="mr-2 h-4 w-4" />
+              <Pencil className="me-2 h-4 w-4" />
               Edit
             </DropdownMenuItem>
             <DropdownMenuItem
               className="text-destructive focus:text-destructive"
               onClick={() => setDeleteTarget(row.original)}
             >
-              <Trash2 className="mr-2 h-4 w-4" />
+              <Trash2 className="me-2 h-4 w-4" />
               Delete
             </DropdownMenuItem>
           </DropdownMenuContent>
@@ -229,7 +229,7 @@ export default function ProductsPage() {
             size="sm"
             onClick={() => handleBulkDelete(selected)}
           >
-            <Trash2 className="mr-1 size-3.5" />
+            <Trash2 className="me-1 size-3.5" />
             Delete ({selected.length})
           </Button>
         )}

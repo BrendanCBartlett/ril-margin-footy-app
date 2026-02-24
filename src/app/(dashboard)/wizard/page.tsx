@@ -492,7 +492,7 @@ export default function WizardPage() {
                           onClick={addMember}
                           className="shrink-0"
                         >
-                          <Plus className="size-4 mr-1" />
+                          <Plus className="size-4 me-1" />
                           Add
                         </Button>
                       </div>
@@ -508,13 +508,13 @@ export default function WizardPage() {
                             <Badge
                               key={email}
                               variant="secondary"
-                              className="gap-1 pl-2.5 pr-1 py-1"
+                              className="gap-1 ps-2.5 pe-1 py-1"
                             >
                               {email}
                               <button
                                 type="button"
                                 onClick={() => removeMember(email)}
-                                className="ml-1 rounded-full p-0.5 hover:bg-muted-foreground/20 transition-colors"
+                                className="ms-1rounded-full p-0.5 hover:bg-muted-foreground/20 transition-colors"
                                 aria-label={`Remove ${email}`}
                               >
                                 <X className="size-3" />
@@ -685,7 +685,7 @@ export default function WizardPage() {
                           <span className="text-muted-foreground">
                             Description
                           </span>
-                          <span className="font-medium text-right max-w-[60%] truncate">
+                          <span className="font-medium text-end max-w-[60%] truncate">
                             {getValues("projectDescription") || "\u2014"}
                           </span>
                         </div>
@@ -738,7 +738,7 @@ export default function WizardPage() {
                           <span className="text-muted-foreground">
                             Members
                           </span>
-                          <div className="text-right">
+                          <div className="text-end">
                             {invitedMembers && invitedMembers.length > 0 ? (
                               <div className="flex flex-wrap gap-1 justify-end">
                                 {invitedMembers.map((email) => (
@@ -862,7 +862,7 @@ export default function WizardPage() {
             <div className="flex items-center justify-between p-6 pt-2">
               {currentStep > 1 ? (
                 <Button type="button" variant="outline" onClick={goToBack}>
-                  <ArrowLeft className="size-4 mr-1.5" />
+                  <ArrowLeft className="size-4 me-1.5" />
                   Back
                 </Button>
               ) : (
@@ -872,11 +872,11 @@ export default function WizardPage() {
               {currentStep < 4 ? (
                 <Button type="button" onClick={goToNext}>
                   Next
-                  <ArrowRight className="size-4 ml-1.5" />
+                  <ArrowRight className="size-4 ms-1.5" />
                 </Button>
               ) : (
                 <Button type="button" onClick={onSubmit}>
-                  <FolderPlus className="size-4 mr-1.5" />
+                  <FolderPlus className="size-4 me-1.5" />
                   Create Project
                 </Button>
               )}

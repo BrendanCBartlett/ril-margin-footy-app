@@ -115,8 +115,8 @@ export default function ThemingPage() {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b bg-muted/50">
-                <th className="px-4 py-2 text-left font-medium">Token</th>
-                <th className="px-4 py-2 text-left font-medium">Purpose</th>
+                <th className="px-4 py-2 text-start font-medium">Token</th>
+                <th className="px-4 py-2 text-start font-medium">Purpose</th>
               </tr>
             </thead>
             <tbody>
@@ -261,6 +261,223 @@ export function MyComponent() {
           . The system option follows the user&apos;s OS preference and reacts
           to changes in real time.
         </p>
+      </section>
+
+      {/* Theme Customizer */}
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold">Theme Customizer</h2>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          Apex Dashboard includes a live Theme Customizer accessible via the
+          palette icon in the header. It opens as a slide-out drawer panel where
+          you can preview every change in real time without refreshing the page.
+          The Customizer controls the following settings:
+        </p>
+        <ul className="space-y-2 text-sm text-muted-foreground">
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>
+              <strong className="text-foreground">Color Presets</strong>{" "}
+              &mdash; 6 built-in palettes: Default (Teal), Ocean, Sunset,
+              Forest, Berry, and Slate. Each preset swaps the full set of OKLCh
+              tokens at runtime, instantly recoloring every component, chart, and
+              sidebar accent across the entire dashboard.
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>
+              <strong className="text-foreground">Density</strong>{" "}
+              &mdash; Three levels: Compact, Default, and Comfortable. Adjusts
+              spacing, padding, and font sizes globally via CSS custom
+              properties, letting you fit more data on screen or give content
+              room to breathe.
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>
+              <strong className="text-foreground">Layout</strong>{" "}
+              &mdash; Choose between the default Sidebar layout (fixed left
+              navigation) or a Horizontal Top-Nav layout where the main
+              navigation runs across the top of the page.
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>
+              <strong className="text-foreground">Container</strong>{" "}
+              &mdash; Fluid (full-width, edge-to-edge content) or Boxed
+              (max-width centered container with side margins for a more
+              traditional feel).
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>
+              <strong className="text-foreground">Direction</strong>{" "}
+              &mdash; Toggle between LTR (left-to-right) and RTL
+              (right-to-left) text direction for multilingual support.
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>
+              <strong className="text-foreground">Reset</strong>{" "}
+              &mdash; A single button that restores all settings to their
+              defaults (Default Teal preset, Default density, Sidebar layout,
+              Fluid container, LTR direction).
+            </span>
+          </li>
+        </ul>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          All preferences are persisted to{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            localStorage
+          </code>
+          , so they survive page refreshes and browser restarts. The next time
+          the user visits the dashboard, their chosen color preset, density,
+          layout, container, and direction settings are restored automatically.
+        </p>
+      </section>
+
+      {/* RTL Support */}
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold">RTL Support</h2>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          The entire dashboard supports right-to-left text direction for
+          languages such as Arabic, Hebrew, Persian, and Urdu. The toggle is
+          available in the Theme Customizer under the Direction setting. When RTL
+          is enabled, the sidebar moves to the right, text aligns to the right,
+          and all directional spacing flips accordingly.
+        </p>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          The implementation relies on the following techniques:
+        </p>
+        <ul className="space-y-2 text-sm text-muted-foreground">
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>
+              <strong className="text-foreground">CSS Logical Properties</strong>{" "}
+              &mdash; Instead of physical{" "}
+              <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+                ml-*
+              </code>
+              /{" "}
+              <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+                mr-*
+              </code>{" "}
+              and{" "}
+              <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+                pl-*
+              </code>
+              /{" "}
+              <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+                pr-*
+              </code>
+              , all spacing uses logical equivalents:{" "}
+              <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+                ms-*
+              </code>
+              /{" "}
+              <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+                me-*
+              </code>
+              ,{" "}
+              <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+                ps-*
+              </code>
+              /{" "}
+              <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+                pe-*
+              </code>
+              ,{" "}
+              <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+                text-start
+              </code>
+              /{" "}
+              <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+                text-end
+              </code>
+              ,{" "}
+              <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+                border-s
+              </code>
+              /{" "}
+              <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+                border-e
+              </code>
+              , and{" "}
+              <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+                rounded-s
+              </code>
+              /{" "}
+              <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+                rounded-e
+              </code>
+              . These automatically flip based on the document direction.
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>
+              <strong className="text-foreground">Tailwind CSS v4 ltr:/rtl: Variants</strong>{" "}
+              &mdash; For cases where logical properties alone are not
+              sufficient (e.g., icon rotation, absolute positioning, transform
+              origins), Tailwind&apos;s{" "}
+              <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+                ltr:
+              </code>{" "}
+              and{" "}
+              <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+                rtl:
+              </code>{" "}
+              variants apply direction-specific styles conditionally.
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>
+              <strong className="text-foreground">dir attribute on HTML element</strong>{" "}
+              &mdash; The Theme Customizer sets{" "}
+              <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+                dir=&quot;rtl&quot;
+              </code>{" "}
+              on the{" "}
+              <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+                &lt;html&gt;
+              </code>{" "}
+              element, which browsers use natively to reverse text flow, scroll
+              direction, and table column order.
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>
+              <strong className="text-foreground">Inline Script Prevents Flash</strong>{" "}
+              &mdash; A small inline script in the{" "}
+              <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+                &lt;head&gt;
+              </code>{" "}
+              reads the saved direction preference from localStorage and applies
+              the{" "}
+              <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+                dir
+              </code>{" "}
+              attribute before the page renders. This prevents a flash of
+              incorrect direction (FOID) on page load, similar to how the theme
+              script prevents a flash of incorrect theme.
+            </span>
+          </li>
+        </ul>
+        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
+          <code>{`<!-- Example: classes that work in both LTR and RTL -->
+<div className="ms-4 me-2 ps-3 pe-3 text-start border-s-2">
+  Content flows correctly in both directions
+</div>
+
+<!-- Example: direction-specific overrides -->
+<ChevronRight className="size-4 ltr:rotate-0 rtl:rotate-180" />`}</code>
+        </pre>
       </section>
 
       {/* Next steps */}

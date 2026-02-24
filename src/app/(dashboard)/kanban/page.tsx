@@ -430,7 +430,7 @@ function KanbanTaskCard({
           {/* Drag handle */}
           <div
             {...provided.dragHandleProps}
-            className="absolute top-3 right-2 text-muted-foreground/40 opacity-0 transition-opacity group-hover:opacity-100"
+            className="absolute top-3 ltr:right-2 rtl:left-2 text-muted-foreground/40 opacity-0 transition-opacity group-hover:opacity-100"
           >
             <GripVertical className="h-4 w-4" />
           </div>
@@ -453,7 +453,7 @@ function KanbanTaskCard({
           )}
 
           {/* Title */}
-          <p className="pr-6 text-sm font-medium leading-snug text-foreground">
+          <p className="pe-6 text-sm font-medium leading-snug text-foreground">
             {task.title}
           </p>
 

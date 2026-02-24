@@ -551,19 +551,19 @@ export default function SaasPage() {
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-border">
-                    <th className="pb-3 text-left text-xs font-medium text-muted-foreground">
+                    <th className="pb-3 text-start text-xs font-medium text-muted-foreground">
                       Channel
                     </th>
-                    <th className="pb-3 text-right text-xs font-medium text-muted-foreground">
+                    <th className="pb-3 text-end text-xs font-medium text-muted-foreground">
                       Visitors
                     </th>
-                    <th className="pb-3 text-right text-xs font-medium text-muted-foreground">
+                    <th className="pb-3 text-end text-xs font-medium text-muted-foreground">
                       Signups
                     </th>
-                    <th className="hidden pb-3 text-right text-xs font-medium text-muted-foreground sm:table-cell">
+                    <th className="hidden pb-3 text-end text-xs font-medium text-muted-foreground sm:table-cell">
                       Conv%
                     </th>
-                    <th className="hidden pb-3 text-right text-xs font-medium text-muted-foreground sm:table-cell">
+                    <th className="hidden pb-3 text-end text-xs font-medium text-muted-foreground sm:table-cell">
                       CPA
                     </th>
                   </tr>
@@ -577,15 +577,15 @@ export default function SaasPage() {
                       <td className="py-3 text-sm font-medium">
                         {ch.channel}
                       </td>
-                      <td className="py-3 text-right text-sm text-muted-foreground">
+                      <td className="py-3 text-end text-sm text-muted-foreground">
                         {ch.visitors.toLocaleString()}
                       </td>
-                      <td className="py-3 text-right text-sm font-semibold">
+                      <td className="py-3 text-end text-sm font-semibold">
                         {ch.signups.toLocaleString()}
                       </td>
                       <td
                         className={cn(
-                          "hidden py-3 text-right text-sm font-semibold sm:table-cell",
+                          "hidden py-3 text-end text-sm font-semibold sm:table-cell",
                           ch.convPct >= 6
                             ? "text-success"
                             : ch.convPct < 4
@@ -595,7 +595,7 @@ export default function SaasPage() {
                       >
                         {ch.convPct}%
                       </td>
-                      <td className="hidden py-3 text-right text-sm text-muted-foreground sm:table-cell">
+                      <td className="hidden py-3 text-end text-sm text-muted-foreground sm:table-cell">
                         {ch.cpa === 0 ? "—" : `$${ch.cpa}`}
                       </td>
                     </tr>
@@ -685,16 +685,16 @@ export default function SaasPage() {
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-border">
-                    <th className="pb-3 text-left text-xs font-medium text-muted-foreground">
+                    <th className="pb-3 text-start text-xs font-medium text-muted-foreground">
                       User
                     </th>
-                    <th className="hidden pb-3 text-left text-xs font-medium text-muted-foreground sm:table-cell">
+                    <th className="hidden pb-3 text-start text-xs font-medium text-muted-foreground sm:table-cell">
                       Email
                     </th>
-                    <th className="pb-3 text-right text-xs font-medium text-muted-foreground">
+                    <th className="pb-3 text-end text-xs font-medium text-muted-foreground">
                       Plan
                     </th>
-                    <th className="pb-3 text-right text-xs font-medium text-muted-foreground">
+                    <th className="pb-3 text-end text-xs font-medium text-muted-foreground">
                       Signed Up
                     </th>
                   </tr>
@@ -718,7 +718,7 @@ export default function SaasPage() {
                       <td className="hidden py-3 text-sm text-muted-foreground sm:table-cell">
                         {signup.email}
                       </td>
-                      <td className="py-3 text-right">
+                      <td className="py-3 text-end">
                         <Badge
                           variant={planVariant[signup.plan]}
                           className="capitalize"
@@ -726,7 +726,7 @@ export default function SaasPage() {
                           {signup.plan}
                         </Badge>
                       </td>
-                      <td className="py-3 text-right text-sm text-muted-foreground">
+                      <td className="py-3 text-end text-sm text-muted-foreground">
                         {signup.date}
                       </td>
                     </tr>

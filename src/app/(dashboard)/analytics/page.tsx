@@ -231,19 +231,19 @@ export default function AnalyticsPage() {
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-border">
-                    <th className="pb-3 text-left text-xs font-medium text-muted-foreground">Page</th>
-                    <th className="pb-3 text-right text-xs font-medium text-muted-foreground">Views</th>
-                    <th className="pb-3 text-right text-xs font-medium text-muted-foreground">Unique</th>
-                    <th className="pb-3 text-right text-xs font-medium text-muted-foreground">Bounce</th>
+                    <th className="pb-3 text-start text-xs font-medium text-muted-foreground">Page</th>
+                    <th className="pb-3 text-end text-xs font-medium text-muted-foreground">Views</th>
+                    <th className="pb-3 text-end text-xs font-medium text-muted-foreground">Unique</th>
+                    <th className="pb-3 text-end text-xs font-medium text-muted-foreground">Bounce</th>
                   </tr>
                 </thead>
                 <tbody>
                   {topPages.map((page) => (
                     <tr key={page.page} className="border-b border-border/50 last:border-0 hover:bg-muted/30 transition-colors">
                       <td className="py-3 text-sm font-mono text-sm">{page.page}</td>
-                      <td className="py-3 text-right text-sm font-semibold">{page.views.toLocaleString()}</td>
-                      <td className="py-3 text-right text-sm text-muted-foreground">{page.unique.toLocaleString()}</td>
-                      <td className="py-3 text-right text-sm text-muted-foreground">{page.bounce}</td>
+                      <td className="py-3 text-end text-sm font-semibold">{page.views.toLocaleString()}</td>
+                      <td className="py-3 text-end text-sm text-muted-foreground">{page.unique.toLocaleString()}</td>
+                      <td className="py-3 text-end text-sm text-muted-foreground">{page.bounce}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -270,10 +270,10 @@ export default function AnalyticsPage() {
                       />
                     </div>
                   </div>
-                  <span className="w-16 text-right text-sm text-muted-foreground">
+                  <span className="w-16 text-end text-sm text-muted-foreground">
                     {country.visitors.toLocaleString()}
                   </span>
-                  <span className="w-8 text-right text-xs text-muted-foreground">{country.pct}%</span>
+                  <span className="w-8 text-end text-xs text-muted-foreground">{country.pct}%</span>
                 </div>
               ))}
             </div>

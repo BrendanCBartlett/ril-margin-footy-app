@@ -37,12 +37,12 @@ function DatePicker({
           variant="outline"
           disabled={disabled}
           className={cn(
-            "w-full justify-start text-left font-normal",
+            "w-full justify-start text-start font-normal",
             !value && "text-muted-foreground",
             className
           )}
         >
-          <CalendarDays className="mr-2 size-4" />
+          <CalendarDays className="me-2 size-4" />
           {value ? format(value, "PPP") : placeholder}
         </Button>
       </PopoverTrigger>

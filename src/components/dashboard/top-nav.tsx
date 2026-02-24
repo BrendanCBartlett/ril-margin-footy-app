@@ -61,7 +61,7 @@ export function TopNav() {
                         <Icon className="h-4 w-4" />
                         {item.label}
                         {item.badge && (
-                          <span className="ml-auto flex h-5 min-w-5 items-center justify-center rounded-full bg-primary/15 px-1.5 text-[10px] font-semibold text-primary">
+                          <span className="ms-auto flex h-5 min-w-5 items-center justify-center rounded-full bg-primary/15 px-1.5 text-[10px] font-semibold text-primary">
                             {item.badge}
                           </span>
                         )}
@@ -107,7 +107,7 @@ export function TopNav() {
                     <Icon className="h-4 w-4" />
                     {item.label}
                     {item.badge && (
-                      <span className="ml-auto flex h-5 min-w-5 items-center justify-center rounded-full bg-primary/15 px-1.5 text-[10px] font-semibold text-primary">
+                      <span className="ms-auto flex h-5 min-w-5 items-center justify-center rounded-full bg-primary/15 px-1.5 text-[10px] font-semibold text-primary">
                         {item.badge}
                       </span>
                     )}

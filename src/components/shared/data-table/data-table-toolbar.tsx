@@ -97,7 +97,7 @@ export function DataTableToolbar<TData>({
               size="sm"
               onClick={() => table.toggleAllRowsSelected(false)}
             >
-              <X className="mr-1 size-3.5" />
+              <X className="me-1 size-3.5" />
               Clear
             </Button>
           </div>
@@ -105,12 +105,12 @@ export function DataTableToolbar<TData>({
           <>
             {/* Search */}
             <div className="relative max-w-sm flex-1">
-              <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+              <Search className="absolute ltr:left-3 rtl:right-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
               <Input
                 placeholder={searchPlaceholder}
                 value={globalFilter}
                 onChange={(e) => table.setGlobalFilter(e.target.value)}
-                className="pl-9"
+                className="ps-9"
               />
             </div>
 
@@ -139,7 +139,7 @@ export function DataTableToolbar<TData>({
                 }}
               >
                 Reset
-                <X className="ml-1 size-3.5" />
+                <X className="ms-1 size-3.5" />
               </Button>
             )}
           </>

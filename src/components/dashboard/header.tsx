@@ -95,11 +95,11 @@ export function Header() {
 
         <button
           onClick={() => document.dispatchEvent(new KeyboardEvent("keydown", { key: "k", metaKey: true }))}
-          className="relative hidden h-9 w-72 items-center rounded-lg border border-input bg-muted/40 pl-9 pr-4 text-left text-sm text-muted-foreground/50 transition-colors hover:bg-muted/60 sm:flex"
+          className="relative hidden h-9 w-72 items-center rounded-lg border border-input bg-muted/40 ps-9 pe-4 text-start text-sm text-muted-foreground/50 transition-colors hover:bg-muted/60 sm:flex"
         >
-          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground/60" />
+          <Search className="absolute ltr:left-3 rtl:right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground/60" />
           Search anything...
-          <kbd className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 rounded border border-border bg-muted px-1.5 text-[10px] font-medium text-muted-foreground">
+          <kbd className="pointer-events-none absolute ltr:right-3 rtl:left-3 top-1/2 -translate-y-1/2 rounded border border-border bg-muted px-1.5 text-[10px] font-medium text-muted-foreground">
             ⌘K
           </kbd>
         </button>
@@ -151,7 +151,7 @@ export function Header() {
             >
               <Bell className="h-4 w-4" />
               {unreadCount > 0 && (
-                <span className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-destructive" />
+                <span className="absolute ltr:right-1.5 rtl:left-1.5 top-1.5 h-2 w-2 rounded-full bg-destructive" />
               )}
             </button>
           </PopoverTrigger>
@@ -191,7 +191,7 @@ export function Header() {
                     <button
                       key={notif.id}
                       className={cn(
-                        "flex w-full items-start gap-3 px-4 py-3 text-left transition-colors hover:bg-accent/50",
+                        "flex w-full items-start gap-3 px-4 py-3 text-start transition-colors hover:bg-accent/50",
                         !notif.read && "bg-primary/5"
                       )}
                       onClick={() => {
@@ -252,7 +252,7 @@ export function Header() {
           <DropdownMenuTrigger asChild>
             <button
               aria-label="User menu"
-              className="ml-1 flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary transition-colors hover:bg-primary/20"
+              className="ms-1 flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary transition-colors hover:bg-primary/20"
             >
               AS
             </button>
@@ -265,14 +265,14 @@ export function Header() {
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <DropdownMenuItem onClick={() => router.push("/settings")}>
-                <Settings className="mr-2 h-4 w-4" />
+                <Settings className="me-2 h-4 w-4" />
                 Settings
               </DropdownMenuItem>
               <DropdownMenuItem onClick={() => router.push("/notifications")}>
-                <Bell className="mr-2 h-4 w-4" />
+                <Bell className="me-2 h-4 w-4" />
                 Notifications
                 {unreadCount > 0 && (
-                  <span className="ml-auto flex h-4 min-w-4 items-center justify-center rounded-full bg-primary/15 px-1 text-[10px] font-semibold text-primary">
+                  <span className="ms-auto flex h-4 min-w-4 items-center justify-center rounded-full bg-primary/15 px-1 text-[10px] font-semibold text-primary">
                     {unreadCount}
                   </span>
                 )}
@@ -286,7 +286,7 @@ export function Header() {
                 });
               }}
             >
-              <LogOut className="mr-2 h-4 w-4" />
+              <LogOut className="me-2 h-4 w-4" />
               Log out
             </DropdownMenuItem>
           </DropdownMenuContent>

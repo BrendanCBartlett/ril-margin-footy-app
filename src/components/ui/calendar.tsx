@@ -27,12 +27,12 @@ function Calendar({
         caption_label: "text-sm font-medium",
         nav: "flex items-center gap-1",
         button_previous: cn(
-          "absolute left-1 top-0 z-10 inline-flex h-7 w-7 items-center justify-center rounded-md border border-input bg-transparent text-sm font-medium shadow-xs transition-colors",
+          "absolute ltr:left-1 rtl:right-1 top-0 z-10 inline-flex h-7 w-7 items-center justify-center rounded-md border border-input bg-transparent text-sm font-medium shadow-xs transition-colors",
           "hover:bg-accent hover:text-accent-foreground",
           "disabled:pointer-events-none disabled:opacity-50"
         ),
         button_next: cn(
-          "absolute right-1 top-0 z-10 inline-flex h-7 w-7 items-center justify-center rounded-md border border-input bg-transparent text-sm font-medium shadow-xs transition-colors",
+          "absolute ltr:right-1 rtl:left-1 top-0 z-10 inline-flex h-7 w-7 items-center justify-center rounded-md border border-input bg-transparent text-sm font-medium shadow-xs transition-colors",
           "hover:bg-accent hover:text-accent-foreground",
           "disabled:pointer-events-none disabled:opacity-50"
         ),
@@ -43,9 +43,9 @@ function Calendar({
         week: "flex w-full mt-2",
         day: cn(
           "relative p-0 text-center text-sm focus-within:relative focus-within:z-20",
-          "[&:has([aria-selected])]:bg-accent [&:has([aria-selected].day-range-end)]:rounded-r-md",
+          "[&:has([aria-selected])]:bg-accent [&:has([aria-selected].day-range-end)]:rounded-e-md",
           "[&:has([aria-selected].day-outside)]:bg-accent/50",
-          "first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md"
+          "first:[&:has([aria-selected])]:rounded-s-md last:[&:has([aria-selected])]:rounded-e-md"
         ),
         day_button: cn(
           "inline-flex h-9 w-9 items-center justify-center rounded-md text-sm font-normal transition-colors",
@@ -53,8 +53,8 @@ function Calendar({
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
           "aria-selected:opacity-100"
         ),
-        range_start: "day-range-start rounded-l-md",
-        range_end: "day-range-end rounded-r-md",
+        range_start: "day-range-start rounded-s-md",
+        range_end: "day-range-end rounded-e-md",
         selected:
           "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground rounded-md",
         today: "bg-accent text-accent-foreground rounded-md",

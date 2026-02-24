@@ -32,6 +32,7 @@ import {
   Store,
   Handshake,
   Rocket,
+  ChartNoAxesCombined,
 } from "lucide-react";
 
 export interface NavItem {
@@ -55,6 +56,7 @@ export const navGroups: NavGroup[] = [
       { icon: Store, label: "eCommerce", href: "/ecommerce" },
       { icon: Handshake, label: "CRM", href: "/crm" },
       { icon: Rocket, label: "SaaS", href: "/saas" },
+      { icon: ChartNoAxesCombined, label: "Charts", href: "/charts" },
     ],
   },
   {
@@ -141,7 +143,7 @@ function NavItemComponent({
         </>
       )}
       {collapsed && item.badge && (
-        <span className="absolute right-2 top-1 h-2 w-2 rounded-full bg-sidebar-primary" />
+        <span className="absolute ltr:right-2 rtl:left-2 top-1 h-2 w-2 rounded-full bg-sidebar-primary" />
       )}
     </Link>
   );
@@ -184,7 +186,7 @@ function CollapsibleGroup({
         onClick={toggle}
         className="flex w-full items-center gap-2 rounded-md px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-sidebar-foreground/30 transition-colors hover:text-sidebar-foreground/50"
       >
-        <span className="flex-1 text-left">{group.label}</span>
+        <span className="flex-1 text-start">{group.label}</span>
         <ChevronRight
           className={cn(
             "size-3 transition-transform duration-200",
@@ -323,7 +325,7 @@ export function Sidebar() {
       {/* Desktop sidebar */}
       <aside
         className={cn(
-          "fixed left-0 top-0 z-40 hidden h-screen flex-col bg-sidebar transition-all duration-300 ease-in-out",
+          "fixed ltr:left-0 rtl:right-0 top-0 z-40 hidden h-screen flex-col bg-sidebar transition-all duration-300 ease-in-out",
           layout === "sidebar" ? "lg:flex" : "",
           collapsed ? "w-[68px]" : "w-[260px]"
         )}
@@ -334,12 +336,12 @@ export function Sidebar() {
         <button
           onClick={() => setCollapsed(!collapsed)}
           aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
-          className="absolute -right-3 top-20 flex h-6 w-6 items-center justify-center rounded-full border border-sidebar-border bg-sidebar text-sidebar-foreground/50 shadow-sm transition-all hover:bg-sidebar-accent hover:text-sidebar-foreground"
+          className="absolute ltr:-right-3 rtl:-left-3 top-20 flex h-6 w-6 items-center justify-center rounded-full border border-sidebar-border bg-sidebar text-sidebar-foreground/50 shadow-sm transition-all hover:bg-sidebar-accent hover:text-sidebar-foreground"
         >
           <ChevronLeft
             className={cn(
               "h-3.5 w-3.5 transition-transform duration-300",
-              collapsed && "rotate-180"
+              collapsed ? "ltr:rotate-180 rtl:rotate-0" : "ltr:rotate-0 rtl:rotate-180"
             )}
           />
         </button>
@@ -356,8 +358,8 @@ export function Sidebar() {
       {/* Mobile sidebar */}
       <aside
         className={cn(
-          "fixed left-0 top-0 z-50 flex h-screen w-[260px] flex-col bg-sidebar transition-transform duration-300 ease-in-out lg:hidden",
-          mobileOpen ? "translate-x-0" : "-translate-x-full"
+          "fixed ltr:left-0 rtl:right-0 top-0 z-50 flex h-screen w-[260px] flex-col bg-sidebar transition-transform duration-300 ease-in-out lg:hidden",
+          mobileOpen ? "translate-x-0" : "ltr:-translate-x-full rtl:translate-x-full"
         )}
       >
         <SidebarContent collapsed={false} />
@@ -366,7 +368,7 @@ export function Sidebar() {
         <button
           onClick={() => setMobileOpen(false)}
           aria-label="Close sidebar"
-          className="absolute right-3 top-4 flex h-7 w-7 items-center justify-center rounded-md text-sidebar-foreground/50 transition-colors hover:bg-sidebar-accent hover:text-sidebar-foreground"
+          className="absolute ltr:right-3 rtl:left-3 top-4 flex h-7 w-7 items-center justify-center rounded-md text-sidebar-foreground/50 transition-colors hover:bg-sidebar-accent hover:text-sidebar-foreground"
         >
           <X className="h-4 w-4" />
         </button>

@@ -59,7 +59,7 @@ const columns: ColumnDef<Customer>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Orders" />
     ),
-    meta: { className: "text-right" },
+    meta: { className: "text-end" },
   },
   {
     accessorKey: "totalSpent",
@@ -71,7 +71,7 @@ const columns: ColumnDef<Customer>[] = [
         ${row.original.totalSpent.toLocaleString("en-US", { minimumFractionDigits: 2 })}
       </span>
     ),
-    meta: { className: "text-right" },
+    meta: { className: "text-end" },
   },
 ];
 

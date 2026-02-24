@@ -324,7 +324,7 @@ export default function CalendarPage() {
         <Dialog open={addDialogOpen} onOpenChange={setAddDialogOpen}>
           <DialogTrigger asChild>
             <Button onClick={() => openAddDialog()}>
-              <Plus className="mr-2 h-4 w-4" />
+              <Plus className="me-2 h-4 w-4" />
               Add Event
             </Button>
           </DialogTrigger>
@@ -371,7 +371,7 @@ export default function CalendarPage() {
                 >
                   <ChevronRight className="h-4 w-4" />
                 </Button>
-                <h2 className="ml-2 text-lg font-semibold">
+                <h2 className="ms-2 text-lg font-semibold">
                   {MONTH_NAMES[currentMonth]} {currentYear}
                 </h2>
               </div>
@@ -403,11 +403,11 @@ export default function CalendarPage() {
                     type="button"
                     onClick={() => handleDayClick(calDay.dateKey)}
                     className={cn(
-                      "relative flex min-h-[80px] flex-col items-start border-b border-r border-border p-1.5 text-left transition-colors hover:bg-muted/50 sm:min-h-[100px] sm:p-2",
+                      "relative flex min-h-[80px] flex-col items-start border-b border-e border-border p-1.5 text-start transition-colors hover:bg-muted/50 sm:min-h-[100px] sm:p-2",
                       // First column gets left border
-                      calDay.dateKey === calendarDays[0].dateKey && "border-l",
+                      calDay.dateKey === calendarDays[0].dateKey && "border-s",
                       // Start of each row gets left border
-                      calendarDays.indexOf(calDay) % 7 === 0 && "border-l",
+                      calendarDays.indexOf(calDay) % 7 === 0 && "border-s",
                       !calDay.isCurrentMonth && "bg-muted/30",
                       isSelected && "bg-primary/5 ring-1 ring-inset ring-primary/30"
                     )}
@@ -478,7 +478,7 @@ export default function CalendarPage() {
                         size="sm"
                         onClick={() => openAddDialog(selectedDate)}
                       >
-                        <Plus className="mr-1 h-3.5 w-3.5" />
+                        <Plus className="me-1 h-3.5 w-3.5" />
                         Add
                       </Button>
                       <Button

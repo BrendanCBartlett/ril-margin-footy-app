@@ -236,12 +236,12 @@ function FileToolbar({
           </Button>
         )}
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+          <Search className="absolute ltr:left-3 rtl:right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Search files..."
-            className="h-9 pl-9"
+            className="h-9 ps-9"
           />
         </div>
         <div className="flex items-center gap-1 rounded-lg border p-0.5">
@@ -263,11 +263,11 @@ function FileToolbar({
           </Button>
         </div>
         <Button size="sm" variant="outline" onClick={onNewFolder} className="hidden sm:flex">
-          <FolderPlus className="mr-2 h-4 w-4" />
+          <FolderPlus className="me-2 h-4 w-4" />
           New Folder
         </Button>
         <Button size="sm" onClick={onUpload}>
-          <Upload className="mr-2 h-4 w-4" />
+          <Upload className="me-2 h-4 w-4" />
           Upload
         </Button>
       </div>
@@ -297,24 +297,24 @@ function FileActions({
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-48">
         <DropdownMenuItem onClick={() => onToggleStar(file.id)}>
-          <Star className={cn("mr-2 h-4 w-4", file.starred && "fill-current text-amber-500")} />
+          <Star className={cn("me-2 h-4 w-4", file.starred && "fill-current text-amber-500")} />
           {file.starred ? "Remove star" : "Add star"}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => onRename(file)}>
-          <Pencil className="mr-2 h-4 w-4" />
+          <Pencil className="me-2 h-4 w-4" />
           Rename
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Download className="mr-2 h-4 w-4" />
+          <Download className="me-2 h-4 w-4" />
           Download
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Share2 className="mr-2 h-4 w-4" />
+          <Share2 className="me-2 h-4 w-4" />
           Share
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={() => onDelete(file)} className="text-destructive focus:text-destructive">
-          <Trash2 className="mr-2 h-4 w-4" />
+          <Trash2 className="me-2 h-4 w-4" />
           Delete
         </DropdownMenuItem>
       </DropdownMenuContent>
@@ -358,11 +358,11 @@ function FileGrid({
         >
           {/* Star indicator */}
           {file.starred && (
-            <Star className="absolute left-2 top-2 h-3 w-3 fill-amber-500 text-amber-500" />
+            <Star className="absolute ltr:left-2 rtl:right-2 top-2 h-3 w-3 fill-amber-500 text-amber-500" />
           )}
 
           {/* Actions */}
-          <div className="absolute right-1 top-1" onClick={(e) => e.stopPropagation()}>
+          <div className="absolute ltr:right-1 rtl:left-1 top-1" onClick={(e) => e.stopPropagation()}>
             <FileActions file={file} onRename={onRename} onDelete={onDelete} onToggleStar={onToggleStar} />
           </div>
 
@@ -384,8 +384,8 @@ function FileGrid({
 
           {/* Shared badge */}
           {file.shared && (
-            <Badge variant="secondary" className="absolute bottom-1 right-1 h-4 px-1 text-[9px]">
-              <Users className="mr-0.5 h-2.5 w-2.5" />
+            <Badge variant="secondary" className="absolute bottom-1 ltr:right-1 rtl:left-1 h-4 px-1 text-[9px]">
+              <Users className="me-0.5 h-2.5 w-2.5" />
               {file.sharedWith?.length || 0}
             </Badge>
           )}
@@ -454,7 +454,7 @@ function FileList({
           <span>
             {file.shared && (
               <Badge variant="secondary" className="h-5 px-1.5 text-[10px]">
-                <Users className="mr-0.5 h-3 w-3" />
+                <Users className="me-0.5 h-3 w-3" />
                 {file.sharedWith?.length || 0}
               </Badge>
             )}
@@ -605,7 +605,7 @@ function UploadDialog({
                 className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-muted"
               >
                 <FileIcon type="document" size="sm" />
-                <span className="flex-1 text-left">{f.name}</span>
+                <span className="flex-1 text-start">{f.name}</span>
                 <span className="text-xs text-muted-foreground">{formatFileSize(f.size)}</span>
               </button>
             ))}
@@ -712,7 +712,7 @@ export default function FilesPage() {
       <Card className="flex h-[calc(100vh-12rem)] overflow-hidden">
         {/* Sidebar */}
         <div className={cn(
-          "w-56 shrink-0 border-r",
+          "w-56 shrink-0 border-e",
           showMobileSidebar ? "flex" : "hidden md:flex"
         )}>
           <FileSidebar section={section} onSectionChange={handleSectionChange} />
@@ -762,7 +762,7 @@ export default function FilesPage() {
               size="sm"
               onClick={() => setShowMobileSidebar(true)}
             >
-              <ArrowLeft className="mr-2 h-4 w-4" />
+              <ArrowLeft className="me-2 h-4 w-4" />
               Back
             </Button>
             <span className="text-sm font-medium">{sectionTitle}</span>

@@ -13,9 +13,9 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { Sun, Moon, Monitor, Rows3, Rows4, StretchHorizontal, PanelLeft, PanelTop, Maximize, Minimize } from "lucide-react";
+import { Sun, Moon, Monitor, Rows3, Rows4, StretchHorizontal, PanelLeft, PanelTop, Maximize, Minimize, AlignLeft, AlignRight } from "lucide-react";
 import { useSidebar } from "./sidebar-context";
-import type { LayoutMode, ContainerMode } from "./sidebar-context";
+import type { LayoutMode, ContainerMode, DirectionMode } from "./sidebar-context";
 import { cn } from "@/lib/utils";
 
 /* ------------------------------------------------------------------ */
@@ -96,9 +96,14 @@ const CONTAINER_OPTIONS: { value: ContainerMode; label: string; icon: React.Elem
   { value: "boxed", label: "Boxed",  icon: Minimize },
 ];
 
+const DIRECTION_OPTIONS: { value: DirectionMode; label: string; icon: React.ElementType }[] = [
+  { value: "ltr", label: "LTR", icon: AlignLeft },
+  { value: "rtl", label: "RTL", icon: AlignRight },
+];
+
 export function ThemeCustomizer({ open, onOpenChange }: ThemeCustomizerProps) {
   const { theme, setTheme } = useTheme();
-  const { layout, setLayout, container, setContainer } = useSidebar();
+  const { layout, setLayout, container, setContainer, direction, setDirection } = useSidebar();
 
   /* --- Color preset state --- */
   const [colorPreset, setColorPreset] = useState<ColorPresetKey>(() => {
@@ -146,6 +151,7 @@ export function ThemeCustomizer({ open, onOpenChange }: ThemeCustomizerProps) {
     applyDensity("comfortable");
     setLayout("sidebar");
     setContainer("fluid");
+    setDirection("ltr");
   }
 
   /* --- Theme options --- */
@@ -304,6 +310,35 @@ export function ThemeCustomizer({ open, onOpenChange }: ThemeCustomizerProps) {
                   >
                     <Icon className={cn("h-5 w-5", container === opt.value ? "text-primary" : "text-muted-foreground")} />
                     <span className={cn("text-xs font-medium", container === opt.value ? "text-primary" : "text-muted-foreground")}>
+                      {opt.label}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <Separator />
+
+          {/* ---- Direction ---- */}
+          <div className="space-y-3">
+            <Label>Direction</Label>
+            <div className="grid grid-cols-2 gap-2">
+              {DIRECTION_OPTIONS.map((opt) => {
+                const Icon = opt.icon;
+                return (
+                  <button
+                    key={opt.value}
+                    onClick={() => setDirection(opt.value)}
+                    className={cn(
+                      "flex flex-col items-center gap-1.5 rounded-lg border-2 p-3 transition-all",
+                      direction === opt.value
+                        ? "border-primary bg-primary/5 text-primary"
+                        : "border-border hover:border-primary/30"
+                    )}
+                  >
+                    <Icon className={cn("h-5 w-5", direction === opt.value ? "text-primary" : "text-muted-foreground")} />
+                    <span className={cn("text-xs font-medium", direction === opt.value ? "text-primary" : "text-muted-foreground")}>
                       {opt.label}
                     </span>
                   </button>

@@ -21,7 +21,7 @@ export default function DeploymentPage() {
           Vercel is the easiest way to deploy a Next.js application. It provides
           automatic builds, preview deployments, and a global edge network.
         </p>
-        <ol className="list-decimal space-y-2 pl-6 text-sm text-muted-foreground">
+        <ol className="list-decimal space-y-2 ps-6 text-sm text-muted-foreground">
           <li>
             Push your code to a GitHub, GitLab, or Bitbucket repository.
           </li>
@@ -156,8 +156,8 @@ docker run -p 3000:3000 apex-dashboard`}</code>
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b bg-muted/50">
-                <th className="px-4 py-2 text-left font-medium">Variable</th>
-                <th className="px-4 py-2 text-left font-medium">
+                <th className="px-4 py-2 text-start font-medium">Variable</th>
+                <th className="px-4 py-2 text-start font-medium">
                   Description
                 </th>
               </tr>

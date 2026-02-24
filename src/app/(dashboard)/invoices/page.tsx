@@ -46,12 +46,12 @@ export default function InvoicesPage() {
           <CardTitle className="text-base font-semibold">All Invoices</CardTitle>
           <div className="flex items-center gap-3">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground/60" />
+              <Search className="absolute ltr:left-3 rtl:right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground/60" />
               <Input
                 placeholder="Search invoices..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="h-9 w-60 pl-9"
+                className="h-9 w-60 ps-9"
               />
             </div>
             <div className="flex items-center gap-1 rounded-lg bg-muted p-0.5">
@@ -77,14 +77,14 @@ export default function InvoicesPage() {
             <table className="w-full">
               <thead>
                 <tr className="border-b border-border">
-                  <th className="pb-3 text-left text-xs font-medium text-muted-foreground">Invoice</th>
-                  <th className="pb-3 text-left text-xs font-medium text-muted-foreground">Customer</th>
-                  <th className="pb-3 text-left text-xs font-medium text-muted-foreground">Order</th>
-                  <th className="pb-3 text-left text-xs font-medium text-muted-foreground">Status</th>
-                  <th className="pb-3 text-left text-xs font-medium text-muted-foreground">Issued</th>
-                  <th className="pb-3 text-left text-xs font-medium text-muted-foreground">Due</th>
-                  <th className="pb-3 text-right text-xs font-medium text-muted-foreground">Amount</th>
-                  <th className="pb-3 text-right text-xs font-medium text-muted-foreground">
+                  <th className="pb-3 text-start text-xs font-medium text-muted-foreground">Invoice</th>
+                  <th className="pb-3 text-start text-xs font-medium text-muted-foreground">Customer</th>
+                  <th className="pb-3 text-start text-xs font-medium text-muted-foreground">Order</th>
+                  <th className="pb-3 text-start text-xs font-medium text-muted-foreground">Status</th>
+                  <th className="pb-3 text-start text-xs font-medium text-muted-foreground">Issued</th>
+                  <th className="pb-3 text-start text-xs font-medium text-muted-foreground">Due</th>
+                  <th className="pb-3 text-end text-xs font-medium text-muted-foreground">Amount</th>
+                  <th className="pb-3 text-end text-xs font-medium text-muted-foreground">
                     <span className="sr-only">Actions</span>
                   </th>
                 </tr>
@@ -109,10 +109,10 @@ export default function InvoicesPage() {
                     </td>
                     <td className="py-3 text-sm text-muted-foreground">{inv.issuedDate}</td>
                     <td className="py-3 text-sm text-muted-foreground">{inv.dueDate}</td>
-                    <td className="py-3 text-right text-sm font-semibold">
+                    <td className="py-3 text-end text-sm font-semibold">
                       ${inv.amount.toLocaleString("en-US", { minimumFractionDigits: 2 })}
                     </td>
-                    <td className="py-3 text-right">
+                    <td className="py-3 text-end">
                       <div className="flex items-center justify-end gap-1">
                         <Button variant="ghost" size="icon" className="h-8 w-8" aria-label="Download invoice">
                           <Download className="h-4 w-4" />

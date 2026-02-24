@@ -110,7 +110,7 @@ function ProfileBanner({ user }: { user: ProfileUser }) {
             <div className="flex gap-2">
               <Button variant="outline" size="sm" asChild>
                 <Link href="/settings">
-                  <Settings className="mr-2 h-4 w-4" />
+                  <Settings className="me-2 h-4 w-4" />
                   Edit Profile
                 </Link>
               </Button>
@@ -119,7 +119,7 @@ function ProfileBanner({ user }: { user: ProfileUser }) {
                 size="sm"
                 onClick={() => toast.info("Demo mode — link copied!")}
               >
-                <Share2 className="mr-2 h-4 w-4" />
+                <Share2 className="me-2 h-4 w-4" />
                 Share
               </Button>
             </div>
@@ -270,19 +270,19 @@ function OverviewTab({ user }: { user: ProfileUser }) {
             <CardContent className="space-y-2">
               <Button variant="outline" size="sm" className="w-full justify-start" asChild>
                 <Link href="/settings">
-                  <Settings className="mr-2 h-4 w-4" />
+                  <Settings className="me-2 h-4 w-4" />
                   Edit Profile
                 </Link>
               </Button>
               <Button variant="outline" size="sm" className="w-full justify-start" asChild>
                 <Link href="/settings">
-                  <Mail className="mr-2 h-4 w-4" />
+                  <Mail className="me-2 h-4 w-4" />
                   Email Settings
                 </Link>
               </Button>
               <Button variant="outline" size="sm" className="w-full justify-start" asChild>
                 <Link href="/notifications">
-                  <MessageSquare className="mr-2 h-4 w-4" />
+                  <MessageSquare className="me-2 h-4 w-4" />
                   Notifications
                 </Link>
               </Button>
@@ -376,7 +376,7 @@ function ConnectionCard({ connection }: { connection: ProfileConnection }) {
           </Avatar>
           <div
             className={cn(
-              "absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-background",
+              "absolute bottom-0 ltr:right-0 rtl:left-0 h-3 w-3 rounded-full border-2 border-background",
               statusColor[connection.status]
             )}
           />
@@ -428,12 +428,12 @@ function ConnectionsTab() {
   return (
     <div className="space-y-4">
       <div className="relative max-w-sm">
-        <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+        <Search className="absolute ltr:left-3 rtl:right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
         <Input
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search connections..."
-          className="h-9 pl-9"
+          className="h-9 ps-9"
         />
       </div>
 

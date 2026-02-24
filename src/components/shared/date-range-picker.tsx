@@ -145,7 +145,7 @@ export function DateRangePicker({ value, onChange, className }: DateRangePickerP
             <button
               key={preset.label}
               onClick={() => handlePreset(preset.days)}
-              className="rounded-md px-3 py-1.5 text-left text-sm text-foreground transition-colors hover:bg-accent"
+              className="rounded-md px-3 py-1.5 text-start text-sm text-foreground transition-colors hover:bg-accent"
             >
               {preset.label}
             </button>

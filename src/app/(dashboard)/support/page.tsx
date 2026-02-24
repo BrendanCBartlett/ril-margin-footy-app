@@ -98,7 +98,7 @@ export default function SupportPage() {
               <div key={i} className="border-b border-border/50 last:border-0">
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="flex w-full items-center justify-between py-4 text-left text-sm font-medium hover:text-primary transition-colors"
+                  className="flex w-full items-center justify-between py-4 text-start text-sm font-medium hover:text-primary transition-colors"
                 >
                   {faq.question}
                   <ChevronDown

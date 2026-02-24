@@ -130,7 +130,7 @@ function MailSidebar({
               <Icon className="h-4 w-4 shrink-0" />
               {!collapsed && (
                 <>
-                  <span className="flex-1 text-left">{label}</span>
+                  <span className="flex-1 text-start">{label}</span>
                   {count > 0 && (
                     <Badge variant="secondary" className="h-5 min-w-5 rounded-full px-1.5 text-[10px]">
                       {count}
@@ -213,7 +213,7 @@ function ComposeDialog() {
             Save Draft
           </Button>
           <Button onClick={handleSend}>
-            <Send className="mr-2 h-4 w-4" />
+            <Send className="me-2 h-4 w-4" />
             Send
           </Button>
         </DialogFooter>
@@ -262,12 +262,12 @@ function MailToolbar({
         </div>
       ) : (
         <div className="relative flex-1">
-          <Search className="absolute left-2.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-muted-foreground" />
+          <Search className="absolute ltr:left-2.5 rtl:right-2.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-muted-foreground" />
           <Input
             placeholder="Search emails..."
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
-            className="h-8 pl-8 text-xs"
+            className="h-8 ps-8 text-xs"
           />
         </div>
       )}
@@ -550,7 +550,7 @@ export default function MailPage() {
         {/* Sidebar — folders & labels */}
         <div
           className={cn(
-            "w-full flex-col border-r border-border md:w-56 md:shrink-0",
+            "w-full flex-col border-e border-border md:w-56 md:shrink-0",
             (activeEmailId || emailList.length > 0) ? "hidden md:flex" : "flex"
           )}
         >

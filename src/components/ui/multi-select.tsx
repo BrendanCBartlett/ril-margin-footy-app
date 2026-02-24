@@ -92,7 +92,7 @@ function MultiSelect({
                 {opt.label}
                 <button
                   type="button"
-                  className="ml-0.5 rounded-full outline-none hover:bg-foreground/10"
+                  className="ms-0.5 rounded-full outline-none hover:bg-foreground/10"
                   onClick={(e) => removeOption(opt.value, e)}
                   aria-label={`Remove ${opt.label}`}
                 >
@@ -109,7 +109,7 @@ function MultiSelect({
               </Badge>
             )}
           </div>
-          <ChevronsUpDown className="ml-2 size-4 shrink-0 opacity-50" />
+          <ChevronsUpDown className="ms-2 size-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[--radix-popover-trigger-width] p-0" align="start">
@@ -128,7 +128,7 @@ function MultiSelect({
                   >
                     <div
                       className={cn(
-                        "mr-2 flex h-4 w-4 items-center justify-center rounded-sm border border-primary",
+                        "me-2 flex h-4 w-4 items-center justify-center rounded-sm border border-primary",
                         isSelected
                           ? "bg-primary text-primary-foreground"
                           : "opacity-50 [&_svg]:invisible"

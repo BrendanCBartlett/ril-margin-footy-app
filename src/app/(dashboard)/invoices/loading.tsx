@@ -30,7 +30,7 @@ export default function InvoicesLoading() {
             <Skeleton className="h-3 w-14" />
             <Skeleton className="h-3 w-16" />
             <Skeleton className="h-3 w-14" />
-            <Skeleton className="ml-auto h-3 w-16" />
+            <Skeleton className="ms-auto h-3 w-16" />
             <Skeleton className="h-3 w-8" />
           </div>
 
@@ -46,7 +46,7 @@ export default function InvoicesLoading() {
               <Skeleton className="h-5 w-16 rounded-full" />
               <Skeleton className="h-4 w-24" />
               <Skeleton className="h-4 w-24" />
-              <Skeleton className="ml-auto h-4 w-16" />
+              <Skeleton className="ms-auto h-4 w-16" />
               <Skeleton className="h-8 w-8 rounded-md" />
             </div>
           ))}

@@ -97,3 +97,38 @@ export interface Goal {
   target: number;
   color: string;
 }
+
+// ── Charts showcase types ──
+
+export interface SkillDataPoint {
+  subject: string;
+  current: number;
+  previous: number;
+  fullMark: number;
+}
+
+export interface RadialBarDataPoint {
+  name: string;
+  value: number;
+  fill: string;
+}
+
+export interface TreemapDataPoint {
+  name: string;
+  size: number;
+  fill: string;
+  [key: string]: string | number;
+}
+
+export interface ScatterDataPoint {
+  x: number;
+  y: number;
+  z: number;
+}
+
+export interface ComboDataPoint {
+  month: string;
+  revenue: number;
+  orders: number;
+  growth: number;
+}

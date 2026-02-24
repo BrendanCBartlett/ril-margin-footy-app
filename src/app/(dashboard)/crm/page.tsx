@@ -544,19 +544,19 @@ export default function CrmPage() {
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-border">
-                    <th className="pb-3 text-left text-xs font-medium text-muted-foreground">
+                    <th className="pb-3 text-start text-xs font-medium text-muted-foreground">
                       #
                     </th>
-                    <th className="pb-3 text-left text-xs font-medium text-muted-foreground">
+                    <th className="pb-3 text-start text-xs font-medium text-muted-foreground">
                       Rep
                     </th>
-                    <th className="hidden pb-3 text-right text-xs font-medium text-muted-foreground sm:table-cell">
+                    <th className="hidden pb-3 text-end text-xs font-medium text-muted-foreground sm:table-cell">
                       Won
                     </th>
-                    <th className="pb-3 text-right text-xs font-medium text-muted-foreground">
+                    <th className="pb-3 text-end text-xs font-medium text-muted-foreground">
                       Revenue
                     </th>
-                    <th className="hidden pb-3 text-right text-xs font-medium text-muted-foreground sm:table-cell">
+                    <th className="hidden pb-3 text-end text-xs font-medium text-muted-foreground sm:table-cell">
                       Win Rate
                     </th>
                   </tr>
@@ -585,10 +585,10 @@ export default function CrmPage() {
                           </div>
                         </div>
                       </td>
-                      <td className="hidden py-3 text-right text-sm font-semibold sm:table-cell">
+                      <td className="hidden py-3 text-end text-sm font-semibold sm:table-cell">
                         {rep.won}
                       </td>
-                      <td className="py-3 text-right text-sm font-semibold">
+                      <td className="py-3 text-end text-sm font-semibold">
                         ${rep.revenue.toLocaleString()}
                       </td>
                       <td className="hidden py-3 sm:table-cell">
@@ -598,7 +598,7 @@ export default function CrmPage() {
                             className="h-1.5 w-16"
                             indicatorClassName="bg-chart-1"
                           />
-                          <span className="w-8 text-right text-xs text-muted-foreground">
+                          <span className="w-8 text-end text-xs text-muted-foreground">
                             {rep.rate}%
                           </span>
                         </div>
@@ -690,19 +690,19 @@ export default function CrmPage() {
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-border">
-                    <th className="pb-3 text-left text-xs font-medium text-muted-foreground">
+                    <th className="pb-3 text-start text-xs font-medium text-muted-foreground">
                       Deal
                     </th>
-                    <th className="hidden pb-3 text-left text-xs font-medium text-muted-foreground sm:table-cell">
+                    <th className="hidden pb-3 text-start text-xs font-medium text-muted-foreground sm:table-cell">
                       Company
                     </th>
-                    <th className="pb-3 text-right text-xs font-medium text-muted-foreground">
+                    <th className="pb-3 text-end text-xs font-medium text-muted-foreground">
                       Value
                     </th>
-                    <th className="pb-3 text-right text-xs font-medium text-muted-foreground">
+                    <th className="pb-3 text-end text-xs font-medium text-muted-foreground">
                       Stage
                     </th>
-                    <th className="hidden pb-3 text-right text-xs font-medium text-muted-foreground sm:table-cell">
+                    <th className="hidden pb-3 text-end text-xs font-medium text-muted-foreground sm:table-cell">
                       Close
                     </th>
                   </tr>
@@ -722,10 +722,10 @@ export default function CrmPage() {
                       <td className="hidden py-3 text-sm text-muted-foreground sm:table-cell">
                         {deal.company}
                       </td>
-                      <td className="py-3 text-right text-sm font-semibold">
+                      <td className="py-3 text-end text-sm font-semibold">
                         ${deal.value.toLocaleString()}
                       </td>
-                      <td className="py-3 text-right">
+                      <td className="py-3 text-end">
                         <Badge
                           variant={stageVariant[deal.stage]}
                           className="capitalize"
@@ -733,7 +733,7 @@ export default function CrmPage() {
                           {stageLabel[deal.stage]}
                         </Badge>
                       </td>
-                      <td className="hidden py-3 text-right text-sm text-muted-foreground sm:table-cell">
+                      <td className="hidden py-3 text-end text-sm text-muted-foreground sm:table-cell">
                         {deal.close}
                       </td>
                     </tr>

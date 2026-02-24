@@ -108,7 +108,7 @@ function PhoneInput({
             type="button"
             disabled={disabled}
             className={cn(
-              "inline-flex h-9 items-center gap-1 rounded-l-md border border-r-0 border-input bg-transparent px-2 text-sm transition-colors",
+              "inline-flex h-9 items-center gap-1 rounded-s-md border border-e-0 border-input bg-transparent px-2 text-sm transition-colors",
               "hover:bg-accent",
               "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:z-10",
               "disabled:cursor-not-allowed disabled:opacity-50"
@@ -131,7 +131,7 @@ function PhoneInput({
                     value={`${getCountryName(code)} ${code}`}
                     onSelect={() => handleCountrySelect(code)}
                   >
-                    <span className="mr-2 text-base">{getFlag(code)}</span>
+                    <span className="me-2 text-base">{getFlag(code)}</span>
                     <span className="flex-1">{getCountryName(code)}</span>
                     <span className="text-xs text-muted-foreground">
                       +{getCountryCallingCode(code)}
@@ -146,7 +146,7 @@ function PhoneInput({
                     value={`${getCountryName(code)} ${code}`}
                     onSelect={() => handleCountrySelect(code)}
                   >
-                    <span className="mr-2 text-base">{getFlag(code)}</span>
+                    <span className="me-2 text-base">{getFlag(code)}</span>
                     <span className="flex-1">{getCountryName(code)}</span>
                     <span className="text-xs text-muted-foreground">
                       +{getCountryCallingCode(code)}
@@ -164,7 +164,7 @@ function PhoneInput({
         onChange={handleInputChange}
         placeholder={placeholder}
         disabled={disabled}
-        className="rounded-l-none"
+        className="rounded-s-none"
       />
     </div>
   );

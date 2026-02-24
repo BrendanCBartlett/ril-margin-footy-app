@@ -18,7 +18,7 @@ export default function GettingStartedPage() {
         <p className="text-sm text-muted-foreground">
           Before you begin, make sure you have the following installed:
         </p>
-        <ul className="list-disc space-y-1 pl-6 text-sm text-muted-foreground">
+        <ul className="list-disc space-y-1 ps-6 text-sm text-muted-foreground">
           <li>
             <strong className="text-foreground">Node.js 18+</strong> &mdash;{" "}
             <a
@@ -84,7 +84,7 @@ cd apex-dashboard`}</code>
         <p className="text-sm text-muted-foreground">
           The development server starts at{" "}
           <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
-            http://localhost:3000
+            http://localhost:3737
           </code>
           . Next.js hot-reloads your changes automatically so you can see
           updates in real time.
@@ -122,8 +122,8 @@ npm run start`}</code>
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b bg-muted/50">
-                <th className="px-4 py-2 text-left font-medium">Command</th>
-                <th className="px-4 py-2 text-left font-medium">
+                <th className="px-4 py-2 text-start font-medium">Command</th>
+                <th className="px-4 py-2 text-start font-medium">
                   Description
                 </th>
               </tr>
@@ -153,12 +153,44 @@ npm run start`}</code>
                   Serve the production build
                 </td>
               </tr>
-              <tr>
+              <tr className="border-b">
                 <td className="px-4 py-2">
                   <code className="text-xs font-mono">npm run lint</code>
                 </td>
                 <td className="px-4 py-2 text-muted-foreground">
                   Run ESLint across the project
+                </td>
+              </tr>
+              <tr className="border-b">
+                <td className="px-4 py-2">
+                  <code className="text-xs font-mono">npm run test</code>
+                </td>
+                <td className="px-4 py-2 text-muted-foreground">
+                  Run Vitest unit tests in watch mode
+                </td>
+              </tr>
+              <tr className="border-b">
+                <td className="px-4 py-2">
+                  <code className="text-xs font-mono">npm run test:run</code>
+                </td>
+                <td className="px-4 py-2 text-muted-foreground">
+                  Run Vitest unit tests once (CI-friendly)
+                </td>
+              </tr>
+              <tr className="border-b">
+                <td className="px-4 py-2">
+                  <code className="text-xs font-mono">npm run test:e2e</code>
+                </td>
+                <td className="px-4 py-2 text-muted-foreground">
+                  Run Playwright end-to-end tests
+                </td>
+              </tr>
+              <tr>
+                <td className="px-4 py-2">
+                  <code className="text-xs font-mono">npm run test:e2e:ui</code>
+                </td>
+                <td className="px-4 py-2 text-muted-foreground">
+                  Open Playwright interactive UI mode
                 </td>
               </tr>
             </tbody>

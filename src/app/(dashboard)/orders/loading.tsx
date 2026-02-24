@@ -21,7 +21,7 @@ export default function OrdersLoading() {
             <Skeleton className="h-4 w-28" />
             <Skeleton className="h-5 w-16 rounded-full" />
             <Skeleton className="h-4 w-24" />
-            <Skeleton className="ml-auto h-4 w-16" />
+            <Skeleton className="ms-auto h-4 w-16" />
           </div>
         ))}
       </div>

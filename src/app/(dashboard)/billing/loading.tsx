@@ -79,7 +79,7 @@ export default function BillingLoading() {
             <Skeleton className="h-3 w-20" />
             <Skeleton className="h-3 w-36" />
             <Skeleton className="h-3 w-16" />
-            <Skeleton className="ml-auto h-3 w-16" />
+            <Skeleton className="ms-auto h-3 w-16" />
             <Skeleton className="h-3 w-8" />
           </div>
           {/* Table rows */}
@@ -88,7 +88,7 @@ export default function BillingLoading() {
               <Skeleton className="h-4 w-24" />
               <Skeleton className="h-4 w-44" />
               <Skeleton className="h-5 w-12 rounded-full" />
-              <Skeleton className="ml-auto h-4 w-16" />
+              <Skeleton className="ms-auto h-4 w-16" />
               <Skeleton className="h-8 w-8 rounded-md" />
             </div>
           ))}

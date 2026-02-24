@@ -103,7 +103,7 @@ function StatusDot({ status, className }: { status: ContactStatus; className?: s
   return (
     <span
       className={cn(
-        "absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full border-2 border-background",
+        "absolute bottom-0 ltr:right-0 rtl:left-0 h-2.5 w-2.5 rounded-full border-2 border-background",
         statusColor[status],
         className
       )}
@@ -128,7 +128,7 @@ function ConversationItem({
     <button
       onClick={onSelect}
       className={cn(
-        "flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left transition-colors",
+        "flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-start transition-colors",
         active ? "bg-accent" : "hover:bg-accent/50"
       )}
     >
@@ -190,12 +190,12 @@ function ConversationList({
     <div className="flex flex-col h-full">
       <div className="shrink-0 p-3">
         <div className="relative">
-          <Search className="absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+          <Search className="absolute ltr:left-2.5 rtl:right-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
             placeholder="Search conversations..."
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
-            className="pl-9 h-9"
+            className="ps-9 h-9"
           />
         </div>
       </div>
@@ -305,8 +305,8 @@ function MessageBubble({
           className={cn(
             "rounded-2xl px-3.5 py-2",
             isOwn
-              ? "rounded-br-md bg-primary text-primary-foreground"
-              : "rounded-bl-md bg-muted"
+              ? "rounded-ee-md bg-primary text-primary-foreground"
+              : "rounded-es-md bg-muted"
           )}
         >
           <p className="text-sm whitespace-pre-wrap break-words">{message.text}</p>
@@ -336,7 +336,7 @@ function MessageBubble({
 function TypingIndicator({ name }: { name: string }) {
   return (
     <div className="flex items-center gap-2 px-1">
-      <div className="flex items-center gap-1 rounded-2xl rounded-bl-md bg-muted px-3.5 py-2.5">
+      <div className="flex items-center gap-1 rounded-2xl rounded-es-md bg-muted px-3.5 py-2.5">
         <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground/60 animate-bounce [animation-delay:0ms]" />
         <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground/60 animate-bounce [animation-delay:150ms]" />
         <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground/60 animate-bounce [animation-delay:300ms]" />
@@ -587,7 +587,7 @@ export default function ChatPage() {
         {/* Conversation list */}
         <div
           className={cn(
-            "w-full flex-col border-r border-border md:w-80 md:shrink-0",
+            "w-full flex-col border-e border-border md:w-80 md:shrink-0",
             activeConversationId ? "hidden md:flex" : "flex"
           )}
         >

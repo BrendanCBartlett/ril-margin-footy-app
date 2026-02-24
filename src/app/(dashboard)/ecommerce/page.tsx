@@ -560,19 +560,19 @@ export default function EcommercePage() {
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-border">
-                    <th className="pb-3 text-left text-xs font-medium text-muted-foreground">
+                    <th className="pb-3 text-start text-xs font-medium text-muted-foreground">
                       #
                     </th>
-                    <th className="pb-3 text-left text-xs font-medium text-muted-foreground">
+                    <th className="pb-3 text-start text-xs font-medium text-muted-foreground">
                       Product
                     </th>
-                    <th className="pb-3 text-right text-xs font-medium text-muted-foreground">
+                    <th className="pb-3 text-end text-xs font-medium text-muted-foreground">
                       Sold
                     </th>
-                    <th className="pb-3 text-right text-xs font-medium text-muted-foreground">
+                    <th className="pb-3 text-end text-xs font-medium text-muted-foreground">
                       Revenue
                     </th>
-                    <th className="hidden pb-3 text-right text-xs font-medium text-muted-foreground sm:table-cell">
+                    <th className="hidden pb-3 text-end text-xs font-medium text-muted-foreground sm:table-cell">
                       Trend
                     </th>
                   </tr>
@@ -594,14 +594,14 @@ export default function EcommercePage() {
                             {product.category}
                           </p>
                         </td>
-                        <td className="py-3 text-right text-sm font-semibold">
+                        <td className="py-3 text-end text-sm font-semibold">
                           {product.sold.toLocaleString()}
                         </td>
-                        <td className="py-3 text-right text-sm font-semibold">
+                        <td className="py-3 text-end text-sm font-semibold">
                           ${product.revenue.toLocaleString()}
                         </td>
                         <td className="hidden py-3 sm:table-cell">
-                          <div className="ml-auto h-8 w-20">
+                          <div className="ms-auto h-8 w-20">
                             <ResponsiveContainer width="100%" height="100%">
                               <AreaChart
                                 data={trendData}
@@ -733,19 +733,19 @@ export default function EcommercePage() {
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-border">
-                    <th className="pb-3 text-left text-xs font-medium text-muted-foreground">
+                    <th className="pb-3 text-start text-xs font-medium text-muted-foreground">
                       Customer
                     </th>
-                    <th className="hidden pb-3 text-left text-xs font-medium text-muted-foreground sm:table-cell">
+                    <th className="hidden pb-3 text-start text-xs font-medium text-muted-foreground sm:table-cell">
                       Product
                     </th>
-                    <th className="pb-3 text-right text-xs font-medium text-muted-foreground">
+                    <th className="pb-3 text-end text-xs font-medium text-muted-foreground">
                       Amount
                     </th>
-                    <th className="pb-3 text-right text-xs font-medium text-muted-foreground">
+                    <th className="pb-3 text-end text-xs font-medium text-muted-foreground">
                       Status
                     </th>
-                    <th className="hidden pb-3 text-right text-xs font-medium text-muted-foreground sm:table-cell">
+                    <th className="hidden pb-3 text-end text-xs font-medium text-muted-foreground sm:table-cell">
                       Date
                     </th>
                   </tr>
@@ -769,10 +769,10 @@ export default function EcommercePage() {
                       <td className="hidden py-3 text-sm text-muted-foreground sm:table-cell">
                         {tx.product}
                       </td>
-                      <td className="py-3 text-right text-sm font-semibold">
+                      <td className="py-3 text-end text-sm font-semibold">
                         ${tx.amount.toFixed(2)}
                       </td>
-                      <td className="py-3 text-right">
+                      <td className="py-3 text-end">
                         <Badge
                           variant={statusVariant[tx.status]}
                           className="capitalize"
@@ -780,7 +780,7 @@ export default function EcommercePage() {
                           {tx.status}
                         </Badge>
                       </td>
-                      <td className="hidden py-3 text-right text-sm text-muted-foreground sm:table-cell">
+                      <td className="hidden py-3 text-end text-sm text-muted-foreground sm:table-cell">
                         {tx.date}
                       </td>
                     </tr>

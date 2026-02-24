@@ -23,11 +23,13 @@ export const docsNavigation: DocsNavGroup[] = [
       { title: "Theming", href: "/docs/theming" },
       { title: "Adding Pages", href: "/docs/adding-pages" },
       { title: "Components", href: "/docs/components" },
+      { title: "Charts", href: "/docs/charts" },
     ],
   },
   {
-    title: "Deployment",
+    title: "Development",
     items: [
+      { title: "Testing", href: "/docs/testing" },
       { title: "Deploy to Production", href: "/docs/deployment" },
       { title: "Changelog", href: "/docs/changelog" },
     ],

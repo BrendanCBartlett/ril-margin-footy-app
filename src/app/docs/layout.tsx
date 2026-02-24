@@ -125,7 +125,7 @@ export default function DocsLayout({
 
       <div className="mx-auto max-w-7xl lg:flex">
         {/* Desktop sidebar */}
-        <aside className="hidden w-64 shrink-0 border-r lg:block">
+        <aside className="hidden w-64 shrink-0 border-e lg:block">
           <div className="sticky top-14 max-h-[calc(100vh-3.5rem)] overflow-y-auto">
             <DocsSidebar />
           </div>
@@ -138,7 +138,7 @@ export default function DocsLayout({
               className="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm lg:hidden"
               onClick={() => setMobileOpen(false)}
             />
-            <aside className="fixed inset-y-14 left-0 z-50 w-64 overflow-y-auto border-r bg-background lg:hidden">
+            <aside className="fixed inset-y-14 ltr:left-0 rtl:right-0 z-50 w-64 overflow-y-auto border-e bg-background lg:hidden">
               <DocsSidebar mobile onLinkClick={() => setMobileOpen(false)} />
             </aside>
           </>

@@ -20,7 +20,7 @@ export default function ProductsLoading() {
             <Skeleton className="h-5 w-16 rounded-full" />
             <Skeleton className="h-5 w-16 rounded-full" />
             <Skeleton className="h-4 w-12" />
-            <Skeleton className="ml-auto h-4 w-16" />
+            <Skeleton className="ms-auto h-4 w-16" />
           </div>
         ))}
       </div>

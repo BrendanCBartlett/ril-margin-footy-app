@@ -4,6 +4,7 @@ import * as React from "react";
 
 export type LayoutMode = "sidebar" | "topnav";
 export type ContainerMode = "fluid" | "boxed";
+export type DirectionMode = "ltr" | "rtl";
 
 type SidebarState = {
   collapsed: boolean;
@@ -14,10 +15,13 @@ type SidebarState = {
   setLayout: (layout: LayoutMode) => void;
   container: ContainerMode;
   setContainer: (container: ContainerMode) => void;
+  direction: DirectionMode;
+  setDirection: (direction: DirectionMode) => void;
 };
 
 const LAYOUT_STORAGE_KEY = "apex-layout";
 const CONTAINER_STORAGE_KEY = "apex-container";
+const DIRECTION_STORAGE_KEY = "apex-direction";
 
 function applyLayoutClass(mode: LayoutMode) {
   const root = document.documentElement;
@@ -31,6 +35,13 @@ function applyContainerClass(mode: ContainerMode) {
   root.classList.add(`container-${mode}`);
 }
 
+function applyDirectionClass(mode: DirectionMode) {
+  const root = document.documentElement;
+  root.dir = mode;
+  root.classList.remove("dir-ltr", "dir-rtl");
+  root.classList.add(`dir-${mode}`);
+}
+
 const SidebarContext = React.createContext<SidebarState>({
   collapsed: false,
   setCollapsed: () => null,
@@ -40,6 +51,8 @@ const SidebarContext = React.createContext<SidebarState>({
   setLayout: () => null,
   container: "fluid",
   setContainer: () => null,
+  direction: "ltr",
+  setDirection: () => null,
 });
 
 export function SidebarProvider({ children }: { children: React.ReactNode }) {
@@ -67,9 +80,20 @@ export function SidebarProvider({ children }: { children: React.ReactNode }) {
     applyContainerClass(mode);
   }, []);
 
+  const [direction, setDirectionState] = React.useState<DirectionMode>(() => {
+    if (typeof window === "undefined") return "ltr";
+    return (localStorage.getItem(DIRECTION_STORAGE_KEY) as DirectionMode) || "ltr";
+  });
+
+  const setDirection = React.useCallback((mode: DirectionMode) => {
+    setDirectionState(mode);
+    localStorage.setItem(DIRECTION_STORAGE_KEY, mode);
+    applyDirectionClass(mode);
+  }, []);
+
   const value = React.useMemo(
-    () => ({ collapsed, setCollapsed, mobileOpen, setMobileOpen, layout, setLayout, container, setContainer }),
-    [collapsed, mobileOpen, layout, setLayout, container, setContainer]
+    () => ({ collapsed, setCollapsed, mobileOpen, setMobileOpen, layout, setLayout, container, setContainer, direction, setDirection }),
+    [collapsed, mobileOpen, layout, setLayout, container, setContainer, direction, setDirection]
   );
 
   return (

@@ -20,7 +20,7 @@ export default function CalendarLoading() {
             <div className="flex items-center gap-2">
               <Skeleton className="h-8 w-8 rounded-md" />
               <Skeleton className="h-8 w-8 rounded-md" />
-              <Skeleton className="ml-2 h-6 w-40" />
+              <Skeleton className="ms-2 h-6 w-40" />
             </div>
             <Skeleton className="h-8 w-16 rounded-md" />
           </div>
@@ -37,7 +37,7 @@ export default function CalendarLoading() {
           {/* Calendar cells (6 rows x 7 cols) */}
           <div className="grid grid-cols-7">
             {Array.from({ length: 42 }).map((_, i) => (
-              <div key={i} className="min-h-[80px] border-b border-r border-border p-1.5 sm:min-h-[100px] sm:p-2">
+              <div key={i} className="min-h-[80px] border-b border-e border-border p-1.5 sm:min-h-[100px] sm:p-2">
                 <Skeleton className="h-6 w-6 rounded-full sm:h-7 sm:w-7" />
                 {/* Some cells show event pills */}
                 {(i === 5 || i === 12 || i === 18 || i === 24 || i === 30) && (

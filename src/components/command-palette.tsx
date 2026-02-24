@@ -70,10 +70,10 @@ export function CommandPalette() {
                 value={[item.label, ...(item.keywords ?? [])].join(" ")}
                 onSelect={() => navigateTo(item.href)}
               >
-                <Icon className="mr-2 h-4 w-4" />
+                <Icon className="me-2 h-4 w-4" />
                 <span>{item.label}</span>
                 {item.badge && (
-                  <span className="ml-auto flex h-5 min-w-5 items-center justify-center rounded-full bg-primary/15 px-1.5 text-[10px] font-semibold text-primary">
+                  <span className="ms-auto flex h-5 min-w-5 items-center justify-center rounded-full bg-primary/15 px-1.5 text-[10px] font-semibold text-primary">
                     {item.badge}
                   </span>
                 )}
@@ -88,10 +88,10 @@ export function CommandPalette() {
                 value={[item.label, ...(item.keywords ?? [])].join(" ")}
                 onSelect={() => navigateTo(item.href)}
               >
-                <Icon className="mr-2 h-4 w-4" />
+                <Icon className="me-2 h-4 w-4" />
                 <span>{item.label}</span>
                 {item.badge && (
-                  <span className="ml-auto flex h-5 min-w-5 items-center justify-center rounded-full bg-primary/15 px-1.5 text-[10px] font-semibold text-primary">
+                  <span className="ms-auto flex h-5 min-w-5 items-center justify-center rounded-full bg-primary/15 px-1.5 text-[10px] font-semibold text-primary">
                     {item.badge}
                   </span>
                 )}
@@ -108,17 +108,17 @@ export function CommandPalette() {
             value="new order create"
             onSelect={() => navigateTo("/orders/new")}
           >
-            <ShoppingCart className="mr-2 h-4 w-4" />
+            <ShoppingCart className="me-2 h-4 w-4" />
             <span>New Order</span>
           </CommandItem>
           <CommandItem value="toggle theme dark light mode" onSelect={toggleTheme}>
             {theme === "dark" ? (
-              <Sun className="mr-2 h-4 w-4" />
+              <Sun className="me-2 h-4 w-4" />
             ) : (
-              <Moon className="mr-2 h-4 w-4" />
+              <Moon className="me-2 h-4 w-4" />
             )}
             <span>Toggle Theme</span>
-            <span className="ml-auto text-xs text-muted-foreground">
+            <span className="ms-auto text-xs text-muted-foreground">
               {theme === "dark" ? "Switch to light" : "Switch to dark"}
             </span>
           </CommandItem>
@@ -132,7 +132,7 @@ export function CommandPalette() {
             value="documentation docs guide"
             onSelect={() => navigateTo("/docs")}
           >
-            <FileText className="mr-2 h-4 w-4" />
+            <FileText className="me-2 h-4 w-4" />
             <span>Documentation</span>
           </CommandItem>
         </CommandGroup>

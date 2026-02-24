@@ -8,8 +8,10 @@ export default function DocsIntroductionPage() {
       <div className="space-y-2">
         <h1 className="text-3xl font-bold tracking-tight">Introduction</h1>
         <p className="text-sm text-muted-foreground">
-          A modern, production-ready admin dashboard built with the latest web
-          technologies.
+          A modern, production-ready admin dashboard built with Next.js 16,
+          React 19, TypeScript 5, and Tailwind CSS v4 &mdash; 117 static
+          routes, fully responsive, dark/light/system theme, RTL support, and
+          everything you need to ship fast.
         </p>
       </div>
 
@@ -21,7 +23,9 @@ export default function DocsIntroductionPage() {
           internal tools, SaaS applications, and back-office dashboards. It
           provides a solid foundation with pre-built components, pages, and
           patterns so you can focus on shipping your product instead of building
-          boilerplate UI.
+          boilerplate UI. With five dashboard variations, 15+ app pages, a live
+          Theme Customizer, and a comprehensive set of auth and error pages, it
+          covers every scenario a modern admin panel needs out of the box.
         </p>
       </section>
 
@@ -32,57 +36,137 @@ export default function DocsIntroductionPage() {
           <li className="flex items-start gap-2">
             <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Next.js 16 + React 19</strong>{" "}
-              &mdash; App Router with server and client components
+              <strong className="text-foreground">Next.js 16 + React 19 + TypeScript 5 + Tailwind CSS v4</strong>{" "}
+              &mdash; App Router with server and client components, strict
+              typing, and utility-first styling with OKLCh color tokens
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Tailwind CSS v4</strong>{" "}
-              &mdash; Utility-first styling with OKLCh color tokens
+              <strong className="text-foreground">5 Dashboard Variations</strong>{" "}
+              &mdash; Overview, Analytics, eCommerce, CRM, and SaaS dashboards,
+              each with unique layouts and chart compositions
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">shadcn/ui Components</strong>{" "}
+              <strong className="text-foreground">10+ App Pages</strong>{" "}
+              &mdash; Chat, Mail, Files, Kanban, Calendar, Wizard, Orders,
+              Products, Customers, Invoices, Billing, Profile, Settings,
+              Support, and Pricing pages with full interactivity
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>
+              <strong className="text-foreground">Charts Showcase</strong>{" "}
+              &mdash; Area, Bar, Pie, Radar, RadialBar, Treemap, Scatter, and
+              Composed charts powered by Recharts
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>
+              <strong className="text-foreground">Theme Customizer</strong>{" "}
+              &mdash; Live drawer panel with 6 color presets (Default, Ocean,
+              Sunset, Forest, Berry, Slate), 3 density levels (Compact, Default,
+              Comfortable), dark/light/system theme, and persistent preferences
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>
+              <strong className="text-foreground">Layout Options</strong>{" "}
+              &mdash; Sidebar (default) or horizontal top-nav layout, plus fluid
+              (full-width) or boxed (max-width centered) container modes
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>
+              <strong className="text-foreground">RTL Support</strong>{" "}
+              &mdash; Full right-to-left language support for Arabic, Hebrew,
+              Persian, and more, toggled via the Theme Customizer
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>
+              <strong className="text-foreground">35+ shadcn/ui Components</strong>{" "}
               &mdash; Vendored, accessible, and fully customizable primitives
+              built on Radix UI with CVA variants
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Dark / Light / System Theme</strong>{" "}
-              &mdash; Seamless theme switching with persistent preference
+              <strong className="text-foreground">TanStack Table</strong>{" "}
+              &mdash; Sortable, filterable, paginated data tables with CSV
+              export and mobile-responsive card views
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>
+              <strong className="text-foreground">Auth Pages</strong>{" "}
+              &mdash; Sign-in, sign-up, forgot password, reset password, two-factor
+              authentication, email verification, and lock screen templates
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>
+              <strong className="text-foreground">Error Pages</strong>{" "}
+              &mdash; 404 Not Found, 403 Forbidden, 500 Server Error, Coming
+              Soon, and Maintenance pages
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
               <strong className="text-foreground">Command Palette (Cmd+K)</strong>{" "}
-              &mdash; Quick navigation across all pages
+              &mdash; Quick navigation and search across all pages and actions
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Full CRUD Examples</strong>{" "}
-              &mdash; Orders, products, and customer management pages
+              <strong className="text-foreground">Drag-and-Drop Kanban</strong>{" "}
+              &mdash; Interactive task board with draggable cards across columns
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Auth Page Templates</strong>{" "}
-              &mdash; Sign-in and sign-up pages with form validation
+              <strong className="text-foreground">Framer Motion Page Transitions</strong>{" "}
+              &mdash; Smooth animated transitions between routes and interactive
+              UI elements
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Responsive Design</strong>{" "}
-              &mdash; Collapsible sidebar and mobile-first layout
+              <strong className="text-foreground">React Hook Form + Zod Validation</strong>{" "}
+              &mdash; Type-safe form handling with schema-based validation
+              across all form pages
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>
+              <strong className="text-foreground">Vitest + Playwright Testing</strong>{" "}
+              &mdash; Unit and component testing with Vitest, end-to-end testing
+              with Playwright
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>
+              <strong className="text-foreground">Fully Responsive</strong>{" "}
+              &mdash; Collapsible sidebar, mobile-first layout, and
+              touch-friendly interactions across 117 static routes
             </span>
           </li>
         </ul>
@@ -103,7 +187,7 @@ npm run dev`}</code>
         <p className="text-sm text-muted-foreground">
           Then open{" "}
           <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
-            http://localhost:3000
+            http://localhost:3737
           </code>{" "}
           in your browser.
         </p>
@@ -123,6 +207,10 @@ npm run dev`}</code>
           <Badge variant="secondary">React Hook Form</Badge>
           <Badge variant="secondary">Zod</Badge>
           <Badge variant="secondary">cmdk</Badge>
+          <Badge variant="secondary">Framer Motion</Badge>
+          <Badge variant="secondary">TanStack Table</Badge>
+          <Badge variant="secondary">Vitest</Badge>
+          <Badge variant="secondary">Playwright</Badge>
         </div>
       </section>
 

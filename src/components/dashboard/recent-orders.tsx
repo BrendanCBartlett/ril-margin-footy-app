@@ -49,12 +49,12 @@ export function RecentOrders() {
           <table className="w-full">
             <thead>
               <tr className="border-b border-border">
-                <th className="pb-3 text-left text-xs font-medium text-muted-foreground">Customer</th>
-                <th className="pb-3 text-left text-xs font-medium text-muted-foreground">Order ID</th>
-                <th className="pb-3 text-left text-xs font-medium text-muted-foreground">Product</th>
-                <th className="pb-3 text-left text-xs font-medium text-muted-foreground">Status</th>
-                <th className="pb-3 text-right text-xs font-medium text-muted-foreground">Amount</th>
-                <th className="pb-3 text-right text-xs font-medium text-muted-foreground">
+                <th className="pb-3 text-start text-xs font-medium text-muted-foreground">Customer</th>
+                <th className="pb-3 text-start text-xs font-medium text-muted-foreground">Order ID</th>
+                <th className="pb-3 text-start text-xs font-medium text-muted-foreground">Product</th>
+                <th className="pb-3 text-start text-xs font-medium text-muted-foreground">Status</th>
+                <th className="pb-3 text-end text-xs font-medium text-muted-foreground">Amount</th>
+                <th className="pb-3 text-end text-xs font-medium text-muted-foreground">
                   <span className="sr-only">Actions</span>
                 </th>
               </tr>
@@ -91,12 +91,12 @@ export function RecentOrders() {
                       {order.status}
                     </Badge>
                   </td>
-                  <td className="py-3.5 text-right">
+                  <td className="py-3.5 text-end">
                     <span className="text-sm font-semibold">
                       ${order.amount.toLocaleString("en-US", { minimumFractionDigits: 2 })}
                     </span>
                   </td>
-                  <td className="py-3.5 text-right">
+                  <td className="py-3.5 text-end">
                     <button className="rounded-md p-1 text-muted-foreground opacity-0 transition-all hover:bg-accent group-hover:opacity-100">
                       <MoreHorizontal className="h-4 w-4" />
                     </button>

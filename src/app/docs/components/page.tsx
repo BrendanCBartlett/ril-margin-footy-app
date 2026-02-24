@@ -27,16 +27,34 @@ const componentGroups: ComponentGroup[] = [
         importPath: "@/components/ui/separator",
       },
       {
-        name: "Tabs",
-        description:
-          "Tabbed interface for switching between content panels. Supports controlled and uncontrolled modes.",
-        importPath: "@/components/ui/tabs",
-      },
-      {
         name: "Sheet",
         description:
           "Slide-out panel from any edge. Used for mobile menus and detail views.",
         importPath: "@/components/ui/sheet",
+      },
+      {
+        name: "Accordion",
+        description:
+          "Vertically stacked set of collapsible sections. Supports single or multiple open items.",
+        importPath: "@/components/ui/accordion",
+      },
+      {
+        name: "Collapsible",
+        description:
+          "Expandable/collapsible content area with trigger control.",
+        importPath: "@/components/ui/collapsible",
+      },
+      {
+        name: "Resizable",
+        description:
+          "Resizable panel layout with draggable handles for adjusting pane sizes.",
+        importPath: "@/components/ui/resizable",
+      },
+      {
+        name: "Scroll Area",
+        description:
+          "Custom scrollable container with styled scrollbars for overflow content.",
+        importPath: "@/components/ui/scroll-area",
       },
     ],
   },
@@ -89,6 +107,54 @@ const componentGroups: ComponentGroup[] = [
           "React Hook Form integration with Zod validation and accessible error messages.",
         importPath: "@/components/ui/form",
       },
+      {
+        name: "Combobox",
+        description:
+          "Searchable autocomplete input combining a text field with a filtered dropdown list.",
+        importPath: "@/components/ui/combobox",
+      },
+      {
+        name: "Date Picker",
+        description:
+          "Calendar-based date selection input with popover display.",
+        importPath: "@/components/ui/date-picker",
+      },
+      {
+        name: "Multi-Select",
+        description:
+          "Select multiple values from a dropdown with tag-style display of selections.",
+        importPath: "@/components/ui/multi-select",
+      },
+      {
+        name: "Phone Input",
+        description:
+          "International phone number input with country code selector and formatting.",
+        importPath: "@/components/ui/phone-input",
+      },
+      {
+        name: "OTP Input",
+        description:
+          "One-time password input with individual digit fields and auto-advance.",
+        importPath: "@/components/ui/otp-input",
+      },
+      {
+        name: "Color Picker",
+        description:
+          "Visual color selection input with hue/saturation controls and hex value entry.",
+        importPath: "@/components/ui/color-picker",
+      },
+      {
+        name: "File Uploader (Dropzone)",
+        description:
+          "Drag-and-drop file upload area built with react-dropzone. Supports file type and size validation.",
+        importPath: "@/components/ui/file-uploader",
+      },
+      {
+        name: "Slider",
+        description:
+          "Range input for selecting a numeric value within a min/max range. Supports single and dual thumbs.",
+        importPath: "@/components/ui/slider",
+      },
     ],
   },
   {
@@ -123,6 +189,24 @@ const componentGroups: ComponentGroup[] = [
           "Loading placeholder with pulse animation for content that is still loading.",
         importPath: "@/components/ui/skeleton",
       },
+      {
+        name: "Calendar",
+        description:
+          "Monthly calendar view for date display, selection, and event management.",
+        importPath: "@/components/ui/calendar",
+      },
+      {
+        name: "Carousel",
+        description:
+          "Horizontal content slider with navigation arrows and indicator dots.",
+        importPath: "@/components/ui/carousel",
+      },
+      {
+        name: "Chart",
+        description:
+          "Recharts wrapper with theme-aware colors and consistent tooltip/legend styling.",
+        importPath: "@/components/ui/chart",
+      },
     ],
   },
   {
@@ -151,6 +235,12 @@ const componentGroups: ComponentGroup[] = [
         description:
           "Floating content panel triggered by a button click. Used for filters and mini-forms.",
         importPath: "@/components/ui/popover",
+      },
+      {
+        name: "Alert",
+        description:
+          "Callout banner for important messages with icon, title, and description. Supports info, success, warning, and destructive variants.",
+        importPath: "@/components/ui/alert",
       },
     ],
   },
@@ -181,6 +271,53 @@ const componentGroups: ComponentGroup[] = [
           "Primary action trigger with variants: default, destructive, outline, secondary, ghost, link. Multiple sizes available.",
         importPath: "@/components/ui/button",
       },
+      {
+        name: "Tabs",
+        description:
+          "Tabbed interface for switching between content panels. Supports controlled and uncontrolled modes.",
+        importPath: "@/components/ui/tabs",
+      },
+      {
+        name: "Toggle Group",
+        description:
+          "Group of toggle buttons for selecting one or multiple options from a set.",
+        importPath: "@/components/ui/toggle-group",
+      },
+    ],
+  },
+  {
+    title: "Shared Components",
+    items: [
+      {
+        name: "DataTable",
+        description:
+          "Full-featured data table built on TanStack Table with column filtering, sorting, pagination, CSV export, and mobile responsive card view.",
+        importPath: "@/components/shared/data-table",
+      },
+      {
+        name: "PageHeader",
+        description:
+          "Reusable page header with title, description, breadcrumbs, and action slot.",
+        importPath: "@/components/shared/page-header",
+      },
+      {
+        name: "ConfirmDialog",
+        description:
+          "Pre-configured confirmation dialog for destructive actions with customizable title, message, and button labels.",
+        importPath: "@/components/shared/confirm-dialog",
+      },
+      {
+        name: "EmptyState",
+        description:
+          "Placeholder display for empty data states with icon, title, description, and optional action button.",
+        importPath: "@/components/shared/empty-state",
+      },
+      {
+        name: "DateRangePicker",
+        description:
+          "Dual-calendar date range selector with preset ranges and popover display.",
+        importPath: "@/components/shared/date-range-picker",
+      },
     ],
   },
 ];
@@ -192,8 +329,8 @@ export default function ComponentsPage() {
       <div className="space-y-2">
         <h1 className="text-3xl font-bold tracking-tight">Components</h1>
         <p className="text-sm text-muted-foreground">
-          A reference of all available UI components, grouped by category. Each
-          component is vendored source code that you own and can customize.
+          35+ UI components organized by category. Each component is vendored
+          source code that you own and can customize.
         </p>
       </div>
 
