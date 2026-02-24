@@ -43,6 +43,11 @@ yarn-error.log*
 # vercel
 .vercel
 
+# publishing & internal scripts
+/scripts/
+/screenshots/
+/dist/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
