@@ -226,6 +226,77 @@ export default function InteractivePage() {
         </p>
       </section>
 
+      {/* i18n Translation */}
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold">Adding Translations (i18n)</h2>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          If you want your page title and labels to support multiple languages,
+          add translation keys to the JSON message files in{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            src/lib/i18n/messages/
+          </code>
+          . Each locale (en, de, fr) has its own file.
+        </p>
+        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
+          <code>{`// src/lib/i18n/messages/en.json
+{
+  "reports": {
+    "title": "Reports",
+    "description": "View and generate reports."
+  }
+}
+
+// src/lib/i18n/messages/de.json
+{
+  "reports": {
+    "title": "Berichte",
+    "description": "Berichte anzeigen und erstellen."
+  }
+}`}</code>
+        </pre>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          Then use the{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            useTranslations
+          </code>{" "}
+          hook in your component:
+        </p>
+        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
+          <code>{`"use client";
+
+import { useTranslations } from "@/lib/i18n/locale-context";
+
+export default function ReportsPage() {
+  const t = useTranslations();
+
+  return (
+    <div className="space-y-6">
+      <h1 className="text-2xl font-bold">{t("reports.title")}</h1>
+      <p className="text-sm text-muted-foreground">
+        {t("reports.description")}
+      </p>
+    </div>
+  );
+}`}</code>
+        </pre>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          To add the page to the sidebar with translation support, include a{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            tKey
+          </code>{" "}
+          property in the navigation config pointing to the translation key.
+          The sidebar will use{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            t(tKey)
+          </code>{" "}
+          when available and fall back to the{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            label
+          </code>{" "}
+          string otherwise.
+        </p>
+      </section>
+
       {/* Next steps */}
       <section className="space-y-3">
         <h2 className="text-lg font-semibold">Next Steps</h2>

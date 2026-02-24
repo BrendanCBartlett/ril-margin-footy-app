@@ -24,6 +24,8 @@ export const docsNavigation: DocsNavGroup[] = [
       { title: "Adding Pages", href: "/docs/adding-pages" },
       { title: "Components", href: "/docs/components" },
       { title: "Charts", href: "/docs/charts" },
+      { title: "Internationalization", href: "/docs/i18n" },
+      { title: "Storybook", href: "/docs/storybook" },
     ],
   },
   {
@@ -31,6 +33,7 @@ export const docsNavigation: DocsNavGroup[] = [
     items: [
       { title: "Testing", href: "/docs/testing" },
       { title: "Deploy to Production", href: "/docs/deployment" },
+      { title: "Seed / Starter", href: "/docs/seed-starter" },
       { title: "Changelog", href: "/docs/changelog" },
     ],
   },

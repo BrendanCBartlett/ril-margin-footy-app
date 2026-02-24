@@ -51,6 +51,7 @@ export default function FolderStructurePage() {
 │   │   │   ├── saas/
 │   │   │   ├── settings/
 │   │   │   ├── support/
+│   │   │   ├── users/             # User management (CRUD, roles, permissions)
 │   │   │   ├── wizard/
 │   │   │   ├── layout.tsx      # Dashboard shell (sidebar + header)
 │   │   │   └── page.tsx        # Home / overview
@@ -74,6 +75,7 @@ export default function FolderStructurePage() {
 │   │   └── theme-provider.tsx  # Dark/light/system theme context
 │   ├── lib/
 │   │   ├── data/               # Mock data layer with CRUD helpers
+│   │   ├── i18n/              # Internationalization (locale context, messages)
 │   │   ├── navigation.ts       # Dashboard sidebar nav config
 │   │   ├── docs-navigation.ts  # Docs sidebar nav config
 │   │   └── utils.ts            # cn() helper (clsx + tailwind-merge)
@@ -83,6 +85,8 @@ export default function FolderStructurePage() {
 ├── components.json             # shadcn/ui CLI configuration
 ├── tsconfig.json               # TypeScript configuration
 ├── next.config.ts              # Next.js configuration
+├── .storybook/                 # Storybook configuration
+├── seed/                       # Seed/Starter version (clean starting point)
 └── package.json`}</code>
         </pre>
       </section>
@@ -171,6 +175,28 @@ export default function FolderStructurePage() {
             cn()
           </code>{" "}
           class-merging function used throughout the project.
+        </p>
+
+        <h3 className="text-sm font-medium">
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            src/lib/i18n/
+          </code>
+        </h3>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          Internationalization infrastructure. Contains locale configuration,
+          a React context provider with localStorage persistence, and JSON
+          message files for English, German, and French.
+        </p>
+
+        <h3 className="text-sm font-medium">
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            seed/
+          </code>
+        </h3>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          A standalone starter project with all infrastructure (theming, i18n,
+          layouts, UI components, Storybook/Vitest configs) but no demo pages
+          or mock data. Copy it to start a new project from scratch.
         </p>
       </section>
 

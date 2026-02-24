@@ -9,7 +9,7 @@ export default function DocsIntroductionPage() {
         <h1 className="text-3xl font-bold tracking-tight">Introduction</h1>
         <p className="text-sm text-muted-foreground">
           A modern, production-ready admin dashboard built with Next.js 16,
-          React 19, TypeScript 5, and Tailwind CSS v4 &mdash; 117 static
+          React 19, TypeScript 5, and Tailwind CSS v4 &mdash; 125+ static
           routes, fully responsive, dark/light/system theme, RTL support, and
           everything you need to ship fast.
         </p>
@@ -23,9 +23,10 @@ export default function DocsIntroductionPage() {
           internal tools, SaaS applications, and back-office dashboards. It
           provides a solid foundation with pre-built components, pages, and
           patterns so you can focus on shipping your product instead of building
-          boilerplate UI. With five dashboard variations, 15+ app pages, a live
-          Theme Customizer, and a comprehensive set of auth and error pages, it
-          covers every scenario a modern admin panel needs out of the box.
+          boilerplate UI. With five dashboard variations, 20+ app pages, a live
+          Theme Customizer, i18n support, Storybook component browser, and a
+          comprehensive set of auth and error pages, it covers every scenario a
+          modern admin panel needs out of the box.
         </p>
       </section>
 
@@ -164,9 +165,50 @@ export default function DocsIntroductionPage() {
           <li className="flex items-start gap-2">
             <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
+              <strong className="text-foreground">Internationalization (i18n)</strong>{" "}
+              &mdash; Built-in locale system with English, German, and French
+              translations, localStorage persistence, and a locale switcher in
+              Settings and Theme Customizer
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>
+              <strong className="text-foreground">User Management &amp; RBAC</strong>{" "}
+              &mdash; Full CRUD user pages with roles (Admin, Editor, Viewer,
+              Moderator), permissions grid, department filters, and status management
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>
+              <strong className="text-foreground">Storybook Component Browser</strong>{" "}
+              &mdash; 15 interactive stories across UI primitives, form components,
+              and dashboard widgets for visual development and testing
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>
+              <strong className="text-foreground">Performance Optimizations</strong>{" "}
+              &mdash; Lazy-loaded charts with IntersectionObserver, next/dynamic code
+              splitting, and bundle analyzer integration
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>
+              <strong className="text-foreground">Seed/Starter Version</strong>{" "}
+              &mdash; A minimal, stripped-down starter project with all infrastructure
+              (theming, i18n, layouts, 33 UI components) but no demo pages or mock data
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-primary" />
+            <span>
               <strong className="text-foreground">Fully Responsive</strong>{" "}
               &mdash; Collapsible sidebar, mobile-first layout, and
-              touch-friendly interactions across 117 static routes
+              touch-friendly interactions across 125+ static routes
             </span>
           </li>
         </ul>
@@ -211,6 +253,7 @@ npm run dev`}</code>
           <Badge variant="secondary">TanStack Table</Badge>
           <Badge variant="secondary">Vitest</Badge>
           <Badge variant="secondary">Playwright</Badge>
+          <Badge variant="secondary">Storybook</Badge>
         </div>
       </section>
 

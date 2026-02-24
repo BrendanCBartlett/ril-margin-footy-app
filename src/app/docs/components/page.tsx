@@ -357,6 +357,30 @@ export default function ComponentsPage() {
         </p>
       </section>
 
+      {/* Storybook */}
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold">Storybook Component Browser</h2>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          The project includes Storybook with 15 interactive stories covering
+          core UI primitives, form components, and dashboard widgets. Launch it
+          to visually browse and test components in isolation:
+        </p>
+        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
+          <code>npm run storybook</code>
+        </pre>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          Storybook opens on{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            http://localhost:6006
+          </code>
+          . Build a static version with{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            npm run build-storybook
+          </code>
+          .
+        </p>
+      </section>
+
       {/* Component groups */}
       {componentGroups.map((group) => (
         <section key={group.title} className="space-y-4">

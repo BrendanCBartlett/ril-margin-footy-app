@@ -185,7 +185,7 @@ npm run start`}</code>
                   Run Playwright end-to-end tests
                 </td>
               </tr>
-              <tr>
+              <tr className="border-b">
                 <td className="px-4 py-2">
                   <code className="text-xs font-mono">npm run test:e2e:ui</code>
                 </td>
@@ -193,9 +193,63 @@ npm run start`}</code>
                   Open Playwright interactive UI mode
                 </td>
               </tr>
+              <tr className="border-b">
+                <td className="px-4 py-2">
+                  <code className="text-xs font-mono">npm run storybook</code>
+                </td>
+                <td className="px-4 py-2 text-muted-foreground">
+                  Launch Storybook component browser on port 6006
+                </td>
+              </tr>
+              <tr className="border-b">
+                <td className="px-4 py-2">
+                  <code className="text-xs font-mono">npm run build-storybook</code>
+                </td>
+                <td className="px-4 py-2 text-muted-foreground">
+                  Build static Storybook for deployment
+                </td>
+              </tr>
+              <tr>
+                <td className="px-4 py-2">
+                  <code className="text-xs font-mono">npm run analyze</code>
+                </td>
+                <td className="px-4 py-2 text-muted-foreground">
+                  Run production build with bundle analyzer report
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
+      </section>
+
+      {/* Seed / Starter Version */}
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold">Seed / Starter Version</h2>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          If you prefer a clean starting point without demo pages and mock data,
+          use the{" "}
+          <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
+            seed/
+          </code>{" "}
+          directory. It includes all infrastructure (theming, i18n, layouts, 33
+          UI components, Storybook and Vitest configs) with just two routes:
+          Dashboard and Settings.
+        </p>
+        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
+          <code>{`cd seed
+npm install
+npm run dev`}</code>
+        </pre>
+        <p className="text-sm text-muted-foreground">
+          See the{" "}
+          <Link
+            href="/docs/seed-starter"
+            className="font-medium text-primary hover:underline"
+          >
+            Seed/Starter Guide
+          </Link>{" "}
+          for complete details.
+        </p>
       </section>
 
       {/* Next steps */}
