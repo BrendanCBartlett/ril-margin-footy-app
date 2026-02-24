@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@dashboardpack/core/components/ui/card";
 import { AreaChart, Area, ResponsiveContainer } from "recharts";
 import {
   TrendingUp,
@@ -11,8 +11,8 @@ import {
   ShoppingCart,
   Eye,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { statsData } from "@/lib/data";
+import { cn } from "@dashboardpack/core/lib/utils";
+import { statsData } from "@dashboardpack/core/lib/data";
 
 const iconMap = {
   revenue: { icon: DollarSign, color: "text-chart-1", bg: "bg-chart-1/10", stroke: "var(--chart-1)" },

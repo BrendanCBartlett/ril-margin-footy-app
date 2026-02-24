@@ -2,12 +2,12 @@
 
 import React, { useState } from "react";
 import type { ColumnDef } from "@tanstack/react-table";
-import { Badge } from "@/components/ui/badge";
-import { PageHeader } from "@/components/shared/page-header";
-import { DataTable, DataTableColumnHeader } from "@/components/shared/data-table";
-import { getCustomers } from "@/lib/data";
-import type { Customer } from "@/lib/data";
-import { cn } from "@/lib/utils";
+import { Badge } from "@dashboardpack/core/components/ui/badge";
+import { PageHeader } from "@dashboardpack/core/components/shared/page-header";
+import { DataTable, DataTableColumnHeader } from "@dashboardpack/core/components/shared/data-table";
+import { getCustomers } from "@dashboardpack/core/lib/data";
+import type { Customer } from "@dashboardpack/core/lib/data";
+import { cn } from "@dashboardpack/core/lib/utils";
 
 const statusFilters = [
   { label: "All", value: "all" },

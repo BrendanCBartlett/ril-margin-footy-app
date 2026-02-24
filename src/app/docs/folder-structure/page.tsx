@@ -214,8 +214,8 @@ export default function FolderStructurePage() {
           <code>{`"@/*" → "src/*"
 
 // Usage:
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";`}</code>
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { cn } from "@dashboardpack/core/lib/utils";`}</code>
         </pre>
         <p className="text-sm text-muted-foreground">
           All imports throughout the project use this alias instead of relative

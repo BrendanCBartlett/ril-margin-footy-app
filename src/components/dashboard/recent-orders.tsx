@@ -2,12 +2,12 @@
 
 import React from "react";
 import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Card, CardContent, CardHeader, CardTitle } from "@dashboardpack/core/components/ui/card";
+import { Badge } from "@dashboardpack/core/components/ui/badge";
+import { Avatar, AvatarFallback } from "@dashboardpack/core/components/ui/avatar";
 import { MoreHorizontal, ArrowUpRight } from "lucide-react";
-import { getRecentOrders } from "@/lib/data";
-import type { OrderStatus } from "@/lib/data";
+import { getRecentOrders } from "@dashboardpack/core/lib/data";
+import type { OrderStatus } from "@dashboardpack/core/lib/data";
 
 const statusVariant: Record<OrderStatus, "success" | "default" | "warning" | "destructive"> = {
   completed: "success",

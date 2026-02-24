@@ -5,23 +5,23 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { Input } from "@dashboardpack/core/components/ui/input";
+import { Textarea } from "@dashboardpack/core/components/ui/textarea";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
+} from "@dashboardpack/core/components/ui/card";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "@dashboardpack/core/components/ui/select";
 import {
   Form,
   FormControl,
@@ -29,10 +29,10 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { PageHeader } from "@/components/shared/page-header";
-import { createProduct, getProductCategories } from "@/lib/data";
-import type { ProductStatus } from "@/lib/data";
+} from "@dashboardpack/core/components/ui/form";
+import { PageHeader } from "@dashboardpack/core/components/shared/page-header";
+import { createProduct, getProductCategories } from "@dashboardpack/core/lib/data";
+import type { ProductStatus } from "@dashboardpack/core/lib/data";
 import { toast } from "sonner";
 
 const productSchema = z.object({

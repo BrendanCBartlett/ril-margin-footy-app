@@ -1,4 +1,4 @@
-import { getProductIds } from "@/lib/data";
+import { getProductIds } from "@dashboardpack/core/lib/data";
 import EditProduct from "./edit-product";
 
 export function generateStaticParams() {

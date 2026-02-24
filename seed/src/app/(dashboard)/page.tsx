@@ -1,7 +1,7 @@
 "use client";
 
-import { useTranslations } from "@/lib/i18n/locale-context";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useTranslations } from "@dashboardpack/core/lib/i18n/locale-context";
+import { Card, CardContent, CardHeader, CardTitle } from "@dashboardpack/core/components/ui/card";
 import { LayoutDashboard, Palette, Globe, ArrowRight } from "lucide-react";
 
 export default function DashboardPage() {

@@ -1,7 +1,7 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { useSidebar } from "./sidebar-context";
+import { cn } from "@dashboardpack/core/lib/utils";
+import { useSidebar } from "@dashboardpack/core/providers/sidebar-context";
 import { Sidebar } from "./sidebar";
 import { Header } from "./header";
 import { CommandPalette } from "@/components/command-palette";

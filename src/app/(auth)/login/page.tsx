@@ -3,18 +3,18 @@
 import { toast } from "sonner";
 import Link from "next/link";
 import { Github } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Separator } from "@/components/ui/separator";
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { Input } from "@dashboardpack/core/components/ui/input";
+import { Label } from "@dashboardpack/core/components/ui/label";
+import { Checkbox } from "@dashboardpack/core/components/ui/checkbox";
+import { Separator } from "@dashboardpack/core/components/ui/separator";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@dashboardpack/core/components/ui/card";
 
 export default function LoginPage() {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {

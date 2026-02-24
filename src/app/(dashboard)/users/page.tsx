@@ -4,14 +4,14 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import type { ColumnDef } from "@tanstack/react-table";
 import { Plus, Pencil, Trash2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { PageHeader } from "@/components/shared/page-header";
-import { DataTable, DataTableColumnHeader } from "@/components/shared/data-table";
-import { ConfirmDialog } from "@/components/shared/confirm-dialog";
-import { getUsers, deleteUser } from "@/lib/data";
-import type { User, UserRole, UserStatus } from "@/lib/data";
-import { cn } from "@/lib/utils";
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { Badge } from "@dashboardpack/core/components/ui/badge";
+import { PageHeader } from "@dashboardpack/core/components/shared/page-header";
+import { DataTable, DataTableColumnHeader } from "@dashboardpack/core/components/shared/data-table";
+import { ConfirmDialog } from "@dashboardpack/core/components/shared/confirm-dialog";
+import { getUsers, deleteUser } from "@dashboardpack/core/lib/data";
+import type { User, UserRole, UserStatus } from "@dashboardpack/core/lib/data";
+import { cn } from "@dashboardpack/core/lib/utils";
 
 const statusFilters: { label: string; value: UserStatus | "all" }[] = [
   { label: "All", value: "all" },

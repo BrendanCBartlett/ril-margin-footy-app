@@ -105,7 +105,7 @@ export default function I18nDocsPage() {
         <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
           <code>{`"use client";
 
-import { useTranslations } from "@/lib/i18n/locale-context";
+import { useTranslations } from "@dashboardpack/core/lib/i18n/locale-context";
 
 export default function MyComponent() {
   const t = useTranslations();

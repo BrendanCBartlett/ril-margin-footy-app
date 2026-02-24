@@ -3,20 +3,20 @@
 import { toast } from "sonner";
 import Link from "next/link";
 import { ArrowLeft, ShieldCheck } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@dashboardpack/core/components/ui/button";
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
   InputOTPSeparator,
-} from "@/components/ui/input-otp";
+} from "@dashboardpack/core/components/ui/input-otp";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@dashboardpack/core/components/ui/card";
 
 export default function TwoFactorPage() {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {

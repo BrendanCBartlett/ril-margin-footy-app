@@ -2,15 +2,15 @@
 
 import React, { useState } from "react";
 import { toast } from "sonner";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@dashboardpack/core/components/ui/card";
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { Input } from "@dashboardpack/core/components/ui/input";
+import { Label } from "@dashboardpack/core/components/ui/label";
+import { Textarea } from "@dashboardpack/core/components/ui/textarea";
+import { Badge } from "@dashboardpack/core/components/ui/badge";
 import { ChevronDown, FileText, MessageSquare, CheckCircle } from "lucide-react";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { cn } from "@dashboardpack/core/lib/utils";
 
 const faqs = [
   {

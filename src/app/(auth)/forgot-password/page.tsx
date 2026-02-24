@@ -3,16 +3,16 @@
 import { toast } from "sonner";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { Input } from "@dashboardpack/core/components/ui/input";
+import { Label } from "@dashboardpack/core/components/ui/label";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@dashboardpack/core/components/ui/card";
 
 export default function ForgotPasswordPage() {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {

@@ -233,7 +233,7 @@ export default function ThemingPage() {
         <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
           <code>{`"use client";
 
-import { useTheme } from "@/components/theme-provider";
+import { useTheme } from "@dashboardpack/core/providers/theme-provider";
 
 export function MyComponent() {
   const { theme, setTheme } = useTheme();

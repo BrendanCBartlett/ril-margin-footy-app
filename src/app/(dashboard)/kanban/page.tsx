@@ -15,14 +15,14 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 
-import { cn } from "@/lib/utils";
-import { PageHeader } from "@/components/shared/page-header";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import { cn } from "@dashboardpack/core/lib/utils";
+import { PageHeader } from "@dashboardpack/core/components/shared/page-header";
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { Badge } from "@dashboardpack/core/components/ui/badge";
+import { Card } from "@dashboardpack/core/components/ui/card";
+import { Input } from "@dashboardpack/core/components/ui/input";
+import { Label } from "@dashboardpack/core/components/ui/label";
+import { Textarea } from "@dashboardpack/core/components/ui/textarea";
 import {
   Dialog,
   DialogContent,
@@ -30,14 +30,14 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
+} from "@dashboardpack/core/components/ui/dialog";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "@dashboardpack/core/components/ui/select";
 
 import {
   getKanbanColumns,
@@ -47,7 +47,7 @@ import {
   type KanbanColumn,
   type KanbanTask,
   type KanbanPriority,
-} from "@/lib/data/kanban";
+} from "@dashboardpack/core/lib/data/kanban";
 
 // ---------------------------------------------------------------------------
 // Priority helpers

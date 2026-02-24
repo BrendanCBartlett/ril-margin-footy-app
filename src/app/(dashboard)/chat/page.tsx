@@ -1,16 +1,16 @@
 "use client";
 
 import React, { useState, useCallback, useRef, useEffect } from "react";
-import { Card } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Separator } from "@/components/ui/separator";
-import { PageHeader } from "@/components/shared/page-header";
-import { EmptyState } from "@/components/shared/empty-state";
-import { cn } from "@/lib/utils";
+import { Card } from "@dashboardpack/core/components/ui/card";
+import { Avatar, AvatarFallback } from "@dashboardpack/core/components/ui/avatar";
+import { Badge } from "@dashboardpack/core/components/ui/badge";
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { Input } from "@dashboardpack/core/components/ui/input";
+import { Textarea } from "@dashboardpack/core/components/ui/textarea";
+import { Separator } from "@dashboardpack/core/components/ui/separator";
+import { PageHeader } from "@dashboardpack/core/components/shared/page-header";
+import { EmptyState } from "@dashboardpack/core/components/shared/empty-state";
+import { cn } from "@dashboardpack/core/lib/utils";
 import {
   MessageCircle,
   Search,
@@ -35,13 +35,13 @@ import {
   addReplyMessage,
   markConversationRead,
   getAutoReply,
-} from "@/lib/data/chat";
+} from "@dashboardpack/core/lib/data/chat";
 import type {
   ChatContact,
   ChatConversation,
   ChatMessage,
   ContactStatus,
-} from "@/lib/data/chat";
+} from "@dashboardpack/core/lib/data/chat";
 
 // ── Helpers ──
 

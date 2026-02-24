@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useCallback } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { revenueData } from "@/lib/data";
+import { Card, CardContent, CardHeader, CardTitle } from "@dashboardpack/core/components/ui/card";
+import { revenueData } from "@dashboardpack/core/lib/data";
 import {
   XAxis,
   YAxis,
@@ -15,8 +15,8 @@ import {
   Line,
 } from "recharts";
 import { TrendingUp, TrendingDown, Eye, Users, MousePointer, Clock } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { DateRangePicker, type DateRange } from "@/components/shared/date-range-picker";
+import { cn } from "@dashboardpack/core/lib/utils";
+import { DateRangePicker, type DateRange } from "@dashboardpack/core/components/shared/date-range-picker";
 
 const periods = ["7d", "30d", "90d", "1y"] as const;
 type Period = (typeof periods)[number] | null;

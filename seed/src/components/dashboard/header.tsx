@@ -2,10 +2,10 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useTheme } from "@/components/theme-provider";
-import { useSidebar } from "./sidebar-context";
+import { useTheme } from "@dashboardpack/core/providers/theme-provider";
+import { useSidebar } from "@dashboardpack/core/providers/sidebar-context";
 import { ThemeCustomizer } from "./theme-customizer";
-import { Button } from "@/components/ui/button";
+import { Button } from "@dashboardpack/core/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,7 +13,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@dashboardpack/core/components/ui/dropdown-menu";
 import {
   Search,
   Sun,
@@ -24,8 +24,8 @@ import {
   Settings,
   LogOut,
 } from "lucide-react";
-import { useTranslations } from "@/lib/i18n/locale-context";
-import { cn } from "@/lib/utils";
+import { useTranslations } from "@dashboardpack/core/lib/i18n/locale-context";
+import { cn } from "@dashboardpack/core/lib/utils";
 import { toast } from "sonner";
 
 export function Header() {

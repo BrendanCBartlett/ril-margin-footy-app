@@ -5,22 +5,22 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { Input } from "@dashboardpack/core/components/ui/input";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
+} from "@dashboardpack/core/components/ui/card";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "@dashboardpack/core/components/ui/select";
 import {
   Form,
   FormControl,
@@ -28,10 +28,10 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { PageHeader } from "@/components/shared/page-header";
-import { getOrderById, updateOrder } from "@/lib/data";
-import type { OrderStatus } from "@/lib/data";
+} from "@dashboardpack/core/components/ui/form";
+import { PageHeader } from "@dashboardpack/core/components/shared/page-header";
+import { getOrderById, updateOrder } from "@dashboardpack/core/lib/data";
+import type { OrderStatus } from "@dashboardpack/core/lib/data";
 import { Package } from "lucide-react";
 import { toast } from "sonner";
 

@@ -1,7 +1,7 @@
 "use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { LazyChart } from "@/components/shared/lazy-chart";
+import { Card, CardContent, CardHeader, CardTitle } from "@dashboardpack/core/components/ui/card";
+import { LazyChart } from "@dashboardpack/core/components/shared/lazy-chart";
 import {
   RadarChart,
   Radar,
@@ -32,7 +32,7 @@ import {
   q1ScatterData,
   q2ScatterData,
   comboData,
-} from "@/lib/data";
+} from "@dashboardpack/core/lib/data";
 
 // ── Tooltip Components ──
 

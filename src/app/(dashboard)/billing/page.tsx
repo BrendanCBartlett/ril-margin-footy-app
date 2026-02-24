@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@dashboardpack/core/components/ui/card";
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { Badge } from "@dashboardpack/core/components/ui/badge";
+import { Progress } from "@dashboardpack/core/components/ui/progress";
 import { Check, CreditCard, Download } from "lucide-react";
 
 const currentPlan = {

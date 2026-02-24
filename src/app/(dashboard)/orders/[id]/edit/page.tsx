@@ -1,4 +1,4 @@
-import { getOrderIds } from "@/lib/data";
+import { getOrderIds } from "@dashboardpack/core/lib/data";
 import EditOrder from "./edit-order";
 
 export function generateStaticParams() {

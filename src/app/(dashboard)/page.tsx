@@ -2,8 +2,8 @@
 
 import dynamic from "next/dynamic";
 import { StatsCards } from "@/components/dashboard/stats-cards";
-import { Skeleton } from "@/components/ui/skeleton";
-import { useTranslations } from "@/lib/i18n/locale-context";
+import { Skeleton } from "@dashboardpack/core/components/ui/skeleton";
+import { useTranslations } from "@dashboardpack/core/lib/i18n/locale-context";
 
 const RevenueChart = dynamic(
   () => import("@/components/dashboard/revenue-chart").then((m) => m.RevenueChart),

@@ -2,16 +2,16 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Progress } from "@/components/ui/progress";
-import { Separator } from "@/components/ui/separator";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { PageHeader } from "@/components/shared/page-header";
-import { cn } from "@/lib/utils";
+import { Card, CardContent, CardHeader, CardTitle } from "@dashboardpack/core/components/ui/card";
+import { Avatar, AvatarFallback } from "@dashboardpack/core/components/ui/avatar";
+import { Badge } from "@dashboardpack/core/components/ui/badge";
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { Input } from "@dashboardpack/core/components/ui/input";
+import { Progress } from "@dashboardpack/core/components/ui/progress";
+import { Separator } from "@dashboardpack/core/components/ui/separator";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@dashboardpack/core/components/ui/tabs";
+import { PageHeader } from "@dashboardpack/core/components/shared/page-header";
+import { cn } from "@dashboardpack/core/lib/utils";
 import { toast } from "sonner";
 import {
   Mail,
@@ -40,13 +40,13 @@ import {
   getProfileSkills,
   getProfileActivities,
   getProfileConnections,
-} from "@/lib/data/profile";
+} from "@dashboardpack/core/lib/data/profile";
 import type {
   ProfileUser,
   ProfileActivityType,
   ProfileStat,
   ProfileConnection,
-} from "@/lib/data/profile";
+} from "@dashboardpack/core/lib/data/profile";
 
 // ── Activity icon mapping ──
 

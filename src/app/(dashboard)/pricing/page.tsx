@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@dashboardpack/core/components/ui/card";
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { Badge } from "@dashboardpack/core/components/ui/badge";
+import { Switch } from "@dashboardpack/core/components/ui/switch";
+import { Label } from "@dashboardpack/core/components/ui/label";
 import { Check } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@dashboardpack/core/lib/utils";
 import { toast } from "sonner";
 
 const plans = [

@@ -5,21 +5,21 @@ import { useRouter } from "next/navigation";
 import type { ColumnDef } from "@tanstack/react-table";
 import { Plus, MoreHorizontal, Eye, Pencil, Trash2 } from "lucide-react";
 import { LineChart, Line, ResponsiveContainer } from "recharts";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Checkbox } from "@/components/ui/checkbox";
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { Badge } from "@dashboardpack/core/components/ui/badge";
+import { Checkbox } from "@dashboardpack/core/components/ui/checkbox";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { PageHeader } from "@/components/shared/page-header";
-import { DataTable, DataTableColumnHeader } from "@/components/shared/data-table";
-import { ConfirmDialog } from "@/components/shared/confirm-dialog";
-import { getOrders, deleteOrder } from "@/lib/data";
-import type { Order, OrderStatus } from "@/lib/data";
-import { cn } from "@/lib/utils";
+} from "@dashboardpack/core/components/ui/dropdown-menu";
+import { PageHeader } from "@dashboardpack/core/components/shared/page-header";
+import { DataTable, DataTableColumnHeader } from "@dashboardpack/core/components/shared/data-table";
+import { ConfirmDialog } from "@dashboardpack/core/components/shared/confirm-dialog";
+import { getOrders, deleteOrder } from "@dashboardpack/core/lib/data";
+import type { Order, OrderStatus } from "@dashboardpack/core/lib/data";
+import { cn } from "@dashboardpack/core/lib/utils";
 
 const statusFilters: { label: string; value: OrderStatus | "all" }[] = [
   { label: "All", value: "all" },

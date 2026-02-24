@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardHeader, CardTitle } from "@dashboardpack/core/components/ui/card";
+import { Badge } from "@dashboardpack/core/components/ui/badge";
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { Input } from "@dashboardpack/core/components/ui/input";
 import { Download, Search, Send } from "lucide-react";
-import { getInvoices } from "@/lib/data";
-import type { InvoiceStatus } from "@/lib/data";
-import { cn } from "@/lib/utils";
+import { getInvoices } from "@dashboardpack/core/lib/data";
+import type { InvoiceStatus } from "@dashboardpack/core/lib/data";
+import { cn } from "@dashboardpack/core/lib/utils";
 
 const statusFilters: { label: string; value: InvoiceStatus | "all" }[] = [
   { label: "All", value: "all" },

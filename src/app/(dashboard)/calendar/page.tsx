@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useState, useMemo, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent } from "@dashboardpack/core/components/ui/card";
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { Badge } from "@dashboardpack/core/components/ui/badge";
+import { Input } from "@dashboardpack/core/components/ui/input";
+import { Label } from "@dashboardpack/core/components/ui/label";
+import { Textarea } from "@dashboardpack/core/components/ui/textarea";
 import {
   Dialog,
   DialogContent,
@@ -15,14 +15,14 @@ import {
   DialogDescription,
   DialogFooter,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "@dashboardpack/core/components/ui/dialog";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "@dashboardpack/core/components/ui/select";
 import {
   ChevronLeft,
   ChevronRight,
@@ -31,7 +31,7 @@ import {
   Trash2,
   X,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@dashboardpack/core/lib/utils";
 import { toast } from "sonner";
 import {
   getCalendarEvents,
@@ -39,7 +39,7 @@ import {
   deleteCalendarEvent,
   type CalendarEvent,
   type EventColor,
-} from "@/lib/data/calendar";
+} from "@dashboardpack/core/lib/data/calendar";
 
 // ── Calendar helpers ────────────────────────────────────────────────────
 

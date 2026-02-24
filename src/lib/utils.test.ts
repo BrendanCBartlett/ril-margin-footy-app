@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@dashboardpack/core/lib/utils";
 
 describe("cn utility", () => {
   it("merges class names", () => {

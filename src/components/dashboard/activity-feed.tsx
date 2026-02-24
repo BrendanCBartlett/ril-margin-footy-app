@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@dashboardpack/core/components/ui/card";
 import {
   ShoppingCart,
   UserPlus,
@@ -11,8 +11,8 @@ import {
   MessageSquare,
   ArrowUpRight,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { activitiesData } from "@/lib/data";
+import { cn } from "@dashboardpack/core/lib/utils";
+import { activitiesData } from "@dashboardpack/core/lib/data";
 
 const iconMap = {
   order: { icon: ShoppingCart, color: "text-chart-1", bg: "bg-chart-1/10" },

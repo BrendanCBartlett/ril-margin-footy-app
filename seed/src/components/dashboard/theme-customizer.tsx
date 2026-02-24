@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { useTheme } from "@/components/theme-provider";
+import { useTheme } from "@dashboardpack/core/providers/theme-provider";
 import {
   Sheet,
   SheetContent,
@@ -9,17 +9,17 @@ import {
   SheetTitle,
   SheetDescription,
   SheetFooter,
-} from "@/components/ui/sheet";
-import { Separator } from "@/components/ui/separator";
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
+} from "@dashboardpack/core/components/ui/sheet";
+import { Separator } from "@dashboardpack/core/components/ui/separator";
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { Label } from "@dashboardpack/core/components/ui/label";
 import { Sun, Moon, Monitor, Rows3, Rows4, StretchHorizontal, PanelLeft, PanelTop, Maximize, Minimize, AlignLeft, AlignRight, Globe } from "lucide-react";
-import { useSidebar } from "./sidebar-context";
-import type { LayoutMode, ContainerMode, DirectionMode } from "./sidebar-context";
-import { cn } from "@/lib/utils";
-import { useLocale } from "@/lib/i18n/locale-context";
-import { locales } from "@/lib/i18n/config";
-import type { Locale } from "@/lib/i18n/config";
+import { useSidebar } from "@dashboardpack/core/providers/sidebar-context";
+import type { LayoutMode, ContainerMode, DirectionMode } from "@dashboardpack/core/providers/sidebar-context";
+import { cn } from "@dashboardpack/core/lib/utils";
+import { useLocale } from "@dashboardpack/core/lib/i18n/locale-context";
+import { locales } from "@dashboardpack/core/lib/i18n/config";
+import type { Locale } from "@dashboardpack/core/lib/i18n/config";
 
 /* ------------------------------------------------------------------ */
 /*  Color presets (mirrored from settings page)                        */

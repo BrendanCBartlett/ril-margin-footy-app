@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { ArrowLeft, Rocket } from "lucide-react";
 import { toast } from "sonner";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { Input } from "@dashboardpack/core/components/ui/input";
 
 export default function ComingSoonPage() {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {

@@ -2,17 +2,17 @@
 
 import { toast } from "sonner";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { Input } from "@dashboardpack/core/components/ui/input";
+import { Label } from "@dashboardpack/core/components/ui/label";
+import { Avatar, AvatarFallback } from "@dashboardpack/core/components/ui/avatar";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@dashboardpack/core/components/ui/card";
 
 export default function LockScreenPage() {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {

@@ -228,7 +228,7 @@ export default function ChartsDocsPage() {
         </p>
         <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
           <code>{`import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardContent } from "@dashboardpack/core/components/ui/card";
 
 const data = [
   { name: "Jan", value: 400 },

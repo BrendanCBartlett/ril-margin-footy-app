@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@dashboardpack/core/components/ui/card";
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { Badge } from "@dashboardpack/core/components/ui/badge";
 import { Bell, ShoppingCart, CreditCard, Users, Settings, CheckCheck } from "lucide-react";
-import { getNotifications, markAsRead, markAllAsRead, getUnreadCount } from "@/lib/data";
-import type { NotificationType } from "@/lib/data";
-import { cn } from "@/lib/utils";
+import { getNotifications, markAsRead, markAllAsRead, getUnreadCount } from "@dashboardpack/core/lib/data";
+import type { NotificationType } from "@dashboardpack/core/lib/data";
+import { cn } from "@dashboardpack/core/lib/utils";
 
 const filters = ["all", "unread", "read"] as const;
 type Filter = (typeof filters)[number];

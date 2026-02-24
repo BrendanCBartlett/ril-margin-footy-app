@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useState, useCallback } from "react";
-import { Card } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Separator } from "@/components/ui/separator";
+import { Card } from "@dashboardpack/core/components/ui/card";
+import { Avatar, AvatarFallback } from "@dashboardpack/core/components/ui/avatar";
+import { Badge } from "@dashboardpack/core/components/ui/badge";
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { Input } from "@dashboardpack/core/components/ui/input";
+import { Textarea } from "@dashboardpack/core/components/ui/textarea";
+import { Checkbox } from "@dashboardpack/core/components/ui/checkbox";
+import { Separator } from "@dashboardpack/core/components/ui/separator";
 import {
   Dialog,
   DialogContent,
@@ -16,10 +16,10 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { PageHeader } from "@/components/shared/page-header";
-import { EmptyState } from "@/components/shared/empty-state";
-import { cn } from "@/lib/utils";
+} from "@dashboardpack/core/components/ui/dialog";
+import { PageHeader } from "@dashboardpack/core/components/shared/page-header";
+import { EmptyState } from "@dashboardpack/core/components/shared/empty-state";
+import { cn } from "@dashboardpack/core/lib/utils";
 import { toast } from "sonner";
 import {
   Mail,
@@ -49,8 +49,8 @@ import {
   bulkMarkRead,
   sendEmail,
   saveDraft,
-} from "@/lib/data/mail";
-import type { Email, EmailFolder, EmailLabel } from "@/lib/data/mail";
+} from "@dashboardpack/core/lib/data/mail";
+import type { Email, EmailFolder, EmailLabel } from "@dashboardpack/core/lib/data/mail";
 
 // ── Helpers ──
 

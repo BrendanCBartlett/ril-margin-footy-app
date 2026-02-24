@@ -4,10 +4,10 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Zap, Sun, Moon, Menu, X } from "lucide-react";
-import { useTheme } from "@/components/theme-provider";
-import { Button } from "@/components/ui/button";
+import { useTheme } from "@dashboardpack/core/providers/theme-provider";
+import { Button } from "@dashboardpack/core/components/ui/button";
 import { docsNavigation } from "@/lib/docs-navigation";
-import { cn } from "@/lib/utils";
+import { cn } from "@dashboardpack/core/lib/utils";
 
 function ThemeToggle() {
   const { theme, setTheme } = useTheme();

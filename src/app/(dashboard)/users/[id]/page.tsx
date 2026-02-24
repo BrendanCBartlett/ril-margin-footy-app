@@ -1,4 +1,4 @@
-import { getUserIds } from "@/lib/data";
+import { getUserIds } from "@dashboardpack/core/lib/data";
 import UserDetail from "./user-detail";
 
 export function generateStaticParams() {

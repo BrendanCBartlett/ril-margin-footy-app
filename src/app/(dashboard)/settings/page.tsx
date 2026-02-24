@@ -1,21 +1,21 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Switch } from "@/components/ui/switch";
-import { Separator } from "@/components/ui/separator";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useTheme } from "@/components/theme-provider";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@dashboardpack/core/components/ui/card";
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { Input } from "@dashboardpack/core/components/ui/input";
+import { Label } from "@dashboardpack/core/components/ui/label";
+import { Textarea } from "@dashboardpack/core/components/ui/textarea";
+import { Switch } from "@dashboardpack/core/components/ui/switch";
+import { Separator } from "@dashboardpack/core/components/ui/separator";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@dashboardpack/core/components/ui/tabs";
+import { useTheme } from "@dashboardpack/core/providers/theme-provider";
 import { Sun, Moon, Monitor, Rows3, Rows4, StretchHorizontal, Globe } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@dashboardpack/core/lib/utils";
 import { toast } from "sonner";
-import { useLocale } from "@/lib/i18n/locale-context";
-import { locales } from "@/lib/i18n/config";
-import type { Locale } from "@/lib/i18n/config";
+import { useLocale } from "@dashboardpack/core/lib/i18n/locale-context";
+import { locales } from "@dashboardpack/core/lib/i18n/config";
+import type { Locale } from "@dashboardpack/core/lib/i18n/config";
 
 /* ------------------------------------------------------------------ */
 /*  Color presets                                                      */

@@ -13,13 +13,15 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
+    "preserveSymlinks": true,
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@dashboardpack/core/*": ["./node_modules/@dashboardpack/core/*"]
     }
   },
   "include": [
@@ -28,7 +30,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    "node_modules/@dashboardpack/core/**/*.ts",
+    "node_modules/@dashboardpack/core/**/*.tsx"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules/!(@dashboardpack)"]
 }

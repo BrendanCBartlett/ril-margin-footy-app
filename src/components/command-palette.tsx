@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useRouter } from "next/navigation";
 import { Sun, Moon, FileText, ShoppingCart } from "lucide-react";
-import { useTheme } from "@/components/theme-provider";
+import { useTheme } from "@dashboardpack/core/providers/theme-provider";
 import { navigationItems } from "@/lib/navigation";
 import {
   CommandDialog,
@@ -13,7 +13,7 @@ import {
   CommandGroup,
   CommandItem,
   CommandSeparator,
-} from "@/components/ui/command";
+} from "@dashboardpack/core/components/ui/command";
 
 export function CommandPalette() {
   const [open, setOpen] = React.useState(false);

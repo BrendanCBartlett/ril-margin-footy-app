@@ -3,16 +3,16 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useTheme } from "@/components/theme-provider";
-import { useSidebar } from "./sidebar-context";
+import { useTheme } from "@dashboardpack/core/providers/theme-provider";
+import { useSidebar } from "@dashboardpack/core/providers/sidebar-context";
 import { ThemeCustomizer } from "./theme-customizer";
 import { TopNav } from "./top-nav";
-import { Button } from "@/components/ui/button";
+import { Button } from "@dashboardpack/core/components/ui/button";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
+} from "@dashboardpack/core/components/ui/popover";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -21,7 +21,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@dashboardpack/core/components/ui/dropdown-menu";
 import {
   Search,
   Sun,
@@ -43,11 +43,11 @@ import {
   getUnreadCount,
   markAsRead,
   markAllAsRead,
-} from "@/lib/data";
-import type { NotificationType } from "@/lib/data";
-import { cn } from "@/lib/utils";
+} from "@dashboardpack/core/lib/data";
+import type { NotificationType } from "@dashboardpack/core/lib/data";
+import { cn } from "@dashboardpack/core/lib/utils";
 import { toast } from "sonner";
-import { useTranslations } from "@/lib/i18n/locale-context";
+import { useTranslations } from "@dashboardpack/core/lib/i18n/locale-context";
 
 const notificationIcon: Record<
   NotificationType,

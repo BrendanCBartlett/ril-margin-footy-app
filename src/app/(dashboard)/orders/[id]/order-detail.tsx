@@ -3,20 +3,20 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Pencil, Trash2, Package, User, ShoppingBag } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { Badge } from "@dashboardpack/core/components/ui/badge";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { PageHeader } from "@/components/shared/page-header";
-import { ConfirmDialog } from "@/components/shared/confirm-dialog";
-import { getOrderById, deleteOrder } from "@/lib/data";
-import type { OrderStatus } from "@/lib/data";
+} from "@dashboardpack/core/components/ui/card";
+import { Separator } from "@dashboardpack/core/components/ui/separator";
+import { PageHeader } from "@dashboardpack/core/components/shared/page-header";
+import { ConfirmDialog } from "@dashboardpack/core/components/shared/confirm-dialog";
+import { getOrderById, deleteOrder } from "@dashboardpack/core/lib/data";
+import type { OrderStatus } from "@dashboardpack/core/lib/data";
 
 const statusVariant: Record<
   OrderStatus,

@@ -1,4 +1,4 @@
-import { SidebarProvider } from "@/components/dashboard/sidebar-context";
+import { SidebarProvider } from "@dashboardpack/core/providers/sidebar-context";
 import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 
 export default function DashboardLayout({

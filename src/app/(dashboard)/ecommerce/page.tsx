@@ -2,9 +2,9 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
+import { Card, CardContent, CardHeader, CardTitle } from "@dashboardpack/core/components/ui/card";
+import { Badge } from "@dashboardpack/core/components/ui/badge";
+import { Progress } from "@dashboardpack/core/components/ui/progress";
 import {
   AreaChart,
   Area,
@@ -27,7 +27,7 @@ import {
   RotateCcw,
   ArrowRight,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@dashboardpack/core/lib/utils";
 
 // ── Stat Card Data ──
 

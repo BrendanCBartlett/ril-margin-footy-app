@@ -3,15 +3,15 @@
 import { toast } from "sonner";
 import Link from "next/link";
 import { MailCheck } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { Separator } from "@dashboardpack/core/components/ui/separator";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@dashboardpack/core/components/ui/card";
 
 export default function VerifyEmailPage() {
   function handleResend() {

@@ -3,8 +3,8 @@
   "version": "2.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --port 3737",
-    "build": "next build",
+    "dev": "next dev --webpack --port 3737",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
     "test": "vitest",
@@ -16,6 +16,7 @@
     "build-storybook": "storybook build -o storybook-static"
   },
   "dependencies": {
+    "@dashboardpack/core": "file:../dashboardpack-core",
     "@hello-pangea/dnd": "^18.0.1",
     "@hookform/resolvers": "^5.2.2",
     "@tanstack/react-table": "^8.21.3",

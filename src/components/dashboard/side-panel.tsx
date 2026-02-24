@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
+import { Card, CardContent, CardHeader, CardTitle } from "@dashboardpack/core/components/ui/card";
+import { Progress } from "@dashboardpack/core/components/ui/progress";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
-import { trafficData, goalsData } from "@/lib/data";
+import { trafficData, goalsData } from "@dashboardpack/core/lib/data";
 
 interface TooltipPayloadEntry {
   name: string;

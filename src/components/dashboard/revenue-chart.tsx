@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@dashboardpack/core/components/ui/card";
 import {
   AreaChart,
   Area,
@@ -13,7 +13,7 @@ import {
   BarChart,
   Bar,
 } from "recharts";
-import { revenueData } from "@/lib/data";
+import { revenueData } from "@dashboardpack/core/lib/data";
 
 const tabs = ["Revenue", "Orders", "Profit"] as const;
 type TabType = (typeof tabs)[number];

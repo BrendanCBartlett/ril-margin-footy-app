@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft, Headset, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@dashboardpack/core/components/ui/button";
 
 export default function ServerErrorPage() {
   return (

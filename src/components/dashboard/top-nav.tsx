@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
+import { cn } from "@dashboardpack/core/lib/utils";
 import { navGroups, systemNav, docsNav } from "./sidebar";
 import { ChevronDown } from "lucide-react";
 import {
@@ -11,7 +11,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@dashboardpack/core/components/ui/dropdown-menu";
 
 export function TopNav() {
   const pathname = usePathname();

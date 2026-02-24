@@ -1,29 +1,29 @@
 "use client";
 
 import React, { useState, useCallback, useReducer } from "react";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
-import { Progress } from "@/components/ui/progress";
+import { Card } from "@dashboardpack/core/components/ui/card";
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { Input } from "@dashboardpack/core/components/ui/input";
+import { Badge } from "@dashboardpack/core/components/ui/badge";
+import { Separator } from "@dashboardpack/core/components/ui/separator";
+import { Progress } from "@dashboardpack/core/components/ui/progress";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogFooter,
-} from "@/components/ui/dialog";
+} from "@dashboardpack/core/components/ui/dialog";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { PageHeader } from "@/components/shared/page-header";
-import { EmptyState } from "@/components/shared/empty-state";
-import { cn } from "@/lib/utils";
+} from "@dashboardpack/core/components/ui/dropdown-menu";
+import { PageHeader } from "@dashboardpack/core/components/shared/page-header";
+import { EmptyState } from "@dashboardpack/core/components/shared/empty-state";
+import { cn } from "@dashboardpack/core/lib/utils";
 import {
   Folder,
   File,
@@ -65,8 +65,8 @@ import {
   createFolder,
   uploadFile,
   formatFileSize,
-} from "@/lib/data/files";
-import type { FileItem, FileType, FileView } from "@/lib/data/files";
+} from "@dashboardpack/core/lib/data/files";
+import type { FileItem, FileType, FileView } from "@dashboardpack/core/lib/data/files";
 
 // ── File icon helper ──
 

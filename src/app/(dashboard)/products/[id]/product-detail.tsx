@@ -3,14 +3,14 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Pencil, Trash2, Package, Calendar, DollarSign, Boxes } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { PageHeader } from "@/components/shared/page-header";
-import { ConfirmDialog } from "@/components/shared/confirm-dialog";
-import { getProductById, deleteProduct } from "@/lib/data";
-import type { ProductStatus } from "@/lib/data";
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { Badge } from "@dashboardpack/core/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@dashboardpack/core/components/ui/card";
+import { Separator } from "@dashboardpack/core/components/ui/separator";
+import { PageHeader } from "@dashboardpack/core/components/shared/page-header";
+import { ConfirmDialog } from "@dashboardpack/core/components/shared/confirm-dialog";
+import { getProductById, deleteProduct } from "@dashboardpack/core/lib/data";
+import type { ProductStatus } from "@dashboardpack/core/lib/data";
 
 const statusVariant: Record<ProductStatus, "success" | "warning" | "secondary"> = {
   active: "success",

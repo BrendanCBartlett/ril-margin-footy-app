@@ -3,10 +3,10 @@
 import React, { useState, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
-import { useSidebar } from "./sidebar-context";
-import { useTranslations } from "@/lib/i18n/locale-context";
-import type { TranslationKey } from "@/lib/i18n/locale-context";
+import { cn } from "@dashboardpack/core/lib/utils";
+import { useSidebar } from "@dashboardpack/core/providers/sidebar-context";
+import { useTranslations } from "@dashboardpack/core/lib/i18n/locale-context";
+import type { TranslationKey } from "@dashboardpack/core/lib/i18n/locale-context";
 import {
   LayoutDashboard,
   ShoppingCart,

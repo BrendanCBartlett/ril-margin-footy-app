@@ -4,14 +4,14 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "@/components/ui/button";
+import { Button } from "@dashboardpack/core/components/ui/button";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
+} from "@dashboardpack/core/components/ui/card";
 import {
   Form,
   FormControl,
@@ -20,22 +20,22 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Separator } from "@/components/ui/separator";
-import { PageHeader } from "@/components/shared/page-header";
-import { DatePicker } from "@/components/ui/date-picker";
-import { Combobox } from "@/components/ui/combobox";
-import { MultiSelect } from "@/components/ui/multi-select";
+} from "@dashboardpack/core/components/ui/form";
+import { Input } from "@dashboardpack/core/components/ui/input";
+import { Separator } from "@dashboardpack/core/components/ui/separator";
+import { PageHeader } from "@dashboardpack/core/components/shared/page-header";
+import { DatePicker } from "@dashboardpack/core/components/ui/date-picker";
+import { Combobox } from "@dashboardpack/core/components/ui/combobox";
+import { MultiSelect } from "@dashboardpack/core/components/ui/multi-select";
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
   InputOTPSeparator,
-} from "@/components/ui/input-otp";
-import { ColorPicker } from "@/components/ui/color-picker";
-import { PhoneInput } from "@/components/ui/phone-input";
-import { FileUpload, FileUploadList } from "@/components/ui/file-upload";
+} from "@dashboardpack/core/components/ui/input-otp";
+import { ColorPicker } from "@dashboardpack/core/components/ui/color-picker";
+import { PhoneInput } from "@dashboardpack/core/components/ui/phone-input";
+import { FileUpload, FileUploadList } from "@dashboardpack/core/components/ui/file-upload";
 import { toast } from "sonner";
 
 const frameworkOptions = [

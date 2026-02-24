@@ -23,21 +23,21 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+} from "@dashboardpack/core/components/ui/card";
+import { Button } from "@dashboardpack/core/components/ui/button";
+import { Input } from "@dashboardpack/core/components/ui/input";
+import { Label } from "@dashboardpack/core/components/ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
+} from "@dashboardpack/core/components/ui/select";
+import { Textarea } from "@dashboardpack/core/components/ui/textarea";
+import { Checkbox } from "@dashboardpack/core/components/ui/checkbox";
+import { Badge } from "@dashboardpack/core/components/ui/badge";
+import { Separator } from "@dashboardpack/core/components/ui/separator";
 import {
   Form,
   FormControl,
@@ -46,8 +46,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { cn } from "@/lib/utils";
+} from "@dashboardpack/core/components/ui/form";
+import { cn } from "@dashboardpack/core/lib/utils";
 
 /* -------------------------------------------------------------------------- */
 /*                              Zod Schemas                                   */

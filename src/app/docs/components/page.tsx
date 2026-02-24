@@ -19,42 +19,42 @@ const componentGroups: ComponentGroup[] = [
         name: "Card",
         description:
           "Container with header, content, and footer slots. Used for stats, forms, and data panels.",
-        importPath: "@/components/ui/card",
+        importPath: "@dashboardpack/core/components/ui/card",
       },
       {
         name: "Separator",
         description: "Horizontal or vertical divider line between sections.",
-        importPath: "@/components/ui/separator",
+        importPath: "@dashboardpack/core/components/ui/separator",
       },
       {
         name: "Sheet",
         description:
           "Slide-out panel from any edge. Used for mobile menus and detail views.",
-        importPath: "@/components/ui/sheet",
+        importPath: "@dashboardpack/core/components/ui/sheet",
       },
       {
         name: "Accordion",
         description:
           "Vertically stacked set of collapsible sections. Supports single or multiple open items.",
-        importPath: "@/components/ui/accordion",
+        importPath: "@dashboardpack/core/components/ui/accordion",
       },
       {
         name: "Collapsible",
         description:
           "Expandable/collapsible content area with trigger control.",
-        importPath: "@/components/ui/collapsible",
+        importPath: "@dashboardpack/core/components/ui/collapsible",
       },
       {
         name: "Resizable",
         description:
           "Resizable panel layout with draggable handles for adjusting pane sizes.",
-        importPath: "@/components/ui/resizable",
+        importPath: "@dashboardpack/core/components/ui/resizable",
       },
       {
         name: "Scroll Area",
         description:
           "Custom scrollable container with styled scrollbars for overflow content.",
-        importPath: "@/components/ui/scroll-area",
+        importPath: "@dashboardpack/core/components/ui/scroll-area",
       },
     ],
   },
@@ -65,95 +65,95 @@ const componentGroups: ComponentGroup[] = [
         name: "Input",
         description:
           "Text input field with consistent border and focus ring styling.",
-        importPath: "@/components/ui/input",
+        importPath: "@dashboardpack/core/components/ui/input",
       },
       {
         name: "Select",
         description:
           "Dropdown select menu built on Radix UI Select primitive.",
-        importPath: "@/components/ui/select",
+        importPath: "@dashboardpack/core/components/ui/select",
       },
       {
         name: "Textarea",
         description: "Multi-line text input with auto-sizing support.",
-        importPath: "@/components/ui/textarea",
+        importPath: "@dashboardpack/core/components/ui/textarea",
       },
       {
         name: "Checkbox",
         description:
           "Boolean toggle with checkmark indicator. Supports indeterminate state.",
-        importPath: "@/components/ui/checkbox",
+        importPath: "@dashboardpack/core/components/ui/checkbox",
       },
       {
         name: "Switch",
         description: "Toggle switch for on/off boolean states.",
-        importPath: "@/components/ui/switch",
+        importPath: "@dashboardpack/core/components/ui/switch",
       },
       {
         name: "Label",
         description:
           "Accessible label element that pairs with form inputs.",
-        importPath: "@/components/ui/label",
+        importPath: "@dashboardpack/core/components/ui/label",
       },
       {
         name: "Radio Group",
         description:
           "Group of radio buttons for single-select from multiple options.",
-        importPath: "@/components/ui/radio-group",
+        importPath: "@dashboardpack/core/components/ui/radio-group",
       },
       {
         name: "Form",
         description:
           "React Hook Form integration with Zod validation and accessible error messages.",
-        importPath: "@/components/ui/form",
+        importPath: "@dashboardpack/core/components/ui/form",
       },
       {
         name: "Combobox",
         description:
           "Searchable autocomplete input combining a text field with a filtered dropdown list.",
-        importPath: "@/components/ui/combobox",
+        importPath: "@dashboardpack/core/components/ui/combobox",
       },
       {
         name: "Date Picker",
         description:
           "Calendar-based date selection input with popover display.",
-        importPath: "@/components/ui/date-picker",
+        importPath: "@dashboardpack/core/components/ui/date-picker",
       },
       {
         name: "Multi-Select",
         description:
           "Select multiple values from a dropdown with tag-style display of selections.",
-        importPath: "@/components/ui/multi-select",
+        importPath: "@dashboardpack/core/components/ui/multi-select",
       },
       {
         name: "Phone Input",
         description:
           "International phone number input with country code selector and formatting.",
-        importPath: "@/components/ui/phone-input",
+        importPath: "@dashboardpack/core/components/ui/phone-input",
       },
       {
         name: "OTP Input",
         description:
           "One-time password input with individual digit fields and auto-advance.",
-        importPath: "@/components/ui/otp-input",
+        importPath: "@dashboardpack/core/components/ui/otp-input",
       },
       {
         name: "Color Picker",
         description:
           "Visual color selection input with hue/saturation controls and hex value entry.",
-        importPath: "@/components/ui/color-picker",
+        importPath: "@dashboardpack/core/components/ui/color-picker",
       },
       {
         name: "File Uploader (Dropzone)",
         description:
           "Drag-and-drop file upload area built with react-dropzone. Supports file type and size validation.",
-        importPath: "@/components/ui/file-uploader",
+        importPath: "@dashboardpack/core/components/ui/file-uploader",
       },
       {
         name: "Slider",
         description:
           "Range input for selecting a numeric value within a min/max range. Supports single and dual thumbs.",
-        importPath: "@/components/ui/slider",
+        importPath: "@dashboardpack/core/components/ui/slider",
       },
     ],
   },
@@ -164,48 +164,48 @@ const componentGroups: ComponentGroup[] = [
         name: "Badge",
         description:
           "Small status label with color variants: default, secondary, destructive, success, warning, outline.",
-        importPath: "@/components/ui/badge",
+        importPath: "@dashboardpack/core/components/ui/badge",
       },
       {
         name: "Table",
         description:
           "HTML table primitives (Table, TableHeader, TableBody, TableRow, TableCell) with consistent styling.",
-        importPath: "@/components/ui/table",
+        importPath: "@dashboardpack/core/components/ui/table",
       },
       {
         name: "Avatar",
         description:
           "User avatar with image and fallback initials support.",
-        importPath: "@/components/ui/avatar",
+        importPath: "@dashboardpack/core/components/ui/avatar",
       },
       {
         name: "Progress",
         description: "Horizontal progress bar with animated fill.",
-        importPath: "@/components/ui/progress",
+        importPath: "@dashboardpack/core/components/ui/progress",
       },
       {
         name: "Skeleton",
         description:
           "Loading placeholder with pulse animation for content that is still loading.",
-        importPath: "@/components/ui/skeleton",
+        importPath: "@dashboardpack/core/components/ui/skeleton",
       },
       {
         name: "Calendar",
         description:
           "Monthly calendar view for date display, selection, and event management.",
-        importPath: "@/components/ui/calendar",
+        importPath: "@dashboardpack/core/components/ui/calendar",
       },
       {
         name: "Carousel",
         description:
           "Horizontal content slider with navigation arrows and indicator dots.",
-        importPath: "@/components/ui/carousel",
+        importPath: "@dashboardpack/core/components/ui/carousel",
       },
       {
         name: "Chart",
         description:
           "Recharts wrapper with theme-aware colors and consistent tooltip/legend styling.",
-        importPath: "@/components/ui/chart",
+        importPath: "@dashboardpack/core/components/ui/chart",
       },
     ],
   },
@@ -216,31 +216,31 @@ const componentGroups: ComponentGroup[] = [
         name: "Dialog",
         description:
           "Modal dialog with overlay, title, description, and action buttons.",
-        importPath: "@/components/ui/dialog",
+        importPath: "@dashboardpack/core/components/ui/dialog",
       },
       {
         name: "Tooltip",
         description:
           "Popup hint that appears on hover or focus. Positioned automatically.",
-        importPath: "@/components/ui/tooltip",
+        importPath: "@dashboardpack/core/components/ui/tooltip",
       },
       {
         name: "Sonner (Toast)",
         description:
           "Toast notification system. Trigger with toast() from the sonner package.",
-        importPath: "@/components/ui/sonner",
+        importPath: "@dashboardpack/core/components/ui/sonner",
       },
       {
         name: "Popover",
         description:
           "Floating content panel triggered by a button click. Used for filters and mini-forms.",
-        importPath: "@/components/ui/popover",
+        importPath: "@dashboardpack/core/components/ui/popover",
       },
       {
         name: "Alert",
         description:
           "Callout banner for important messages with icon, title, and description. Supports info, success, warning, and destructive variants.",
-        importPath: "@/components/ui/alert",
+        importPath: "@dashboardpack/core/components/ui/alert",
       },
     ],
   },
@@ -251,37 +251,37 @@ const componentGroups: ComponentGroup[] = [
         name: "Breadcrumb",
         description:
           "Trail of links showing the current page hierarchy.",
-        importPath: "@/components/ui/breadcrumb",
+        importPath: "@dashboardpack/core/components/ui/breadcrumb",
       },
       {
         name: "Dropdown Menu",
         description:
           "Context menu with items, separators, and keyboard navigation.",
-        importPath: "@/components/ui/dropdown-menu",
+        importPath: "@dashboardpack/core/components/ui/dropdown-menu",
       },
       {
         name: "Command",
         description:
           "Command palette (Cmd+K) with searchable list of actions and pages.",
-        importPath: "@/components/ui/command",
+        importPath: "@dashboardpack/core/components/ui/command",
       },
       {
         name: "Button",
         description:
           "Primary action trigger with variants: default, destructive, outline, secondary, ghost, link. Multiple sizes available.",
-        importPath: "@/components/ui/button",
+        importPath: "@dashboardpack/core/components/ui/button",
       },
       {
         name: "Tabs",
         description:
           "Tabbed interface for switching between content panels. Supports controlled and uncontrolled modes.",
-        importPath: "@/components/ui/tabs",
+        importPath: "@dashboardpack/core/components/ui/tabs",
       },
       {
         name: "Toggle Group",
         description:
           "Group of toggle buttons for selecting one or multiple options from a set.",
-        importPath: "@/components/ui/toggle-group",
+        importPath: "@dashboardpack/core/components/ui/toggle-group",
       },
     ],
   },
@@ -292,31 +292,31 @@ const componentGroups: ComponentGroup[] = [
         name: "DataTable",
         description:
           "Full-featured data table built on TanStack Table with column filtering, sorting, pagination, CSV export, and mobile responsive card view.",
-        importPath: "@/components/shared/data-table",
+        importPath: "@dashboardpack/core/components/shared/data-table",
       },
       {
         name: "PageHeader",
         description:
           "Reusable page header with title, description, breadcrumbs, and action slot.",
-        importPath: "@/components/shared/page-header",
+        importPath: "@dashboardpack/core/components/shared/page-header",
       },
       {
         name: "ConfirmDialog",
         description:
           "Pre-configured confirmation dialog for destructive actions with customizable title, message, and button labels.",
-        importPath: "@/components/shared/confirm-dialog",
+        importPath: "@dashboardpack/core/components/shared/confirm-dialog",
       },
       {
         name: "EmptyState",
         description:
           "Placeholder display for empty data states with icon, title, description, and optional action button.",
-        importPath: "@/components/shared/empty-state",
+        importPath: "@dashboardpack/core/components/shared/empty-state",
       },
       {
         name: "DateRangePicker",
         description:
           "Dual-calendar date range selector with preset ranges and popover display.",
-        importPath: "@/components/shared/date-range-picker",
+        importPath: "@dashboardpack/core/components/shared/date-range-picker",
       },
     ],
   },
@@ -422,9 +422,9 @@ export default function ComponentsPage() {
           prop to extend styles:
         </p>
         <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+          <code>{`import { Button } from "@dashboardpack/core/components/ui/button";
+import { Card, CardHeader, CardTitle, CardContent } from "@dashboardpack/core/components/ui/card";
+import { Badge } from "@dashboardpack/core/components/ui/badge";
 
 export function Example() {
   return (

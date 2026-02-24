@@ -132,8 +132,8 @@ export const navigationItems: NavItem[] = [
         </p>
         <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
           <code>{`// src/app/(dashboard)/reports/page.tsx
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@dashboardpack/core/components/ui/card";
+import { Button } from "@dashboardpack/core/components/ui/button";
 import { Download } from "lucide-react";
 
 export default function ReportsPage() {
@@ -264,7 +264,7 @@ export default function InteractivePage() {
         <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
           <code>{`"use client";
 
-import { useTranslations } from "@/lib/i18n/locale-context";
+import { useTranslations } from "@dashboardpack/core/lib/i18n/locale-context";
 
 export default function ReportsPage() {
   const t = useTranslations();

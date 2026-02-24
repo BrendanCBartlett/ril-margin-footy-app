@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { ThemeProvider } from "@/components/theme-provider";
-import { LocaleProvider } from "@/lib/i18n/locale-context";
-import { Toaster } from "@/components/ui/sonner";
+import { ThemeProvider } from "@dashboardpack/core/providers/theme-provider";
+import { LocaleProvider } from "@dashboardpack/core/lib/i18n/locale-context";
+import { Toaster } from "@dashboardpack/core/components/ui/sonner";
 import "./globals.css";
 
 const geistSans = localFont({
