@@ -33,6 +33,7 @@ import {
   Handshake,
   Rocket,
   ChartNoAxesCombined,
+  UserCog,
 } from "lucide-react";
 
 export interface NavItem {
@@ -91,6 +92,7 @@ export const navGroups: NavGroup[] = [
 export const systemNav: NavGroup = {
   label: "System",
   items: [
+    { icon: UserCog, label: "Users", href: "/users" },
     { icon: Bell, label: "Notifications", href: "/notifications", badge: "3" },
     { icon: Settings, label: "Settings", href: "/settings" },
     { icon: HelpCircle, label: "Help & Support", href: "/support" },

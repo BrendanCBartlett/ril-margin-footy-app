@@ -1,6 +1,7 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { LazyChart } from "@/components/shared/lazy-chart";
 import {
   RadarChart,
   Radar,
@@ -351,7 +352,8 @@ export default function ChartsPage() {
       </div>
 
       {/* Row 2: Scatter + Treemap */}
-      <div className="mt-6 grid grid-cols-1 gap-4 xl:grid-cols-12">
+      <LazyChart height={400} className="mt-6">
+      <div className="grid grid-cols-1 gap-4 xl:grid-cols-12">
         {/* Scatter Chart */}
         <Card className="xl:col-span-7">
           <CardHeader className="pb-2">
@@ -446,8 +448,10 @@ export default function ChartsPage() {
         </Card>
       </div>
 
+      </LazyChart>
+
       {/* Row 3: Composed/Mixed Chart */}
-      <div className="mt-6">
+      <LazyChart height={440} className="mt-6">
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-base font-semibold">
@@ -559,7 +563,7 @@ export default function ChartsPage() {
             </ResponsiveContainer>
           </CardContent>
         </Card>
-      </div>
+      </LazyChart>
     </>
   );
 }

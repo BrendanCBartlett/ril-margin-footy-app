@@ -14,6 +14,7 @@ import {
   ListChecks,
   BookOpen,
   ChartNoAxesCombined,
+  UserCog,
 } from "lucide-react";
 
 export interface NavItem {
@@ -38,6 +39,7 @@ export const navigationItems: NavItem[] = [
   { label: "Invoices", href: "/invoices", icon: FileText, keywords: ["bills", "receipts"], group: "main" },
   { label: "Charts", href: "/charts", icon: ChartNoAxesCombined, keywords: ["radar", "treemap", "scatter", "gauge", "graphs"], group: "main" },
   { label: "Documentation", href: "/docs", icon: BookOpen, keywords: ["docs", "guide", "help", "components"], group: "main" },
+  { label: "Users", href: "/users", icon: UserCog, keywords: ["team", "members", "roles", "permissions", "rbac"], group: "system" },
   { label: "Notifications", href: "/notifications", icon: Bell, badge: "3", keywords: ["alerts", "messages"], group: "system" },
   { label: "Settings", href: "/settings", icon: Settings, keywords: ["preferences", "account", "profile"], group: "system" },
   { label: "Help & Support", href: "/support", icon: HelpCircle, keywords: ["faq", "contact", "docs"], group: "system" },

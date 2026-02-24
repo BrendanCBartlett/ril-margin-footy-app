@@ -98,6 +98,25 @@ export interface Goal {
   color: string;
 }
 
+// ── User management types ──
+
+export type UserRole = "admin" | "editor" | "viewer" | "moderator";
+export type UserStatus = "active" | "inactive" | "suspended";
+
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  avatar?: string;
+  initials: string;
+  role: UserRole;
+  status: UserStatus;
+  department: string;
+  joinDate: string;
+  lastActive: string;
+  permissions: string[];
+}
+
 // ── Charts showcase types ──
 
 export interface SkillDataPoint {

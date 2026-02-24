@@ -6,4 +6,8 @@ const nextConfig: NextConfig = {
   outputFileTracingRoot: path.join(__dirname, "./"),
 };
 
-export default nextConfig;
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
+
+export default withBundleAnalyzer(nextConfig);

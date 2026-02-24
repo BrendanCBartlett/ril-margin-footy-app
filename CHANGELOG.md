@@ -2,6 +2,77 @@
 
 All notable changes to Apex Dashboard are documented here.
 
+## v2.0.0 — February 2026
+
+Major update covering Phases 2–9 of the product roadmap.
+
+### Dashboard Variations
+
+- eCommerce dashboard with sales charts, order status donut, top products
+- CRM dashboard with pipeline funnel, deal stages, lead sources
+- SaaS dashboard with MRR/ARR tracking, subscription plans, churn metrics
+
+### App Pages
+
+- Chat application with real-time messaging UI and conversation list
+- Email/Inbox client with folders, compose dialog, and search
+- File Manager with grid/list views, upload, and storage stats
+- Kanban board with drag-and-drop task management
+- Calendar with monthly view and event management
+- Multi-step wizard form with validation
+- User profile page with overview, activity, and connections tabs
+- Pricing page with plan comparison
+
+### Advanced Components
+
+- TanStack Table upgrade with column filtering, sorting, pagination, CSV export, mobile responsive cards
+- Date Picker, Date Range Picker
+- Combobox/Autocomplete, Multi-Select, Phone Input
+- File Uploader (react-dropzone), OTP Input, Color Picker
+- Accordion, Alert, Carousel, Collapsible, Scroll Area, Slider, Toggle Group, Resizable
+
+### Charts Showcase
+
+- New `/charts` page with Radar, Radial Bar, Treemap, Scatter, and Composed charts
+- 10 chart types total (Area, Bar, Line, Pie, Sparkline, Radar, RadialBar, Treemap, Scatter, Composed)
+
+### Theme Customizer
+
+- Live customizer drawer with color presets, density options
+- 6 color presets: Default, Ocean, Sunset, Forest, Berry, Slate
+- 3 density levels: Compact, Default, Comfortable
+- Reset to defaults
+
+### Layout Options
+
+- Horizontal top-nav layout alternative
+- Boxed container option (max-width centered)
+- All layouts persist to localStorage
+
+### RTL Support
+
+- Full right-to-left text direction support
+- CSS logical properties across all components
+- Toggle in Theme Customizer
+
+### Auth & Utility Pages
+
+- Reset Password, Two-Factor Authentication, Email Verification, Lock Screen
+- 500 Server Error, 403 Forbidden error pages
+- Coming Soon and Maintenance pages
+
+### Testing Infrastructure
+
+- Vitest unit testing with jsdom environment (14 tests)
+- Playwright E2E tests with Chromium (4 smoke tests)
+- Representative test suites for utilities, data, and components
+
+### Documentation
+
+- Charts documentation page with all 10 chart types and usage patterns
+- Testing documentation page with Vitest and Playwright guides
+- Updated all existing docs pages to reflect v2.0.0 features
+
 ## v1.0.0 — February 2026
 
 Initial release.
@@ -42,12 +113,12 @@ Initial release.
 ### Documentation Site (`/docs`)
 
 - Dedicated layout with top nav and sidebar
-- 8 pages: Introduction, Getting Started, Folder Structure, Theming, Adding Pages, Components (25+ referenced), Deployment, Changelog
+- 10 pages: Introduction, Getting Started, Folder Structure, Theming, Adding Pages, Components, Charts, Testing, Deployment, Changelog
 
 ### UI Components
 
-- 25+ vendored shadcn/ui components: Button, Card, Dialog, Table, Tabs, Badge, Input, Select, Textarea, Checkbox, Switch, Label, Radio Group, Form, Separator, Skeleton, Sheet, Tooltip, Popover, Breadcrumb, Dropdown Menu, Command, Avatar, Progress, Sonner (toast)
-- Shared components: DataTable, PageHeader, ConfirmDialog, EmptyState
+- 35+ vendored shadcn/ui components: Button, Card, Dialog, Table, Tabs, Badge, Input, Select, Textarea, Checkbox, Switch, Label, Radio Group, Form, Separator, Skeleton, Sheet, Tooltip, Popover, Breadcrumb, Dropdown Menu, Command, Avatar, Progress, Sonner (toast), Accordion, Alert, Carousel, Collapsible, Scroll Area, Slider, Toggle Group, Resizable, Calendar
+- Shared components: DataTable, PageHeader, ConfirmDialog, EmptyState, DateRangePicker
 
 ### Theming
 
@@ -64,4 +135,4 @@ Initial release.
 - Skip-to-content accessibility link
 - ARIA attributes on navigation elements
 - Zero ESLint errors and warnings
-- Clean production build (26 routes)
+- Clean production build (119 routes)

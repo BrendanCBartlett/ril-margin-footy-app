@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useTheme } from "@/components/theme-provider";
 import {
   Sheet,
@@ -111,11 +111,6 @@ export function ThemeCustomizer({ open, onOpenChange }: ThemeCustomizerProps) {
     return (localStorage.getItem(COLOR_STORAGE_KEY) as ColorPresetKey) || "emerald";
   });
 
-  useEffect(() => {
-    const saved = localStorage.getItem(COLOR_STORAGE_KEY) as ColorPresetKey | null;
-    if (saved) setColorPreset(saved);
-  }, []);
-
   function handleColorPreset(preset: ColorPreset) {
     setColorPreset(preset.key);
     localStorage.setItem(COLOR_STORAGE_KEY, preset.key);
@@ -127,11 +122,6 @@ export function ThemeCustomizer({ open, onOpenChange }: ThemeCustomizerProps) {
     if (typeof window === "undefined") return "comfortable";
     return (localStorage.getItem(DENSITY_STORAGE_KEY) as DensityValue) || "comfortable";
   });
-
-  useEffect(() => {
-    const saved = localStorage.getItem(DENSITY_STORAGE_KEY) as DensityValue | null;
-    if (saved) setDensity(saved);
-  }, []);
 
   function handleDensity(value: DensityValue) {
     setDensity(value);

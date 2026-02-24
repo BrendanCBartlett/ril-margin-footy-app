@@ -7,3 +7,4 @@ export * from "./invoices";
 export * from "./notifications";
 export * from "./profile";
 export * from "./charts";
+export * from "./users";
