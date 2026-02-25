@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CodeBlock } from "@dashboardpack/core/components/docs/code-block";
 
 export default function ChartsDocsPage() {
   return (
@@ -226,8 +227,7 @@ export default function ChartsDocsPage() {
           </code>{" "}
           and wrap them in a Card:
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+        <CodeBlock code={`import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { Card, CardHeader, CardTitle, CardContent } from "@dashboardpack/core/components/ui/card";
 
 const data = [
@@ -258,8 +258,7 @@ export function MyChart() {
       </CardContent>
     </Card>
   );
-}`}</code>
-        </pre>
+}`} />
       </section>
 
       {/* Mock Data */}

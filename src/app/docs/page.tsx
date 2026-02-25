@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Badge } from "@dashboardpack/core/components/ui/badge";
+import { CodeBlock } from "@dashboardpack/core/components/docs/code-block";
 
 export default function DocsIntroductionPage() {
   return (
@@ -220,12 +221,10 @@ export default function DocsIntroductionPage() {
         <p className="text-sm text-muted-foreground">
           Get up and running in under a minute:
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`git clone https://github.com/colorlib/apex-dashboard.git
+        <CodeBlock code={`git clone https://github.com/colorlib/apex-dashboard.git
 cd apex-dashboard
 npm install
-npm run dev`}</code>
-        </pre>
+npm run dev`} />
         <p className="text-sm text-muted-foreground">
           Then open{" "}
           <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">

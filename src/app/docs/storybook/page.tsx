@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CodeBlock } from "@dashboardpack/core/components/docs/code-block";
 
 export default function StorybookDocsPage() {
   return (
@@ -26,13 +27,11 @@ export default function StorybookDocsPage() {
       {/* Getting started */}
       <section className="space-y-3">
         <h2 className="text-lg font-semibold">Getting Started</h2>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`# Start Storybook dev server
+        <CodeBlock code={`# Start Storybook dev server
 npm run storybook
 
 # Build static Storybook for deployment
-npm run build-storybook`}</code>
-        </pre>
+npm run build-storybook`} />
         <p className="text-sm text-muted-foreground leading-relaxed">
           Storybook opens at{" "}
           <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
@@ -124,8 +123,7 @@ npm run build-storybook`}</code>
           </code>{" "}
           file next to the component:
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`// src/components/ui/alert.stories.tsx
+        <CodeBlock code={`// src/components/ui/alert.stories.tsx
 import type { Meta, StoryObj } from "@storybook/react";
 import { Alert, AlertTitle, AlertDescription } from "./alert";
 
@@ -157,8 +155,7 @@ export const Destructive: Story = {
       </AlertDescription>
     </Alert>
   ),
-};`}</code>
-        </pre>
+};`} />
       </section>
 
       {/* Configuration */}

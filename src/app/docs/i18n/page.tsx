@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CodeBlock } from "@dashboardpack/core/components/docs/code-block";
 
 export default function I18nDocsPage() {
   return (
@@ -102,8 +103,7 @@ export default function I18nDocsPage() {
           </code>{" "}
           hook and call it with a dot-notation key:
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`"use client";
+        <CodeBlock code={`"use client";
 
 import { useTranslations } from "@dashboardpack/core/lib/i18n/locale-context";
 
@@ -116,8 +116,7 @@ export default function MyComponent() {
       <p>{t("dashboard.welcome")}</p>
     </div>
   );
-}`}</code>
-        </pre>
+}`} />
       </section>
 
       {/* Translated areas */}
@@ -176,14 +175,12 @@ export default function MyComponent() {
             :
           </li>
         </ol>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`export const locales = [
+        <CodeBlock code={`export const locales = [
   { code: "en", label: "English", flag: "\u{1F1FA}\u{1F1F8}" },
   { code: "de", label: "Deutsch", flag: "\u{1F1E9}\u{1F1EA}" },
   { code: "fr", label: "Fran\u00E7ais", flag: "\u{1F1EB}\u{1F1F7}" },
   { code: "es", label: "Espa\u00F1ol", flag: "\u{1F1EA}\u{1F1F8}" },  // Add this
-] as const;`}</code>
-        </pre>
+] as const;`} />
         <p className="text-sm text-muted-foreground leading-relaxed">
           The locale switcher in Settings and Theme Customizer will
           automatically show the new option.
@@ -197,8 +194,7 @@ export default function MyComponent() {
           Add new keys to all JSON message files. Keys use dot-notation
           organized by feature area:
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`// en.json
+        <CodeBlock code={`// en.json
 {
   "reports": {
     "title": "Reports",
@@ -214,8 +210,7 @@ export default function MyComponent() {
     "export": "PDF exportieren",
     "noData": "Keine Berichte gefunden."
   }
-}`}</code>
-        </pre>
+}`} />
         <p className="text-sm text-muted-foreground leading-relaxed">
           The{" "}
           <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">

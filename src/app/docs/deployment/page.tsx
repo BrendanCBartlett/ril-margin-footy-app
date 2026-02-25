@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CodeBlock } from "@dashboardpack/core/components/docs/code-block";
 
 export default function DeploymentPage() {
   return (
@@ -62,8 +63,7 @@ export default function DeploymentPage() {
           You can run the production build on any server with Node.js 18+
           installed.
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`# Build the application
+        <CodeBlock code={`# Build the application
 npm run build
 
 # Start the production server
@@ -71,18 +71,15 @@ npm run start
 
 # The server runs on port 3000 by default.
 # Use the PORT environment variable to change it:
-PORT=8080 npm run start`}</code>
-        </pre>
+PORT=8080 npm run start`} />
         <p className="text-sm text-muted-foreground leading-relaxed">
           For production, use a process manager like{" "}
           <strong className="text-foreground">PM2</strong> to keep the server
           running and handle restarts:
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`npm install -g pm2
+        <CodeBlock code={`npm install -g pm2
 pm2 start npm --name "apex-dashboard" -- start
-pm2 save`}</code>
-        </pre>
+pm2 save`} />
       </section>
 
       {/* Docker */}
@@ -95,8 +92,7 @@ pm2 save`}</code>
           </code>{" "}
           at the project root for containerized deployments:
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`FROM node:20-alpine AS base
+        <CodeBlock code={`FROM node:20-alpine AS base
 
 # Install dependencies
 FROM base AS deps
@@ -121,15 +117,12 @@ COPY --from=builder /app/.next/static ./.next/static
 
 EXPOSE 3000
 ENV PORT=3000
-CMD ["node", "server.js"]`}</code>
-        </pre>
+CMD ["node", "server.js"]`} />
         <p className="text-sm text-muted-foreground leading-relaxed">
           Build and run the container:
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`docker build -t apex-dashboard .
-docker run -p 3000:3000 apex-dashboard`}</code>
-        </pre>
+        <CodeBlock code={`docker build -t apex-dashboard .
+docker run -p 3000:3000 apex-dashboard`} />
         <p className="text-sm text-muted-foreground leading-relaxed">
           <strong className="text-foreground">Note:</strong> For the standalone
           output to work, add{" "}

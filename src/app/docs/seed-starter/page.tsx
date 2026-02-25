@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CodeBlock } from "@dashboardpack/core/components/docs/code-block";
 
 export default function SeedStarterDocsPage() {
   return (
@@ -31,8 +32,7 @@ export default function SeedStarterDocsPage() {
       {/* Quick start */}
       <section className="space-y-3">
         <h2 className="text-lg font-semibold">Quick Start</h2>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`# Copy seed to a new project directory
+        <CodeBlock code={`# Copy seed to a new project directory
 cp -r seed/ ../my-new-project
 cd ../my-new-project
 
@@ -40,8 +40,7 @@ cd ../my-new-project
 npm install
 
 # Start dev server
-npm run dev`}</code>
-        </pre>
+npm run dev`} />
         <p className="text-sm text-muted-foreground">
           The dev server starts at{" "}
           <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
@@ -99,8 +98,7 @@ npm run dev`}</code>
       {/* Project structure */}
       <section className="space-y-3">
         <h2 className="text-lg font-semibold">Project Structure</h2>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm leading-relaxed">
-          <code>{`seed/
+        <CodeBlock className="leading-relaxed" code={`seed/
 ├── .storybook/                 # Storybook configuration
 ├── public/                     # Static assets
 ├── src/
@@ -124,8 +122,7 @@ npm run dev`}</code>
 ├── vitest.config.ts
 ├── tsconfig.json
 ├── next.config.ts
-└── package.json`}</code>
-        </pre>
+└── package.json`} />
       </section>
 
       {/* Adding your first page */}

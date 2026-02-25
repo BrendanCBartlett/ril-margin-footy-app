@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CodeBlock } from "@dashboardpack/core/components/docs/code-block";
 
 export default function GettingStartedPage() {
   return (
@@ -46,10 +47,8 @@ export default function GettingStartedPage() {
       {/* Step 1: Clone */}
       <section className="space-y-3">
         <h2 className="text-lg font-semibold">Step 1: Clone the Repository</h2>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`git clone https://github.com/colorlib/apex-dashboard.git
-cd apex-dashboard`}</code>
-        </pre>
+        <CodeBlock code={`git clone https://github.com/colorlib/apex-dashboard.git
+cd apex-dashboard`} />
       </section>
 
       {/* Step 2: Install dependencies */}
@@ -60,27 +59,19 @@ cd apex-dashboard`}</code>
         </p>
 
         <h3 className="text-sm font-medium">npm</h3>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>npm install</code>
-        </pre>
+        <CodeBlock code={`npm install`} />
 
         <h3 className="text-sm font-medium">yarn</h3>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>yarn</code>
-        </pre>
+        <CodeBlock code={`yarn`} />
 
         <h3 className="text-sm font-medium">pnpm</h3>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>pnpm install</code>
-        </pre>
+        <CodeBlock code={`pnpm install`} />
       </section>
 
       {/* Step 3: Run dev server */}
       <section className="space-y-3">
         <h2 className="text-lg font-semibold">Step 3: Run the Dev Server</h2>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>npm run dev</code>
-        </pre>
+        <CodeBlock code={`npm run dev`} />
         <p className="text-sm text-muted-foreground">
           The development server starts at{" "}
           <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
@@ -99,10 +90,8 @@ cd apex-dashboard`}</code>
         <p className="text-sm text-muted-foreground">
           When you are ready to deploy, create an optimized production build:
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`npm run build
-npm run start`}</code>
-        </pre>
+        <CodeBlock code={`npm run build
+npm run start`} />
         <p className="text-sm text-muted-foreground">
           <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
             npm run build
@@ -235,11 +224,9 @@ npm run start`}</code>
           UI components, Storybook and Vitest configs) with just two routes:
           Dashboard and Settings.
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`cd seed
+        <CodeBlock code={`cd seed
 npm install
-npm run dev`}</code>
-        </pre>
+npm run dev`} />
         <p className="text-sm text-muted-foreground">
           See the{" "}
           <Link

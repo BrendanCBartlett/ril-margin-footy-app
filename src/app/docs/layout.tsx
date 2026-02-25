@@ -8,6 +8,7 @@ import { useTheme } from "@dashboardpack/core/providers/theme-provider";
 import { Button } from "@dashboardpack/core/components/ui/button";
 import { docsNavigation } from "@/lib/docs-navigation";
 import { cn } from "@dashboardpack/core/lib/utils";
+import "@dashboardpack/core/components/docs/code-highlight.css";
 
 function ThemeToggle() {
   const { theme, setTheme } = useTheme();

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CodeBlock } from "@dashboardpack/core/components/docs/code-block";
 
 interface ComponentEntry {
   name: string;
@@ -345,9 +346,7 @@ export default function ComponentsPage() {
           configuration file, so you can scaffold new shadcn/ui components
           using the CLI:
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>npx shadcn@latest add accordion</code>
-        </pre>
+        <CodeBlock code={`npx shadcn@latest add accordion`} />
         <p className="text-sm text-muted-foreground leading-relaxed">
           This generates the component source file in{" "}
           <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
@@ -365,9 +364,7 @@ export default function ComponentsPage() {
           core UI primitives, form components, and dashboard widgets. Launch it
           to visually browse and test components in isolation:
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>npm run storybook</code>
-        </pre>
+        <CodeBlock code={`npm run storybook`} />
         <p className="text-sm text-muted-foreground leading-relaxed">
           Storybook opens on{" "}
           <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
@@ -421,8 +418,7 @@ export default function ComponentsPage() {
           </code>{" "}
           prop to extend styles:
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`import { Button } from "@dashboardpack/core/components/ui/button";
+        <CodeBlock code={`import { Button } from "@dashboardpack/core/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@dashboardpack/core/components/ui/card";
 import { Badge } from "@dashboardpack/core/components/ui/badge";
 
@@ -441,8 +437,7 @@ export function Example() {
       </CardContent>
     </Card>
   );
-}`}</code>
-        </pre>
+}`} />
       </section>
 
       {/* Next steps */}

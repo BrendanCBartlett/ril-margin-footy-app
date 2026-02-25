@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CodeBlock } from "@dashboardpack/core/components/docs/code-block";
 
 export default function TestingDocsPage() {
   return (
@@ -193,27 +194,23 @@ export default function TestingDocsPage() {
           </code>{" "}
           extension alongside the source file:
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`// src/lib/my-utils.test.ts
+        <CodeBlock code={`// src/lib/my-utils.test.ts
 import { formatCurrency } from "@/lib/my-utils";
 
 describe("formatCurrency", () => {
   it("formats USD amounts", () => {
     expect(formatCurrency(1234.5)).toBe("$1,234.50");
   });
-});`}</code>
-        </pre>
+});`} />
         <p className="text-sm text-muted-foreground leading-relaxed">
           For component tests, mock Recharts to avoid SVG rendering issues in
           jsdom:
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`vi.mock("recharts", () => ({
+        <CodeBlock code={`vi.mock("recharts", () => ({
   ResponsiveContainer: ({ children }) => <div>{children}</div>,
   AreaChart: ({ children }) => <div>{children}</div>,
   Area: () => null,
-}));`}</code>
-        </pre>
+}));`} />
       </section>
 
       {/* Playwright */}
@@ -274,15 +271,13 @@ describe("formatCurrency", () => {
           </code>{" "}
           directory:
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`import { test, expect } from "@playwright/test";
+        <CodeBlock code={`import { test, expect } from "@playwright/test";
 
 test("orders page shows data table", async ({ page }) => {
   await page.goto("/orders");
   await expect(page.getByRole("heading", { name: "Orders" })).toBeVisible();
   await expect(page.getByRole("table")).toBeVisible();
-});`}</code>
-        </pre>
+});`} />
         <p className="text-sm text-muted-foreground leading-relaxed">
           Use{" "}
           <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
@@ -299,10 +294,8 @@ test("orders page shows data table", async ({ page }) => {
         <p className="text-sm text-muted-foreground leading-relaxed">
           For continuous integration, use the single-run commands:
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`npm run test:run     # Unit tests (Vitest)
-npm run test:e2e     # E2E tests (Playwright)`}</code>
-        </pre>
+        <CodeBlock code={`npm run test:run     # Unit tests (Vitest)
+npm run test:e2e     # E2E tests (Playwright)`} />
         <p className="text-sm text-muted-foreground leading-relaxed">
           Playwright automatically enables retries and single-worker mode when
           the{" "}

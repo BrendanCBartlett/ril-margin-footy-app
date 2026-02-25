@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CodeBlock } from "@dashboardpack/core/components/docs/code-block";
 
 export default function FolderStructurePage() {
   return (
@@ -15,8 +16,7 @@ export default function FolderStructurePage() {
       {/* Directory tree */}
       <section className="space-y-3">
         <h2 className="text-lg font-semibold">Project Tree</h2>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm leading-relaxed">
-          <code>{`apex-dashboard/
+        <CodeBlock className="leading-relaxed" code={`apex-dashboard/
 ├── public/                     # Static assets (favicon, images)
 ├── e2e/                        # Playwright end-to-end tests
 │   └── smoke.spec.ts
@@ -87,8 +87,7 @@ export default function FolderStructurePage() {
 ├── next.config.ts              # Next.js configuration
 ├── .storybook/                 # Storybook configuration
 ├── seed/                       # Seed/Starter version (clean starting point)
-└── package.json`}</code>
-        </pre>
+└── package.json`} />
       </section>
 
       {/* Explanation */}
@@ -210,13 +209,11 @@ export default function FolderStructurePage() {
           </code>
           :
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`"@/*" → "src/*"
+        <CodeBlock code={`"@/*" → "src/*"
 
 // Usage:
 import { Button } from "@dashboardpack/core/components/ui/button";
-import { cn } from "@dashboardpack/core/lib/utils";`}</code>
-        </pre>
+import { cn } from "@dashboardpack/core/lib/utils";`} />
         <p className="text-sm text-muted-foreground">
           All imports throughout the project use this alias instead of relative
           paths.

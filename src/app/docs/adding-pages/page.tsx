@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CodeBlock } from "@dashboardpack/core/components/docs/code-block";
 
 export default function AddingPagesPage() {
   return (
@@ -43,8 +44,7 @@ export default function AddingPagesPage() {
           </code>
           :
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`// src/app/(dashboard)/reports/page.tsx
+        <CodeBlock code={`// src/app/(dashboard)/reports/page.tsx
 
 export default function ReportsPage() {
   return (
@@ -59,8 +59,7 @@ export default function ReportsPage() {
       {/* Your page content goes here */}
     </div>
   );
-}`}</code>
-        </pre>
+}`} />
         <p className="text-sm text-muted-foreground leading-relaxed">
           This page will be accessible at{" "}
           <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
@@ -90,8 +89,7 @@ export default function ReportsPage() {
           </code>{" "}
           array:
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`import {
+        <CodeBlock code={`import {
   // ... existing imports
   FileBarChart,
 } from "lucide-react";
@@ -105,8 +103,7 @@ export const navigationItems: NavItem[] = [
     keywords: ["reports", "analytics", "export"],
     group: "main",
   },
-];`}</code>
-        </pre>
+];`} />
         <p className="text-sm text-muted-foreground leading-relaxed">
           The sidebar will automatically render the new link. You can add an
           optional{" "}
@@ -130,8 +127,7 @@ export const navigationItems: NavItem[] = [
           The page inherits the full dashboard layout automatically. You can
           enhance it with any of the available components:
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`// src/app/(dashboard)/reports/page.tsx
+        <CodeBlock code={`// src/app/(dashboard)/reports/page.tsx
 import { Card, CardContent, CardHeader, CardTitle } from "@dashboardpack/core/components/ui/card";
 import { Button } from "@dashboardpack/core/components/ui/button";
 import { Download } from "lucide-react";
@@ -167,8 +163,7 @@ export default function ReportsPage() {
       </div>
     </div>
   );
-}`}</code>
-        </pre>
+}`} />
       </section>
 
       {/* Adding client components */}
@@ -182,8 +177,7 @@ export default function ReportsPage() {
           </code>{" "}
           directive at the top of the file:
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`"use client";
+        <CodeBlock code={`"use client";
 
 import { useState } from "react";
 
@@ -195,8 +189,7 @@ export default function InteractivePage() {
       Clicked {count} times
     </button>
   );
-}`}</code>
-        </pre>
+}`} />
         <p className="text-sm text-muted-foreground leading-relaxed">
           For better performance, keep pages as server components when possible
           and extract interactive parts into smaller client components.
@@ -209,14 +202,12 @@ export default function InteractivePage() {
         <p className="text-sm text-muted-foreground leading-relaxed">
           To create nested pages (e.g., a detail view), add subdirectories:
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`src/app/(dashboard)/reports/
+        <CodeBlock code={`src/app/(dashboard)/reports/
 ├── page.tsx                # /reports (list view)
 ├── [id]/
 │   └── page.tsx            # /reports/123 (detail view)
 └── create/
-    └── page.tsx            # /reports/create (form)`}</code>
-        </pre>
+    └── page.tsx            # /reports/create (form)`} />
         <p className="text-sm text-muted-foreground leading-relaxed">
           Square brackets denote a dynamic segment. The{" "}
           <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
@@ -237,8 +228,7 @@ export default function InteractivePage() {
           </code>
           . Each locale (en, de, fr) has its own file.
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`// src/lib/i18n/messages/en.json
+        <CodeBlock code={`// src/lib/i18n/messages/en.json
 {
   "reports": {
     "title": "Reports",
@@ -252,8 +242,7 @@ export default function InteractivePage() {
     "title": "Berichte",
     "description": "Berichte anzeigen und erstellen."
   }
-}`}</code>
-        </pre>
+}`} />
         <p className="text-sm text-muted-foreground leading-relaxed">
           Then use the{" "}
           <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
@@ -261,8 +250,7 @@ export default function InteractivePage() {
           </code>{" "}
           hook in your component:
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`"use client";
+        <CodeBlock code={`"use client";
 
 import { useTranslations } from "@dashboardpack/core/lib/i18n/locale-context";
 
@@ -277,8 +265,7 @@ export default function ReportsPage() {
       </p>
     </div>
   );
-}`}</code>
-        </pre>
+}`} />
         <p className="text-sm text-muted-foreground leading-relaxed">
           To add the page to the sidebar with translation support, include a{" "}
           <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">

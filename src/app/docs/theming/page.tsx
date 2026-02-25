@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CodeBlock } from "@dashboardpack/core/components/docs/code-block";
 
 export default function ThemingPage() {
   return (
@@ -25,8 +26,7 @@ export default function ThemingPage() {
           </code>
           .
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`:root {
+        <CodeBlock code={`:root {
   --primary: oklch(0.55 0.175 160);
   --primary-foreground: oklch(0.985 0.002 230);
   --background: oklch(0.985 0.002 230);
@@ -36,8 +36,7 @@ export default function ThemingPage() {
   --muted-foreground: oklch(0.556 0.015 230);
   --border: oklch(0.922 0.005 230);
   /* ... more tokens */
-}`}</code>
-        </pre>
+}`} />
         <p className="text-sm text-muted-foreground leading-relaxed">
           The OKLCh format is{" "}
           <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
@@ -70,8 +69,7 @@ export default function ThemingPage() {
           </code>{" "}
           blocks. For example, to switch from teal to blue:
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`/* Light mode */
+        <CodeBlock code={`/* Light mode */
 :root {
   --primary: oklch(0.55 0.175 250);          /* hue 160 → 250 (blue) */
   --primary-foreground: oklch(0.985 0.002 230);
@@ -83,8 +81,7 @@ export default function ThemingPage() {
   --primary: oklch(0.65 0.19 250);
   --primary-foreground: oklch(0.09 0.015 170);
   --ring: oklch(0.65 0.19 250);
-}`}</code>
-        </pre>
+}`} />
         <p className="text-sm text-muted-foreground leading-relaxed">
           The change propagates everywhere{" "}
           <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
@@ -204,9 +201,7 @@ export default function ThemingPage() {
           manages the state and persists the preference to localStorage. The
           Tailwind dark variant is configured in globals.css:
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`@custom-variant dark (&:is(.dark *));`}</code>
-        </pre>
+        <CodeBlock code={`@custom-variant dark (&:is(.dark *));`} />
         <p className="text-sm text-muted-foreground leading-relaxed">
           This allows you to use{" "}
           <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
@@ -230,8 +225,7 @@ export default function ThemingPage() {
           </code>{" "}
           hook provides access to the current theme and a setter:
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`"use client";
+        <CodeBlock code={`"use client";
 
 import { useTheme } from "@dashboardpack/core/providers/theme-provider";
 
@@ -243,8 +237,7 @@ export function MyComponent() {
       Current theme: {theme}
     </button>
   );
-}`}</code>
-        </pre>
+}`} />
         <p className="text-sm text-muted-foreground leading-relaxed">
           Supported values are{" "}
           <code className="rounded bg-muted px-1 py-0.5 text-xs font-mono">
@@ -469,15 +462,13 @@ export function MyComponent() {
             </span>
           </li>
         </ul>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
-          <code>{`<!-- Example: classes that work in both LTR and RTL -->
+        <CodeBlock code={`<!-- Example: classes that work in both LTR and RTL -->
 <div className="ms-4 me-2 ps-3 pe-3 text-start border-s-2">
   Content flows correctly in both directions
 </div>
 
 <!-- Example: direction-specific overrides -->
-<ChevronRight className="size-4 ltr:rotate-0 rtl:rotate-180" />`}</code>
-        </pre>
+<ChevronRight className="size-4 ltr:rotate-0 rtl:rotate-180" />`} />
       </section>
 
       {/* Next steps */}
