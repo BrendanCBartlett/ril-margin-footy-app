@@ -4,7 +4,7 @@ A modern, production-ready admin dashboard template built with **Next.js 16**, *
 
 ![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript)
+![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
@@ -236,7 +236,7 @@ Full right-to-left layout support built in:
 | --- | --- |
 | Framework | Next.js 16 (App Router, static export) |
 | UI Library | React 19 |
-| Language | TypeScript 5 (strict mode) |
+| Language | TypeScript 6 (strict mode) |
 | Styling | Tailwind CSS v4 with OKLCh color tokens |
 | Components | shadcn/ui (33 vendored primitives) |
 | Charts | Recharts 3 (10 chart types) |
@@ -254,7 +254,7 @@ Full right-to-left layout support built in:
 | Phone Input | libphonenumber-js |
 | Unit Testing | Vitest + Testing Library |
 | E2E Testing | Playwright |
-| Storybook | Storybook 8.x (15 component stories) |
+| Storybook | Storybook 10.x (15 component stories) |
 | i18n | Custom React Context + typed JSON messages |
 | Bundle Analysis | @next/bundle-analyzer |
 
@@ -285,7 +285,7 @@ Open [http://localhost:3737](http://localhost:3737) to see the dashboard.
 | `npm run dev` | Start dev server (port 3737) |
 | `npm run build` | Production build (static export to `out/`) |
 | `npm run start` | Serve production build |
-| `npm run lint` | Run ESLint (flat config, v9) |
+| `npm run lint` | Run ESLint (flat config, v10) |
 | `npm run test` | Vitest in watch mode |
 | `npm run test:run` | Vitest single run |
 | `npm run test:e2e` | Playwright E2E tests |

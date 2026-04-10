@@ -2,6 +2,19 @@
 
 All notable changes to Apex Dashboard are documented here.
 
+## v2.2.0 — April 2026
+
+### Dependencies
+
+- Next.js 16.1.6 to 16.2.3
+- React and React-DOM 19.2.3 to 19.2.5
+- Storybook 8.6.x to 10.3.5 (major upgrade; addon-essentials and blocks consolidated into core)
+- TypeScript 5 to 6
+- ESLint 9 to 10
+- lucide-react 0.564 to 1.8.0 (brand icons removed, replaced with inline SVGs)
+- @dashboardpack/core now installed from npm (^1.1.0) instead of file: reference
+- Bumped all remaining dependencies to latest: framer-motion, recharts, vitest, playwright, and others
+
 ## v2.1.0 — February 2026
 
 ### User Management
@@ -14,7 +27,7 @@ All notable changes to Apex Dashboard are documented here.
 
 ### Storybook
 
-- Storybook 8.x with @storybook/react-vite framework
+- Storybook 10.x with @storybook/react-vite framework
 - 15 component stories across 3 tiers (core primitives, form components, dashboard widgets)
 - Dark mode decorator and responsive viewport presets
 - Auto-docs enabled for all stories

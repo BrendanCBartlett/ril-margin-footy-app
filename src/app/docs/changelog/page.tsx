@@ -12,11 +12,38 @@ export default function ChangelogPage() {
         </p>
       </div>
 
+      {/* v2.2.0 */}
+      <section className="space-y-4">
+        <div className="flex items-center gap-3">
+          <h2 className="text-lg font-semibold">v2.2.0</h2>
+          <Badge variant="default">Latest</Badge>
+          <span className="text-sm text-muted-foreground">
+            April 2026
+          </span>
+        </div>
+        <p className="text-sm text-muted-foreground">
+          Full dependency update across the entire stack.
+        </p>
+
+        <div className="space-y-3">
+          <h3 className="text-sm font-medium">Dependencies</h3>
+          <ul className="list-disc space-y-1 ps-6 text-sm text-muted-foreground">
+            <li>Next.js 16.1.6 to 16.2.3</li>
+            <li>React and React DOM 19.2.3 to 19.2.5</li>
+            <li>Storybook 8.6.x to 10.3.5 (addon-essentials and blocks consolidated into core)</li>
+            <li>TypeScript 5 to 6</li>
+            <li>ESLint 9 to 10</li>
+            <li>lucide-react 0.564.x to 1.8.0 (brand icons replaced with inline SVGs)</li>
+            <li>@dashboardpack/core now installed from npm registry (^1.1.0)</li>
+            <li>All remaining dependencies bumped to latest versions</li>
+          </ul>
+        </div>
+      </section>
+
       {/* v2.1.0 */}
       <section className="space-y-4">
         <div className="flex items-center gap-3">
           <h2 className="text-lg font-semibold">v2.1.0</h2>
-          <Badge variant="default">Latest</Badge>
           <span className="text-sm text-muted-foreground">
             February 2026
           </span>
@@ -36,7 +63,7 @@ export default function ChangelogPage() {
 
           <h3 className="text-sm font-medium">Storybook</h3>
           <ul className="list-disc space-y-1 ps-6 text-sm text-muted-foreground">
-            <li>Storybook 8.x with 15 component stories across core, form, and dashboard tiers</li>
+            <li>Storybook 10.x with 15 component stories across core, form, and dashboard tiers</li>
             <li>Dark mode decorator and responsive viewport presets</li>
             <li>Auto-docs enabled for all stories</li>
           </ul>
@@ -203,7 +230,7 @@ export default function ChangelogPage() {
           <ul className="list-disc space-y-1 ps-6 text-sm text-muted-foreground">
             <li>Next.js 16 with App Router</li>
             <li>React 19</li>
-            <li>TypeScript 5 with strict mode</li>
+            <li>TypeScript 6 with strict mode</li>
             <li>Tailwind CSS v4</li>
             <li>Recharts for data visualization</li>
             <li>Lucide React icons</li>
