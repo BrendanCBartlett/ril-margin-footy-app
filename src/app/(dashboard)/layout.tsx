@@ -1,3 +1,5 @@
+"use client";
+
 import { SidebarProvider } from "@dashboardpack/core/providers/sidebar-context";
 import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 
