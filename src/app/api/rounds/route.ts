@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
 const supabase = createClient(
@@ -6,10 +6,7 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export async function GET() {
   const { data, error } = await supabase
     .from("rounds")
     .select("round_number, status")
@@ -17,9 +14,11 @@ export default async function handler(
     .order("round_number");
 
   if (error) {
-    res.status(500).json({ error: error.message });
-    return;
+    return NextResponse.json(
+      { error: error.message },
+      { status: 500 }
+    );
   }
 
-  res.status(200).json(data);
+  return NextResponse.json(data);
 }
