@@ -1,6 +1,9 @@
-'use client';
+"use client";
 
 export function AuthButton() {
   return (
     <button disabled>
-      Auth (
+      Auth (coming soon)
+    </button>
+  );
+}
