@@ -1,3 +1,10 @@
-export default function ForgotPasswordForm() {
-  return <div>Forgot password form placeholder</div>;
+'use client';
+
+export default function UpdatePasswordForm() {
+  return (
+    <div>
+      <h2>Update Password</h2>
+      <p>Password update functionality will be implemented later.</p>
+    </div>
+  );
 }
