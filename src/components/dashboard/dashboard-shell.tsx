@@ -1,13 +1,33 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { cn } from "@dashboardpack/core/lib/utils";
 import { useSidebar } from "@dashboardpack/core/providers/sidebar-context";
-import { Sidebar } from "./sidebar";
-import { Header } from "./header";
-import { CommandPalette } from "@/components/command-palette";
-import { PageTransition } from "./page-transition";
 
-export function DashboardShell({ children }: { children: React.ReactNode }) {
+// Dynamically import dashboard components to prevent SSR execution
+const Sidebar = dynamic(() => import("./sidebar").then(m => m.Sidebar), {
+  ssr: false,
+});
+
+const Header = dynamic(() => import("./header").then(m => m.Header), {
+  ssr: false,
+});
+
+const CommandPalette = dynamic(
+  () => import("@/components/command-palette").then(m => m.CommandPalette),
+  { ssr: false }
+);
+
+const PageTransition = dynamic(
+  () => import("./page-transition").then(m => m.PageTransition),
+  { ssr: false }
+);
+
+export function DashboardShell({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const { collapsed, layout, container } = useSidebar();
 
   return (
@@ -15,7 +35,7 @@ export function DashboardShell({ children }: { children: React.ReactNode }) {
       className={cn(
         "min-h-screen",
         container === "boxed"
-          ? "mx-auto max-w-[1440px] border-x border-border bg-background shadow-sm"
+          ? "mx-auto max-w-[1440px] border-x border-border bg-background"
           : "bg-background"
       )}
     >
@@ -27,7 +47,9 @@ export function DashboardShell({ children }: { children: React.ReactNode }) {
           className={cn(
             "flex flex-1 flex-col transition-all duration-300",
             layout === "sidebar"
-              ? collapsed ? "lg:ms-[68px]" : "lg:ms-[260px]"
+              ? collapsed
+                ? "lg:ms-[68px]"
+                : "lg:ms-[260px]"
               : ""
           )}
         >
