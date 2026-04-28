@@ -38,10 +38,10 @@
     "node_modules/@dashboardpack/core/**/*.ts",
     "node_modules/@dashboardpack/core/**/*.tsx"
   ],
- 
-"exclude": [
+ "exclude": [
   "node_modules",
   "seed",
+  "vitest.config.ts",
   "**/*.stories.ts",
   "**/*.stories.tsx"
 ]
