@@ -5,7 +5,12 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useTheme } from "@dashboardpack/core/providers/theme-provider";
 import { useSidebar } from "@dashboardpack/core/providers/sidebar-context";
-import { ThemeCustomizer } from "./theme-customizer";
+import dynamic from "next/dynamic";
+
+const ThemeCustomizer = dynamic(
+  () => import("./theme-customizer"),
+  { ssr: false }
+);
 import { TopNav } from "./top-nav";
 import { Button } from "@dashboardpack/core/components/ui/button";
 import {
