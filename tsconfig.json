@@ -38,9 +38,11 @@
     "node_modules/@dashboardpack/core/**/*.ts",
     "node_modules/@dashboardpack/core/**/*.tsx"
   ],
-
-  "exclude": [
-    "node_modules",
-    "seed"
-  ]
+ 
+"exclude": [
+  "node_modules",
+  "seed",
+  "**/*.stories.ts",
+  "**/*.stories.tsx"
+]
 }
