@@ -1,4 +1,5 @@
 "use client";
+export const revalidate = 0;
 
 import React, { useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@dashboardpack/core/components/ui/card";
