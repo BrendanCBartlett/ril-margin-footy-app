@@ -1,9 +1,4 @@
-import nextDynamic from "next/dynamic";
-
-const AnalyticsClient = nextDynamic(
-  () => import("./analytics-client").then(m => m.default),
-  { ssr: false }
-);
+import AnalyticsClient from "./analytics-client";
 
 export const dynamic = "force-dynamic";
 
