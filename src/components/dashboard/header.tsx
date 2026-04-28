@@ -8,7 +8,7 @@ import { useSidebar } from "@dashboardpack/core/providers/sidebar-context";
 import dynamic from "next/dynamic";
 
 const ThemeCustomizer = dynamic(
-  () => import("./theme-customizer"),
+  () => import("./theme-customizer").then(m => m.ThemeCustomizer),
   { ssr: false }
 );
 import { TopNav } from "./top-nav";
